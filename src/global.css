@@ -1,0 +1,161 @@
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  background: #fff;
+  scroll-behavior:smooth;
+  /* color: white; */
+  /* font-family: roundo, sans; */
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/AvenirRegular.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
+.no-scrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .main-container::-webkit-scrollbar {
+    width: 1px !important;
+
+  }
+  ::-webkit-scrollbar {
+    width: 1px;
+  }
+  .main-container {
+    overflow-y: overlay;
+  }
+}
+ 
+.main-container::-webkit-scrollbar {
+  width: 18px;
+}
+
+.main-container::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+dd {
+  display: list-item;
+
+  padding-inline-start: 1ch;
+}
+.hero {
+  min-height: calc(100vh - 20px);
+  /* height: calc(100svh - 120px); */
+  /* height: calc(100vh - 120px); */
+}
+@media not all and (min-width: 1000px) {
+  /* .hero {
+    height: calc(85svh - 80px);
+    height: calc(85vh - 80px);
+  } */
+}
+/* .daisy {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  transform: translate(0, 0);
+}
+
+
+.daisy-y-1 {
+  transform: translate(0, 10px);
+}
+
+.daisy-y-2 {
+  transform: translate(0, 20px);
+}
+
+.daisy-1 {
+  transition-delay: 0.1s;
+}
+
+.daisy-2 {
+  transition-delay: 0.2s;
+}
+
+.daisy-3 {
+  transition-delay: 0.3s;
+}
+
+.daisy-4 {
+  transition-delay: 0.4s;
+}
+
+.daisy-5 {
+  transition-delay: 0.5s;
+}
+
+.daisy-6 {
+  transition-delay: 0.6s;
+}
+
+.daisy-7 {
+  transition-delay: 0.7s;
+}
+
+.daisy-8 {
+  transition-delay: 0.8s;
+}
+
+.daisy-9 {
+  transition-delay: 0.9s;
+}
+
+.daisy-10 {
+  transition-delay: 1s;
+}
+
+.daisy-show {
+  opacity: 1;
+  transform: translate(0, 0);
+} */
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* [data-appear] {
+  opacity: 0;
+} */
+
+.transition-smooth {
+  transition-timing-function: cubic-bezier(.4,0,.2,1) !important;
+  /* transition-duration: .5s !important; */
+  /* transition-delay: .1s !important; */
+}

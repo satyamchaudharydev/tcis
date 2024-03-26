@@ -1,0 +1,42 @@
+---
+import { twMerge as tw } from "tailwind-merge";
+import scribble from "../../fillers/scribble.png";
+
+interface Props {
+  type:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "base"
+    | "lg"
+    | "sm"
+    | "xs"
+    | "subtitle"
+  class?: string;
+  style?: {};
+  tag?: string;
+}
+
+let { type = "base", tag = null, class: className, style = {}, ...props } = Astro.props;
+const classes = {
+  h1: "font-display font-[700] text-[81px] max-md:text-[2rem] leading-[120%]",
+  h2: "font-display font-semibold text-5xl max-md:text-[2rem] leading-[120%]",
+  h3: "text-[32px] font-display font-[700] max-md:text-3xl leading-[120%]",
+  base: "text-[24px] font-sans max-md:text-base",
+  lg: "text-2xl font-sans font-bold tracking-tight max-md:text-lg",
+  sm: "text-base font-sans",
+  xs: "text-base font-sans",
+  subtitle: "text-xl max-md:text-base uppercase font-extrabold text-center",
+}
+if (!tag) {
+  if (type === "h1" || type === "h2" || type === "h3") {
+    tag = type;
+  } else {
+    tag = "p";
+  }
+}
+const Tag = tag
+---
+<Tag class={tw(classes[type], className)} style={style}>
+  <slot />
+</Tag>

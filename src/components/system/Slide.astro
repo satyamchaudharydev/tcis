@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets"
+const { slides, id, width=1440, duration=3000, class: className } = Astro.props
+
+---
+<div class:list={["relative w-full h-full", className]} data-slides={id} data-duration={duration}>
+  {slides.map(({ slide, position, alt }, i) => (
+    <div class="w-full h-full slideshow-item" data-slide={id}>
+      <Image
+        width={width}
+        alt={alt}
+        class:list={[
+          "slideshow-item w-full h-full absolute top-0 left-0 object-no-repeat object-cover",
+          i === 0 ? "opacity-1" : "opacity-0",
+        ]}
+        src={slide}
+        style={{
+          objectPosition: position,
+          transition: "0.8s all ease-in-out",
+        }}
+        data-slide={id}
+      />
+    </div>
+  ))}
+</div>
+
+
+<script>
+
+  let cancelSlide = () => {}
+
+  function initSlide() {
+    cancelSlide()
+
+    const slideshowElements = Array.from(
+      document.querySelectorAll<HTMLElement>(".slideshow-item")
+    );  
+
+    let slideshowItems = {}
+
+
+
+    let duration = 3000
+    // group by slideshow.dataset.slide
+    slideshowElements.forEach(slideshow => {
+      const id = slideshow.dataset.slide
+      const slideShowParent = document.querySelector(`[data-slides="${id}"]`)
+      duration = slideShowParent?.dataset?.duration || 3000
+      if (!slideshowItems[id]) {
+        slideshowItems[id] = []
+      }
+      slideshowItems[id].push(slideshow)
+    })
+
+    let timer = null
+
+
+    Object.keys(slideshowItems).forEach((slideshowId: string) => {
+      let slides = slideshowItems[slideshowId]
+      let slideshowIndex = 0;
+      moveSlides(slides, slideshowIndex);
+      timer = setInterval(() => {
+        slideshowIndex = (slideshowIndex + 1) % slides.length;
+        moveSlides(slides, slideshowIndex);
+      }, duration)
+    })
+
+    return () => {
+      clearInterval(timer)
+    }
+    
+  }
+
+
+  function moveSlides(items: Array<HTMLElement>, slideshowIndex : number) {
+    items.forEach((item, i) => {
+      if (i === slideshowIndex) {
+        item.style.opacity = "1";
+        return;
+      } else {
+        item.style.opacity = "0";
+      }
+    });
+  }
+
+  cancelSlide = initSlide()
+
+  
+ 
+
+  document.addEventListener('reinit-sliders', () => {
+    cancelSlide = initSlide()
+  })
+</script>

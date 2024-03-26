@@ -1,0 +1,185 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+import "../global.css";
+import Text from "../components/system/Text.astro";
+
+import PracticeBook from '../components/utils/PracticeBook.astro'
+import Section from "../components/system/Section.astro";
+import concept from '../assets/concept.png'
+import playActivity from '../assets/activities/play.png'
+import puzzleActivity from '../assets/activities/puzzle.png'
+
+import "swiper/css";
+
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import 'swiper/css/effect-creative';
+import Slide from "../components/system/Slide.astro";
+
+const arrowIcon = `<svg width="100%" height="100%" viewBox="0 0 40 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.585785 16.9142C-0.195263 16.1332 -0.195263 14.8668 0.585785 14.0858L13.3137 1.35786C14.0948 0.576816 15.3611 0.576816 16.1421 1.35786C16.9232 2.13891 16.9232 3.40524 16.1421 4.18629L4.82843 15.5L16.1421 26.8137C16.9232 27.5948 16.9232 28.8611 16.1421 29.6421C15.3611 30.4232 14.0948 30.4232 13.3137 29.6421L0.585785 16.9142ZM40 17.5H2V13.5H40V17.5Z" fill="white"/>
+</svg>
+`
+---
+
+<Layout 
+  title="Little Elly: Preschool, Playschool, Kindergarten | Best Daycare" 
+  description="Little Elly top preschool in Bangalore with Learning spaces, qualified staff, and Near by locations. Enroll now"
+  keywords="Best preschool near me"
+>
+  <div class="w-screen h-[100svh] bg-red-300">
+    <Slide />
+  </div>
+  <div class="w-full py-[217px] flex flex-col items-center">
+    <Text type="h1" class="italic text-primary text-center">
+      <PracticeBook>
+        Broaden The <span class="text-cp-1">Vision</span>
+      </PracticeBook>
+    </Text>
+    <Text type="h1" class="italic text-primary text-center">
+      <PracticeBook class="border-cp-2">
+        Deepen The <span class="text-cp-2">Roots</span>
+      </PracticeBook>
+    </Text>
+  </div>
+  <div class="h-[calc(100vw/12)] mb-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
+    <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+    </div>
+  </div>
+  <div class="w-full" data-gsap-parent="where-learning-section">
+    <Section class="pb-0">
+      <Text type="h1" class="italic text-primary">
+        <span class="italic font-normal text-cp-4">Where</span>
+        <PracticeBook>
+          learning
+        </PracticeBook>
+        <span class="italic font-normal text-cp-4">meets</span>
+        <span class="italic text-cp-3">fun</span>
+      </Text>
+  
+      <Text type="base" class="w-[60%] max-md:w-full mt-[20px]">
+        SSRBM stands at the intersection of innovation and tradition, fostering holistic development with a curriculum that's as fun as it is formative.
+      </Text>
+    </Section>
+    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12" />
+  </div>
+  <Section class="flex w-full flex-row max-md:flex-col justify-between h-[784px]">
+    <div class="w-[38%] flex-shrink-0 h-full flex flex-col justify-center">
+      <Text type="h1">
+        <span class="text-cp-4 font-normal">Kids</span><br/>
+        <PracticeBook class="border-cp-4">
+          <span class="text-cp-3 italic">Activities</span>
+        </PracticeBook>
+      </Text>
+      <Text type="base" class="pt-[20px]">
+        At SSRBM, every student finds their passion through a diverse range of co-scholastic activities, fostering growth beyond academics. From the field to the stage, these activities encourage students to explore, excel, and express themselves in countless ways.
+      </Text>
+    </div> 
+    <div class="w-[60%] h-full">
+      <div class="w-full h-full relative">
+        <div class="swiper w-full h-full relative rounded-[12px]">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide rounded-[12px]">
+              <Image src={playActivity} alt="Play Activity" class="rounded-[12px] w-full h-full object-cover" width={900} />
+            </div>
+            <div class="swiper-slide rounded-[12px]">
+              <Image src={puzzleActivity} alt="Puzzle Activity" class="rounded-[12px] w-full h-full object-cover" width={900} />
+            </div>
+          </div>
+        </div>
+        <div class="w-full h-full top-0 left-0 absolute z-10 pointer-events-none">
+          <div class="flex flex-row gap-[9px] absolute right-[95px] -bottom-[30px] pointer-events-auto">
+            <div data-prev="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center">
+              <div class="w-[25px]" set:html={arrowIcon}></div>
+            </div>
+            <div data-next="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center">
+              <div class="w-[25px] -scale-100" set:html={arrowIcon}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Text type="h3" class="italic font-normal text-cp-5 mt-[10px]">Puzzle and Problem-Solving Game</Text>
+    </div>
+  </Section>
+  <div class="p-60"></div>
+</Layout>
+<style>
+  .float {
+    position: fixed;
+    /* background-color:#25d366; */
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    /* box-shadow: 2px 2px 3px #999; */
+    z-index: 100;
+  }
+
+  .float > div {
+    opacity: 0;
+    transition: 0.6s all ease-in-out;
+  }
+  .float a:hover ~ div {
+    opacity: 1;
+  }
+
+  .my-float {
+    margin-top: 16px;
+  }
+</style>
+
+
+<script>
+  import Swiper from "swiper";
+
+  import { EffectCreative, Autoplay } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    modules: [Autoplay, EffectCreative],
+    direction: "horizontal",
+    loop: true,
+    effect: "creative",
+    grabCursor: true,
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: ["-120%", 0, -500],
+        opacity: 0.1,
+      },
+      next: {
+        shadow: true,
+        translate: ["120%", 0, -500],
+        opacity: 0.5,
+      },
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    speed: 900,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+  });
+
+  const prevBtn = document.querySelector('[data-prev="swiper"]')
+  const nextBtn = document.querySelector('[data-next="swiper"]')
+
+  prevBtn.addEventListener('click', () => {
+    swiper.slidePrev()
+  })
+
+  nextBtn.addEventListener('click', () => {
+    swiper.slideNext()
+  })
+</script>

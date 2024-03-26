@@ -1,0 +1,135 @@
+---
+import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
+import Text from "./Text.astro";
+const {
+  title,
+  secondary,
+  icon,
+  class: className,
+  buttonType = "primary",
+  type = "button",
+  textClass = "",
+  buttonClass,
+  iconClass = "",
+} = Astro.props;
+
+const Icon = icon ? icon : FilledArrowCircle;
+const buttonClassName = {
+  primary: "border-white/30 bg-primary primary border-[3px] text-white",
+  secondary: "border-[#F6BD60] bg-[#FFF2DC] secondary border-[3px] text-[#AF7F30]",
+  yellow: "bg-yellow text-shades-blue-dark",
+  default: "default text-white",
+};
+---
+
+<div class:list={[
+  className,
+  "flex-shrink-0 font-sans",
+  "[&.loading_.icon]:!hidden [&.loading_.loading-icon]:!block"
+]}>
+  <button
+    type={type}
+    class:list={[
+      "flex flex-row items-center py-3 px-6  rounded-full  button overflow-hidden relative",
+      buttonClassName[buttonType],
+      buttonClass,
+    ]}
+    style={{
+      // boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+      // background: primary ? "linear-gradient(263.64deg, var(--primary) 6.11%, #028339 95.99%)" : 'white'
+    }}
+  >
+  
+    <Text
+      type="base"
+      class={`
+          ${!secondary ? "!text-white" : "!text-green-400"}
+          font-bold tracking-[-0.72px]
+          ${textClass}
+        `}
+    >
+      <slot />
+    </Text>
+    <div class:list={["w-5 h-5 ml-2 icon", iconClass]}>
+      <slot name="icon">
+        <Icon />
+      </slot>
+    </div>
+
+    <div class="w-8 h-8 ml-2 loading-icon hidden">
+      <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+    <path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+      <animateTransform 
+         attributeName="transform" 
+         attributeType="XML" 
+         type="rotate"
+         dur="1s" 
+         from="0 50 50"
+         to="360 50 50" 
+         repeatCount="indefinite" />
+  </path>
+</svg>
+
+
+    </div>
+    
+  </button>
+</div>
+
+<style>
+  .button:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+    animation: none; /* Animation */
+  }
+
+  .button {
+    transition: all 0.3s ease-in-out;
+    /* transform: scale(1); */
+  }
+
+  .button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+  }
+
+  .button.secondary:hover::before,
+  button.default:hover::before {
+    animation: none;
+  }
+
+  .button .icon {
+    transition: all 0.3s ease-in-out;
+  }
+  .button:hover .icon {
+    transform: translateX(4px);
+  }
+
+  .button:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 232, 157, 0.6);
+  }
+
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+    60% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+</style>
