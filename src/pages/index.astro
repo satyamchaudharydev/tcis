@@ -1,28 +1,83 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets"
+import Layout from "../layouts/Layout.astro"
 
-import "../global.css";
-import Text from "../components/system/Text.astro";
+import "../global.css"
+import Text from "../components/system/Text.astro"
 
 import PracticeBook from '../components/utils/PracticeBook.astro'
-import Section from "../components/system/Section.astro";
+import Section from "../components/system/Section.astro"
 import concept from '../assets/concept.png'
 import playActivity from '../assets/activities/play.png'
 import puzzleActivity from '../assets/activities/puzzle.png'
 
-import "swiper/css";
+import "swiper/css"
 
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import 'swiper/css/effect-creative'
 
-import 'swiper/css/effect-creative';
-import Slide from "../components/system/Slide.astro";
+import Slide from "../components/system/Slide.astro"
+
+import logo from '../assets/logo.svg'
+
+import slide1 from '../assets/slides/1.png'
+import slide2 from '../assets/slides/2.png'
+import slide3 from '../assets/slides/3.png'
+import slide4 from '../assets/slides/4.png'
+import slide5 from '../assets/slides/5.png'
+import heroDecorationTop from '../assets/decorations/heroDecorationTop.svg'
+import heroDecorationRight from '../assets/decorations/heroDecorationRight.svg'
+import heroDecorationBottomRight from '../assets/decorations/heroDecorationBottomRight.svg'
+import bottomKidPuzzle from '../assets/decorations/vision/bottomKidPuzzle.png'
+import topKidPuzzle from '../assets/decorations/vision/topKidPuzzle.png'
+import airBaloon from '../assets/decorations/vision/airBaloon.svg'
+import hands from '../assets/decorations/vision/hands.svg'
+import heart from '../assets/decorations/vision/heart.svg'
+import rainbow from '../assets/decorations/vision/rainbow.svg'
+import yellowCloud from '../assets/decorations/vision/yellowCloud.svg'
+import starFootNote from '../assets/decorations/vision/starFootNote.svg'
+import communityGallery from '../assets/communityGallery.png'
+import facilityTicker1 from '../assets/facility/ticker/1.png'
+import facilityTicker2 from '../assets/facility/ticker/2.png'
+import facilityTicker3 from '../assets/facility/ticker/3.png'
+import facilityTicker4 from '../assets/facility/ticker/4.png'
+
+import Team from '../components/templates/Testimonial2Col/Testimonial.astro'
+import Ticker from '../components/templates/Ticker.astro'
+
+import Principal from '../assets/team/principal.png'
+import SriSri from '../assets/team/ssr.png'
+import FancyLine from '../assets/decorations/line.svg'
 
 const arrowIcon = `<svg width="100%" height="100%" viewBox="0 0 40 31" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.585785 16.9142C-0.195263 16.1332 -0.195263 14.8668 0.585785 14.0858L13.3137 1.35786C14.0948 0.576816 15.3611 0.576816 16.1421 1.35786C16.9232 2.13891 16.9232 3.40524 16.1421 4.18629L4.82843 15.5L16.1421 26.8137C16.9232 27.5948 16.9232 28.8611 16.1421 29.6421C15.3611 30.4232 14.0948 30.4232 13.3137 29.6421L0.585785 16.9142ZM40 17.5H2V13.5H40V17.5Z" fill="white"/>
 </svg>
 `
+
+const team = [
+  {
+    name: 'Sri Sri Ravi Shankar',
+    image: SriSri,
+    designation: 'Founder Founder, Art of Living',
+    designationClass: 'text-cp-7',
+    title: "Gurudev's Message",
+    alt: 'Sri Sri Ravi Shankar',
+    titleClass: 'text-cp-6',
+    testimonial: 'Every parent would like to have a child whose personality shines wherever the child goes. It is the personality that is appreciated everywhere. Such a pleasing personality is what is the main aim of education.',
+  },
+  {
+    name: 'Supritha N Gaekwad',
+    alt: 'Supritha N Gaekwad',
+    image: Principal,
+    designation: 'Principal, SSRBM',
+    designationClass: 'text-primary',
+    title: "Principal's <br /> Note",
+    titleClass: 'text-primary',
+    testimonial: 'SSRBM RRN is the perfect place for the child to blossom to its true and full potential. Our dedicated facilitators guide the children with love and provide an atmosphere for joyful learning. Children are taught concepts with hands on materials for better understanding. At most importance is given for Safety, Cleanliness and Security of the children in an atmosphere that is Serene, Peaceful and Homely.',
+  },
+]
+
 ---
 
 <Layout 
@@ -30,34 +85,100 @@ const arrowIcon = `<svg width="100%" height="100%" viewBox="0 0 40 31" fill="non
   description="Little Elly top preschool in Bangalore with Learning spaces, qualified staff, and Near by locations. Enroll now"
   keywords="Best preschool near me"
 >
-  <div class="w-screen h-[100svh] bg-red-300">
-    <Slide />
+  <div class="w-screen h-[100svh] flex flex-col overflow-hidden">
+    <div class="w-full flex-1">
+      <Slide
+        slides={[
+          {slide: slide1, alt: "Slide 1", position: 'center'},
+          {slide: slide2, alt: "Slide 2", position: 'center'},
+          {slide: slide3, alt: "Slide 3", position: 'center'},
+          {slide: slide4, alt: "Slide 4", position: 'center'},
+          {slide: slide5, alt: "Slide 5", position: 'center'},
+        ]}
+      />
+      <div class="w-full h-full top-0 left-0 z-10 absolute rotate-180" style={{
+        opacity: 0.8,
+        background: 'radial-gradient(91.56% 109.67% at 26.63% 81.51%, rgba(226, 162, 83, 0.00) 0%, #FFCD7C 100%)'
+      }}></div>
+      <div class="w-full h-full absolute top-0 left-0 z-20">
+        <div class="h-[210px] absolute top-0 left-0">
+          <Image src={heroDecorationTop} alt="Hero Decoration Top" class="w-full h-full object-contain" />
+        </div>
+        <div class="h-[320px] absolute right-0 top-[12%]">
+          <Image src={heroDecorationRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
+        </div>
+        <div class="h-[372px] absolute right-0 -bottom-[10%]">
+          <Image src={heroDecorationBottomRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
+        </div>
+      </div>
+
+      <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
+        <div class="flex mb-[6%] ml-[4%] items-end gap-7">
+          <div class="w-[118px] h-[118px]">
+            <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
+          </div>
+          <div>
+            <Text type="base" class="uppercase text-cp-4 font-[400]">SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+            <Text type="h1" class="text-cp-4 italic mt-[-3%]">
+              <PracticeBook class="bg-cp-4">
+                Pre-school
+            </Text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-full bg-primary h-[15px] relative z-20"></div>
   </div>
-  <div class="w-full py-[217px] flex flex-col items-center">
-    <Text type="h1" class="italic text-primary text-center">
+
+  <div class="w-full py-[217px] flex flex-col items-center relative">
+    <div class="w-[277px] h-[274px] absolute top-[4%] left-[1%] -rotate-[26.66deg]">
+      <Image src={topKidPuzzle} alt="Top Kid Puzzle" class="w-full h-full object-contain" />
+    </div>
+    <div class="w-[358px] h-[266px] absolute bottom-[4%] -right-[2%] rotate-[13.04deg]">
+      <Image src={bottomKidPuzzle} alt="Bottom Kid Puzzle" class="w-full h-full object-contain" />
+    </div>
+    <div class="w-[161px] h-[119px] absolute top-[55%] -left-[3.2%] -rotate-[34deg]">
+      <Image src={rainbow} alt="Rainbow" class="w-full h-full object-contain" />
+    </div>
+    <div class="w-[330px] h-[254px] absolute bottom-[4%] left-[2%]">
+      <Image src={hands} alt="Hands" class="w-full h-full object-contain" />
+    </div>
+    <div class="w-[260px] h-[173px] absolute top-[3%] -right-[2%]">
+      <Image src={yellowCloud} alt="Yellow Cloud" class="w-full h-full object-contain" />
+    </div>
+    <div class="w-[75px] h-[100px] absolute top-[49%] right-[8%]">
+      <Image src={airBaloon} alt="Air Baloon" class="w-full h-full object-contain" />
+    </div>
+    <div class="w-[68px] h-[72px] -rotate-[30deg] absolute top-[38%] right-[2%]">
+      <Image src={heart} alt="Air Baloon" class="w-full h-full object-contain" />
+    </div>
+    <Text type="h2" class="italic text-primary text-center">
       <PracticeBook>
         Broaden The <span class="text-cp-1">Vision</span>
       </PracticeBook>
     </Text>
-    <Text type="h1" class="italic text-primary text-center">
+    <Text type="h2" class="italic text-primary text-center">
       <PracticeBook class="border-cp-2">
         Deepen The <span class="text-cp-2">Roots</span>
       </PracticeBook>
     </Text>
-  </div>
-  <div class="h-[calc(100vw/12)] mb-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
-    <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
-      <div class="bg-primary rounded-full"></div>
-      <div class="bg-primary rounded-full"></div>
-      <div class="bg-primary rounded-full"></div>
-      <div class="bg-primary rounded-full"></div>
-      <div class="bg-primary rounded-full"></div>
-      <div class="bg-primary rounded-full"></div>
+
+    <Text type="lg" class="w-[55%] mt-[30px] text-center">
+      At SSRBM pre-primary School, we believe in nurturing young minds through holistic education that engages the mind, heart, body, and spirit. Our goal is to cultivate students who not only thrive academically but also embody values of respect, integrity, and environmental awareness. We emphasise the importance of academic excellence, active play, cultural appreciation, and emotional development, empowering our little learners to explore, express, and grow freely.
+    </Text>
+
+    <div class="w-[138px] mt-[26px]">
+      <Image src={starFootNote} alt="Star Foot Note" class="w-full h-full object-contain" />
     </div>
   </div>
+
+  <Section class="border-[0.75px] border-cp-4">
+    <Team data={team} />
+  </Section>
+
   <div class="w-full" data-gsap-parent="where-learning-section">
     <Section class="pb-0">
-      <Text type="h1" class="italic text-primary">
+      <Text type="h2" class="italic text-primary">
         <span class="italic font-normal text-cp-4">Where</span>
         <PracticeBook>
           learning
@@ -72,9 +193,67 @@ const arrowIcon = `<svg width="100%" height="100%" viewBox="0 0 40 31" fill="non
     </Section>
     <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12" />
   </div>
+
+  <Section class="px-0" class="flex flex-col items-center pb-0">
+    <Text type="h2" class="font-[400] text-cp-4">The SSRVM <PracticeBook class="border-cp-1"><span class="font-bold italic text-cp-1">Community</span></PracticeBook></Text>
+    <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" />
+    <Text type="base" class="w-[84%] text-center">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
+    <div class="pt-[26px]"></div>
+    <div class="flex flex-row items-center gap-[64px]">
+      <div class="text-cp-1 flex flex-col items-center">
+        <Text type="h3" class="italic text-[71px]">25</Text>
+        <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Years of<br/> Excellence</Text>
+      </div>
+      <div class="text-cp-4 flex flex-col items-center">
+        <Text type="h3" class="italic text-[71px]">14+</Text>
+        <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">States<br/> In India</Text>
+      </div>
+      <div class="text-cp-3 flex flex-col items-center">
+        <Text type="h3" class="italic text-[71px]">40,000+</Text>
+        <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Students</Text>
+      </div>
+      <div class="text-cp-2 flex flex-col items-center">
+        <Text type="h3" class="italic text-[71px]">2500+</Text>
+        <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Teachers</Text>
+      </div>
+      <div class="text-cp-8 flex flex-col items-center">
+        <Text type="h3" class="italic text-[71px]">2500+</Text>
+        <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Teachers</Text>
+      </div>
+    </div>
+
+    <div class="mt-[65px]">
+    </div>
+  </Section>
+  <Image src={communityGallery} width={1920} alt="Community Gallery" class="w-full" />
+
+  <div class="h-[calc(100vw/12)] overflow-hidden z-[999] sticky" data-gsap-sticky="where-learning-section">
+    <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+      <div class="bg-primary rounded-full"></div>
+    </div>
+  </div>
+
+  <Section class="flex flex-col items-center">
+    <Text type="h2"><span class="font-[400]">{'Our '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
+    <div class="pt-[24px]"></div>
+    <Text type="base" class="w-[94%] text-center">At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
+    <div 
+      class="w-[95%] h-[600px] mt-[60px] rounded-xl"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23CB8733FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
+        backgroundSize: 'contain'
+      }}
+    ></div>
+  </Section>
+  
   <Section class="flex w-full flex-row max-md:flex-col justify-between h-[784px]">
     <div class="w-[38%] flex-shrink-0 h-full flex flex-col justify-center">
-      <Text type="h1">
+      <Text type="h2">
         <span class="text-cp-4 font-normal">Kids</span><br/>
         <PracticeBook class="border-cp-4">
           <span class="text-cp-3 italic">Activities</span>
@@ -108,20 +287,74 @@ const arrowIcon = `<svg width="100%" height="100%" viewBox="0 0 40 31" fill="non
         </div>
       </div>
 
-      <Text type="h3" class="italic font-normal text-cp-5 mt-[10px]">Puzzle and Problem-Solving Game</Text>
+      <Text type="h4" class="italic font-normal text-cp-5 mt-[10px]">Puzzle and Problem-Solving Game</Text>
     </div>
+  </Section>
+
+  <Section>
+    <Text type="h2" class="text-cp-4"><span class="font-[400]">{'SSRBM '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
+    <div class="pt-[26px]"></div>
+    <Text type="base" class="w-[70%]">At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
+    <div></div>
+    <Ticker
+      items={[
+        {
+          type: 'image',
+          src: facilityTicker1,
+          imageClass: 'w-[296px] h-[292px]',
+          textClass: 'text-cp-9',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          alt: "CLASSROOMS",
+          text: "CLASSROOMS",
+        },
+        {
+          type: 'image',
+          src: facilityTicker2,
+          imageClass: 'w-[393px] h-[243px]',
+          textClass: 'text-cp-10',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          alt: "INDOOR PLAY AREA",
+          text: "INDOOR PLAY AREA",
+        },
+        {
+          type: 'image',
+          src: facilityTicker3,
+          imageClass: 'w-[300px] h-[339px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-11',
+          alt: "OUTDOOR PLAY AREA",
+          text: "OUTDOOR PLAY AREA",
+        },
+        {
+          type: 'image',
+          src: facilityTicker4,
+          imageClass: 'w-[390px] h-[290px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-11',
+          alt: "DAYCARE FACILITIES",
+          text: "DAYCARE FACILITIES",
+        },
+      ]}
+    />
+  </Section>
+  <Section class="h-[558px]" style={{
+    background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
+  }}>
   </Section>
   <div class="p-60"></div>
 </Layout>
+
 <style>
   .float {
     position: fixed;
-    /* background-color:#25d366; */
     color: #fff;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
-    /* box-shadow: 2px 2px 3px #999; */
     z-index: 100;
   }
 

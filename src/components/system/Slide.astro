@@ -1,24 +1,24 @@
 ---
 import { Image } from "astro:assets"
+import { twMerge as tw } from "tailwind-merge"
 const { slides, id, width=1440, duration=3000, class: className } = Astro.props
 
 ---
-<div class:list={["relative w-full h-full", className]} data-slides={id} data-duration={duration}>
+<div class={tw("relative w-full h-full", className)} data-slides={id} data-duration={duration}>
   {slides.map(({ slide, position, alt }, i) => (
-    <div class="w-full h-full slideshow-item" data-slide={id}>
+    <div class={tw("w-full h-full absolute top-0 left-0 slideshow-item", i === 0 ? "opacity-1" : "opacity-0")} data-slide={id} style={{
+      transition: "0.8s all ease-in-out",
+    }}>
       <Image
         width={width}
         alt={alt}
         class:list={[
-          "slideshow-item w-full h-full absolute top-0 left-0 object-no-repeat object-cover",
-          i === 0 ? "opacity-1" : "opacity-0",
+          "object-no-repeat object-cover w-full h-full",
         ]}
         src={slide}
         style={{
           objectPosition: position,
-          transition: "0.8s all ease-in-out",
         }}
-        data-slide={id}
       />
     </div>
   ))}

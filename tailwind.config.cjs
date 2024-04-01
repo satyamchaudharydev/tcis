@@ -21,6 +21,24 @@ module.exports = {
 				},
 				'cp-5': {
 					DEFAULT: '#C0840F'
+				},
+				'cp-6': {
+					DEFAULT: '#E69B3D'
+				},
+				'cp-7': {
+					DEFAULT: '#638550'
+				},
+				'cp-8': {
+					DEFAULT: '#538DAA'
+				},
+				'cp-9': {
+					DEFAULT: '#4D6341'
+				},
+				'cp-10': {
+					DEFAULT: '#BC4B4A'
+				},
+				'cp-11': {
+					DEFAULT: '#D3811B'
 				}
 			},
 			gap: {
