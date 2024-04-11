@@ -2,8 +2,7 @@
 import { twMerge as tw } from "tailwind-merge"
 const { class: className, style = {}, ...props } = Astro.props
 ---
-<div class={tw(`
-    py-section-y pt-section-t pb-section-b 
+<div class={tw(`py-section-y pt-section-t pb-section-b 
     px-section-x pl-section-l pr-section-r
     max-md:py-section-y-mb max-md:pt-section-t-mb max-md:pb-section-b-mb
     max-md:px-section-x-mb max-md:pl-section-l-mb max-md:pr-section-r-mb

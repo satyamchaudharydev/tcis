@@ -1,5 +1,5 @@
 ---
-import FilledArrowCircle from "../icons/FilledArrowCircle.astro";
+import FilledArrowCircle from "../../icons/FilledArrowCircle.astro";
 import Text from "./Text.astro";
 const {
   title,
@@ -41,10 +41,9 @@ const buttonClassName = {
   >
   
     <Text
-      type="base"
+      type="xs"
       class={`
           ${!secondary ? "!text-white" : "!text-green-400"}
-          font-bold tracking-[-0.72px]
           ${textClass}
         `}
     >
@@ -52,7 +51,7 @@ const buttonClassName = {
     </Text>
     <div class:list={["w-5 h-5 ml-2 icon", iconClass]}>
       <slot name="icon">
-        <Icon />
+        <Icon pathClass="fill-white" />
       </slot>
     </div>
 

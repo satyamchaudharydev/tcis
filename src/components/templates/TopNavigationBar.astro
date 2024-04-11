@@ -1,0 +1,27 @@
+---
+import Button from "../system/Button.astro"
+import Text from "../system/Text.astro"
+
+const menu = [
+  { label: 'Home', link: '/' },
+  { label: 'About Us', link: '#about-us' },
+  { label: 'Programs', link: '#programs' },
+  { label: 'Activities', link: '#activities' },
+  { label: 'Facilities', link: '#activities' },
+]
+---
+<div class="fixed z-[99999] flex flex-row justify-end w-full mt-[40px] px-[53px]">
+  <div 
+    class="flex flex-row items-center py-[13px] px-[32px] gap-[23px] bg-white rounded-full mr-[18px]"
+    style={{
+      border: '1.594px solid #89C6E5',
+    }}
+  >
+    {menu.map(menuItem => (
+      <a href={menuItem.link} class="hover:underline opacity-85">
+        <Text type="xs">{menuItem.label}</Text>
+      </a>
+    ))}
+  </div>
+  <Button>Apply Now</Button>
+</div>

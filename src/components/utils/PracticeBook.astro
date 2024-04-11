@@ -1,12 +1,12 @@
 ---
 import { twMerge as tw } from 'tailwind-merge'
-const { class: className } = Astro.props
+const { class: className, id } = Astro.props
 ---
-<div class="relative inline-block">
-  <div class={tw("absolute w-full border-t border-[0.5px] top-[22%] left-0 border-primary", className)}></div>
-  <div class={tw("absolute w-full border-t border-[0.5px] bottom-[14%] left-0 border-primary", className)}></div>
-  <div class={tw("absolute w-full border-t border-[0.5px] border-dashed top-[40%] left-0 border-primary", className)}></div>
-  <div class="relative w-full z-[2]">
+<div class="relative inline-block" data-practice-book={id}>
+  <div data-practice-line class={tw("absolute w-full border-t border-[0.5px] top-[22%] left-0 border-primary", className)}></div>
+  <div data-practice-line class={tw("absolute w-full border-t border-[0.5px] bottom-[14%] left-0 border-primary", className)}></div>
+  <div data-practice-line class={tw("absolute w-full border-t border-[0.5px] border-dashed top-[40%] left-0 border-primary", className)}></div>
+  <div class="relative w-full z-[2]" data-practice-text>
     <slot />
   </div>
 </div>

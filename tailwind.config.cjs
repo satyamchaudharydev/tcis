@@ -7,6 +7,9 @@ module.exports = {
 				primary: {
 					DEFAULT: '#4592BA'
 				},
+				yellow: {
+					DEFAULT: '#FBB45C'
+				},
 				'cp-1': {
 					DEFAULT: '#E2A253'
 				},
@@ -51,10 +54,10 @@ module.exports = {
 			padding: {
 				'section-y': '80px',
 				'section-x': '67px',
-				'section-y-mb': '100px',
-				'section-x-mb': '100px',
-				'section-t-mb': '100px',
-				'section-b-mb': '100px',
+				'section-y-mb': '20px',
+				'section-x-mb': '20px',
+				// 'section-t-mb': '20px',
+				// 'section-b-mb': '20px',
 			},
 			margin: {
 				'xl': "60px",

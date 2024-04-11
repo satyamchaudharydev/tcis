@@ -1,0 +1,123 @@
+---
+import logo from "../../assets/logo.svg";
+import { Image } from "astro:assets";
+
+import facebookIcon from '../../icons/socials/Facebook.svg'
+import instagramIcon from '../../icons/socials/Instagram.svg'
+import linkedinIcon from '../../icons/socials/LinkedIn.svg'
+import twitterIcon from '../../icons/socials/Twitter.svg'
+import youtubeIcon from '../../icons/socials/YouTube.svg'
+import PhoneIcon from '../../icons/Phone.svg'
+import EmailIcon from '../../icons/Email.svg'
+import Text from "../system/Text.astro";
+import { twMerge } from "tailwind-merge";
+import theDotStudioLogo from '../../assets/theDotStudioLogo.svg'
+
+const socialMediaLinks = {
+  facebook: "https://www.facebook.com/thedotstudio",
+  instagram: "https://www.instagram.com/thedotstudio",
+  linkedin: "https://www.linkedin.com/company/thedotstudio",
+  twitter: "https://twitter.com/thedotstudio",
+  youtube: "https://www.youtube.com/channel/UC9Q6J9Z9Q9Q9Q9Q9Q9Q9Q9Q",
+};
+
+const socialMedia = [
+  {
+    name: "Facebook",
+    icon: facebookIcon,
+    link: socialMediaLinks.facebook,
+  },
+  {
+    name: "Instagram",
+    icon: instagramIcon,
+    link: socialMediaLinks.instagram,
+  },
+  {
+    name: "LinkedIn",
+    icon: linkedinIcon,
+    link: socialMediaLinks.linkedin,
+  },
+  {
+    name: "Twitter",
+    icon: twitterIcon,
+    link: socialMediaLinks.twitter,
+  },
+  {
+    name: "YouTube",
+    icon: youtubeIcon,
+    link: socialMediaLinks.youtube,
+  },
+];
+
+const footerLinks = [
+  {
+    title: 'Community',
+    containerClass: 'max-w-[120px] max-md:max-w-[100%]',
+    links: [
+      { label: 'SSRVM Bangalore South', href: 'https://ssrvmbs.org/' },
+      { label: 'SSRVM <br class="hidden md:block"/>Pre-University', href: 'https://ssrvm.org/' },
+      { label: 'Art of Living', href: 'https://www.artofliving.org/' }
+    ]
+  },
+  {
+    title: 'Contact Us',
+    containerClass: '',
+    links: [
+      { label: 'admissions@ssrbmbangalore.com', href: 'mailto:admissions@ssrbmbangalore.com', icon: EmailIcon },
+      { label: '+91 76763 10000', href: '+917676310000', icon: PhoneIcon },
+    ]
+  }
+]
+
+// const currentDomainBase = Astro.env.DOMAIN_BASE;
+
+---
+
+
+<div class="p-[60px] max-md:p-[20px] max-md:py-[35px] bg-[#292929] text-white">
+  <div class="flex flex-row max-md:flex-col justify-between">
+    <div class="flex flex-col">
+
+      <div class="w-[118px] max-md:w-[90px]">
+        <Image src={logo} alt="Logo" />
+      </div>
+
+      <div class="flex flex-row gap-[22px] mt-[32px]">
+        {socialMedia.map((social) => (
+          <a href={social.link} target="_blank" rel="noopener noreferrer">
+            <Image src={social.icon} alt={social.name} class="object-contain object-center" />
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="flex flex-row max-md:flex-col"></div>
+    
+    <div class="pt-[30px] md:hidden"></div>
+    <div class="flex flex-row max-md:flex-col gap-[24px] max-md:gap-[14px]">
+      {footerLinks.map((footerLinkSection, i) => (
+        <div class={footerLinkSection.containerClass}>
+          <Text type="xs" class="font-[400] text-[#EDE9FE]/50 tracking-[2.4px] mb-[16px] uppercase">{footerLinkSection.title}</Text>
+          <div class="flex flex-col gap-[16px]">
+            {footerLinkSection.links.map(footerLink => (
+              <a href={footerLink.href} class="flex flex-row gap-[8px] items-center hover:underline">
+                {footerLink?.icon && <Image src={footerLink?.icon} alt={footerLink.label} />}
+                <Text type="xs" class="text-white" set:html={footerLink.label}></Text>
+              </a>
+            ))}
+          </div>
+        </div>
+        
+        <div class={twMerge("h-full w-[1px] bg-white/20", footerLinks.length - 1 === i && 'hidden')}></div>
+        
+      ))}
+    </div>
+  </div>
+
+  <div class="flex flex-row mt-[54px] justify-between items-center max-md:flex-col max-md:mt-[50px] max-md:gap-[10px]">
+    <Text type="xs">Copyright © {new Date().getFullYear()}</Text>
+
+    <a href="https://thedotstudio.in/" target="_blank">
+      <Image src={theDotStudioLogo} class="w-[250px] max-md:w-[200px]" alt={"The Dot Studio Logo"} />
+    </a>
+  </div>
+</div>

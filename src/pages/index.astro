@@ -42,7 +42,9 @@ import facilityTicker1 from '../assets/facility/ticker/1.png'
 import facilityTicker2 from '../assets/facility/ticker/2.png'
 import facilityTicker3 from '../assets/facility/ticker/3.png'
 import facilityTicker4 from '../assets/facility/ticker/4.png'
+import Testimonial from "../components/templates/Testimonial3/Testimonial.astro"
 
+import newsDummy from '../assets/newsDummy.png'
 import Team from '../components/templates/Testimonial2Col/Testimonial.astro'
 import Ticker from '../components/templates/Ticker.astro'
 
@@ -50,8 +52,24 @@ import Principal from '../assets/team/principal.png'
 import SriSri from '../assets/team/ssr.png'
 import FancyLine from '../assets/decorations/line.svg'
 
+import playSchool from '../assets/programs/playSchool.png'
+import nursery from '../assets/programs/nursery.png'
+import lkg from '../assets/programs/lkg.png'
+import ukg from '../assets/programs/ukg.png'
+
+import Footer from '../components/templates/Footer.astro'
+import NewsCard from "../components/templates/NewsCard.astro"
+import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
+import TopNavigationBar from "../components/templates/TopNavigationBar.astro"
+
+
 const arrowIcon = `<svg width="100%" height="100%" viewBox="0 0 40 31" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.585785 16.9142C-0.195263 16.1332 -0.195263 14.8668 0.585785 14.0858L13.3137 1.35786C14.0948 0.576816 15.3611 0.576816 16.1421 1.35786C16.9232 2.13891 16.9232 3.40524 16.1421 4.18629L4.82843 15.5L16.1421 26.8137C16.9232 27.5948 16.9232 28.8611 16.1421 29.6421C15.3611 30.4232 14.0948 30.4232 13.3137 29.6421L0.585785 16.9142ZM40 17.5H2V13.5H40V17.5Z" fill="white"/>
+</svg>
+`
+
+const starIcon = (className="fill-cp-5") => `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.8125 0.625C9.8125 0.625 10.3298 5.45307 12.3446 7.4679C14.3594 9.48273 19.1875 10 19.1875 10C19.1875 10 14.3594 10.5173 12.3446 12.5321C10.3298 14.5469 9.8125 19.375 9.8125 19.375C9.8125 19.375 9.29523 14.5469 7.2804 12.5321C5.26557 10.5173 0.4375 10 0.4375 10C0.4375 10 5.26557 9.48273 7.2804 7.4679C9.29523 5.45307 9.8125 0.625 9.8125 0.625Z" class="${className}" />
 </svg>
 `
 
@@ -72,12 +90,45 @@ const team = [
     image: Principal,
     designation: 'Principal, SSRBM',
     designationClass: 'text-primary',
-    title: "Principal's <br /> Note",
+    title: "Principal's <br class=\"block max-md:hidden\" /> Note",
     titleClass: 'text-primary',
     testimonial: 'SSRBM RRN is the perfect place for the child to blossom to its true and full potential. Our dedicated facilitators guide the children with love and provide an atmosphere for joyful learning. Children are taught concepts with hands on materials for better understanding. At most importance is given for Safety, Cleanliness and Security of the children in an atmosphere that is Serene, Peaceful and Homely.',
   },
 ]
 
+
+const newsEvents = [
+  {
+    image: newsDummy,
+    title: 'World Peace Day',
+    description: 'We held the Club Fair today! Students had the opportunity to browse all of the amazing club opportunities available and talk to current members.'
+  },
+  {
+    image: newsDummy,
+    title: 'Inter-house Drawing Competition for Pre-Nursery Students',
+    description: 'We held the Inter-house Drawing Competition for Pre-Nursery students today!'
+  },
+  {
+    image: newsDummy,
+    title: 'Independence Day',
+    description: 'We celebrated Independence Day today! It was a day filled with patriotic fervor and enthusiasm.'
+  },
+  {
+    image: newsDummy,
+    title: 'World Peace Day',
+    description: 'We held the Club Fair today! Students had the opportunity to browse all of the amazing club opportunities available and talk to current members.'
+  },
+  {
+    image: newsDummy,
+    title: 'Inter-house Drawing Competition for Pre-Nursery Students',
+    description: 'We held the Inter-house Drawing Competition for Pre-Nursery students today!'
+  },
+  {
+    image: newsDummy,
+    title: 'Independence Day',
+    description: 'We celebrated Independence Day today! It was a day filled with patriotic fervor and enthusiasm.'
+  },
+]
 ---
 
 <Layout 
@@ -85,7 +136,8 @@ const team = [
   description="Little Elly top preschool in Bangalore with Learning spaces, qualified staff, and Near by locations. Enroll now"
   keywords="Best preschool near me"
 >
-  <div class="w-screen h-[100svh] flex flex-col overflow-hidden">
+  <div class="w-screen h-[100svh] flex flex-col overflow-hidden relative">
+    <TopNavigationBar />
     <div class="w-full flex-1">
       <Slide
         slides={[
@@ -130,7 +182,7 @@ const team = [
     <div class="w-full bg-primary h-[15px] relative z-20"></div>
   </div>
 
-  <div class="w-full py-[217px] flex flex-col items-center relative">
+  <div class="w-full py-[217px] max-md:px-[20px] flex flex-col items-center relative">
     <div class="w-[277px] h-[274px] absolute top-[4%] left-[1%] -rotate-[26.66deg]">
       <Image src={topKidPuzzle} alt="Top Kid Puzzle" class="w-full h-full object-contain" />
     </div>
@@ -153,7 +205,7 @@ const team = [
       <Image src={heart} alt="Air Baloon" class="w-full h-full object-contain" />
     </div>
     <Text type="h2" class="italic text-primary text-center">
-      <PracticeBook>
+      <PracticeBook id="practicebook">
         Broaden The <span class="text-cp-1">Vision</span>
       </PracticeBook>
     </Text>
@@ -163,7 +215,7 @@ const team = [
       </PracticeBook>
     </Text>
 
-    <Text type="lg" class="w-[55%] mt-[30px] text-center">
+    <Text type="lg" class="w-[55%]  max-md:w-full mt-[30px] text-center">
       At SSRBM pre-primary School, we believe in nurturing young minds through holistic education that engages the mind, heart, body, and spirit. Our goal is to cultivate students who not only thrive academically but also embody values of respect, integrity, and environmental awareness. We emphasise the importance of academic excellence, active play, cultural appreciation, and emotional development, empowering our little learners to explore, express, and grow freely.
     </Text>
 
@@ -172,7 +224,7 @@ const team = [
     </div>
   </div>
 
-  <Section class="border-[0.75px] border-cp-4">
+  <Section class="border-[0.75px] border-cp-4 max-md:flex-col">
     <Team data={team} />
   </Section>
 
@@ -239,16 +291,123 @@ const team = [
   </div>
 
   <Section class="flex flex-col items-center">
-    <Text type="h2"><span class="font-[400]">{'Our '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
+    <Text type="h2"><span class="font-[400] text-cp-4">{'Our '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
     <div class="pt-[24px]"></div>
     <Text type="base" class="w-[94%] text-center">At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
-    <div 
-      class="w-[95%] h-[600px] mt-[60px] rounded-xl"
-      style={{
-        backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23CB8733FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
-        backgroundSize: 'contain'
-      }}
-    ></div>
+    <div class="flex w-full flex-row mt-[60px] gap-6">
+      <div 
+        class="flex-1 rounded-[18px] p-[32px]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23CB8733FF' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
+          backgroundSize: 'contain'
+        }}
+      >
+        <div class="w-full">
+          <Image src={playSchool} alt="Play School" class="w-full h-full object-cover" width={700} />
+        </div>
+
+        <div class="pt-[24px]">
+          <div class="flex flex-row gap-[16px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-[#C0840F]')}></div>
+            <Text type="lg"><span class="text-[#C0840F] font-bold">Imaginative Play:</span> Fosters creativity and social skills.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-[#C0840F]')}></div>
+            <Text type="lg"><span class="text-[#C0840F] font-bold">Sensory Activities:</span> Enhances sensory development and exploration.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-[#C0840F]')}></div>
+            <Text type="lg"><span class="text-[#C0840F] font-bold">Story Time:</span> Builds early literacy and listening skills.</Text>
+          </div>
+        </div>
+        
+      </div>
+      <div 
+        class="flex-1 rounded-[18px] p-[32px]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2378ADF9' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
+          backgroundSize: 'contain'
+        }}
+      >
+        <div class="w-full">
+          <Image src={nursery} alt="Nursery" class="w-full h-full object-cover" width={700} />
+        </div>
+
+
+        <div class="pt-[34px]">
+          <div class="flex flex-row gap-[16px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-primary')}></div>
+            <Text type="lg"><span class="text-primary font-bold">Creative Arts:</span> Encourages expression through art and music.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-primary')}></div>
+            <Text type="lg"><span class="text-primary font-bold">Pre-writing Skills:</span> Develops fine motor skills for writing.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-primary')}></div>
+            <Text type="lg"><span class="text-primary font-bold">Nature Discovery:</span> Introduces environmental awareness and curiosity.</Text>
+          </div>
+        </div>
+
+        
+
+        
+      </div>
+    </div>
+    <div class="flex w-full flex-row mt-[24px] gap-6">
+      <div 
+        class="flex-1 rounded-[18px] p-[32px]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2398B08B' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
+          backgroundSize: 'contain'
+        }}
+      >
+        <div class="w-full">
+          <Image src={lkg} alt="LKG" class="w-full h-full object-cover" width={700} />
+        </div>
+
+        <div class="pt-[34px]">
+          <div class="flex flex-row gap-[16px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-cp-2')}></div>
+            <Text type="lg"><span class="text-cp-2 font-bold">Phonics Fun:</span> Lays the groundwork for reading skills.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-cp-2')}></div>
+            <Text type="lg"><span class="text-cp-2 font-bold">Numeracy:</span> Introduces basic math concepts through play.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-cp-2')}></div>
+            <Text type="lg"><span class="text-cp-2 font-bold">Social Interaction:</span> Promotes teamwork and communication.</Text>
+          </div>
+        </div>
+      </div>
+      <div 
+        class="flex-1 rounded-[18px] p-[32px]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23EE7F82' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
+          backgroundSize: 'contain'
+        }}
+      >
+        <div class="w-full">
+          <Image src={ukg} alt="UKG" class="w-full h-full object-cover" width={700} />
+        </div>
+
+        <div class="pt-[34px]">
+          <div class="flex flex-row gap-[16px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-cp-3')}></div>
+            <Text type="lg"><span class="text-cp-3 font-bold">Phonics Fun:</span> Lays the groundwork for reading skills.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-cp-3')}></div>
+            <Text type="lg"><span class="text-cp-3 font-bold">Numeracy:</span> Introduces basic math concepts through play.</Text>
+          </div>
+          <div class="flex flex-row gap-[16px] mt-[12px] items-start">
+            <div class="w-[18.75px] h-[18.75px] relative top-[8px]" set:html={starIcon('fill-cp-3')}></div>
+            <Text type="lg"><span class="text-cp-3 font-bold">Social Interaction:</span> Promotes teamwork and communication.</Text>
+          </div>
+        </div>
+      </div>
+    </div>
   </Section>
   
   <Section class="flex w-full flex-row max-md:flex-col justify-between h-[784px]">
@@ -291,10 +450,12 @@ const team = [
     </div>
   </Section>
 
-  <Section>
-    <Text type="h2" class="text-cp-4"><span class="font-[400]">{'SSRBM '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
-    <div class="pt-[26px]"></div>
-    <Text type="base" class="w-[70%]">At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
+  <Section class="!px-0">
+    <div class="px-section-x max-md:px-section-x-mb">
+      <Text type="h2" class="text-cp-4"><span class="font-[400]">{'SSRBM '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
+      <div class="pt-[26px]"></div>
+      <Text type="base" class="w-[70%]">At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
+    </div>
     <div></div>
     <Ticker
       items={[
@@ -341,11 +502,56 @@ const team = [
       ]}
     />
   </Section>
-  <Section class="h-[558px]" style={{
+  <Section class="pr-0 flex gap-[24px] relative flex-row max-md:flex-col items-center" style={{
     background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
   }}>
+    <div class="flex-shrink-0">
+      <Text type="subtitle" class="text-[#89C6E5]">OUR LATEST NEWS</Text>
+      <Text type="h3" class="text-white pt-[22px] leading-[140%]">See what's<br/> <span class="text-yellow italic">happening</span><br/> at SSRBM</Text>
+      <div class="flex flex-row gap-[12px] mt-[42px]">
+        <div class="cursor-pointer w-16 h-16 relative -scale-100">
+          <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
+          <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
+        </div>
+        <div class="cursor-pointer w-16 h-16 relative">
+          <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
+          <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row overflow-scroll py-[15px] gap-[80px] pl-8 snap-x" data-mask-scroll-x>
+      <div class="absolute top-0 right-0 w-[150px] h-full z-20 pointer-events-none" style={{
+        'mask-image': 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgb(0, 0, 0) 100%)'
+      }}></div>
+      {newsEvents.map((news, index) => (
+        <NewsCard
+          i={index} 
+          title={news.title}
+          description={news.description}
+        />
+      ))}
+    </div>
+
+  </Section>
+  <Testimonial />
+
+  <div class="h-[calc(100vw/12)] overflow-hidden z-[999] sticky" data-gsap-sticky="where-learning-section">
+    <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
+      <div class="bg-yellow rounded-full"></div>
+      <div class="bg-yellow rounded-full"></div>
+      <div class="bg-yellow rounded-full"></div>
+      <div class="bg-yellow rounded-full"></div>
+      <div class="bg-yellow rounded-full"></div>
+      <div class="bg-yellow rounded-full"></div>
+    </div>
+  </div>
+
+  <Section class="bg-white">
+    
   </Section>
   <div class="p-60"></div>
+
+  <Footer />
 </Layout>
 
 <style>
@@ -369,6 +575,7 @@ const team = [
   .my-float {
     margin-top: 16px;
   }
+
 </style>
 
 
@@ -416,3 +623,5 @@ const team = [
     swiper.slideNext()
   })
 </script>
+
+<script src="../scripts/scrollAnimations.ts"></script>
