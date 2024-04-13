@@ -6,7 +6,7 @@ import Text from "../../system/Text.astro"
 
 const { data } = Astro.props
 ---
-<div class="flex flex-row max-md:flex-col justify-items-start gap-[20px] h-[590px] max-md:h-auto">
+<div class="flex flex-row max-lg:flex-col justify-items-start gap-[20px] h-[590px] max-md:h-auto">
   {data.map(testimonial => (
     <div class="flex-1 flex border-[2.5px] border-[#E2E2E2] overflow-hidden flex-row max-md:flex-col w-full bg-white rounded-[12px]">
       <div class="w-[45%] max-md:w-full max-md:h-[260px] h-auto">
@@ -14,12 +14,12 @@ const { data } = Astro.props
       </div>
       <div class="w-[55%] max-md:w-full p-6 flex flex-col justify-between">
         <div>
-          <Text type="h4" class={tw(testimonial.titleClass, "text-[37px]")} set:html={testimonial.title} />
+          <Text type="h4" class={tw(testimonial.titleClass, "text-[37px] max-lg:text-[25px]")} set:html={testimonial.title} />
           <div class="pt-[12px]" />
           <Text type="sm" set:html={testimonial.testimonial} />
         </div>
         <div>
-          <Text type="sm" class={tw('text-[#121212] text-[24px]')}>{testimonial.name}</Text>
+          <Text type="sm" class={tw('text-[#121212] text-[24px] ')}>{testimonial.name}</Text>
           <Text type="sm" class={tw('text-[#121212]', testimonial.designationClass)}>{testimonial.designation}</Text>
         </div>
       </div>

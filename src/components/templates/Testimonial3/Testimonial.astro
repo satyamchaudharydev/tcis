@@ -1,9 +1,6 @@
 ---
-
-
 import Text from '../../system/Text.astro';
 import Section from '../../system/Section.astro';
-
 import TestimonialCard from './TestimonialCard.astro';
 
 
@@ -11,6 +8,7 @@ import testimonial1 from '../../../assets/testimonial/1.png'
 import testimonial2 from '../../../assets/testimonial/2.png'
 import testimonial3 from '../../../assets/testimonial/3.png'
 import PracticeBook from '../../utils/PracticeBook.astro';
+
 // import Scribble from '../Scribble.astro';
 
 const testimonials = {
@@ -106,7 +104,7 @@ const subtitle = testimonials.subtitle;
   </div> -->
 
 
-   <div class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto'>
+   <div class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto bg-slate-300'>
       <div class='
         min-w-[34vw] max-md:w-[100%]
         max-md:min-h-[136px] bg-cover bg-center
@@ -114,7 +112,7 @@ const subtitle = testimonials.subtitle;
         rounded-r-none
         '
         style={{
-          backgroundImage: `url(${testimonials.data[0].image.src})`
+          backgroundImage: `url('${testimonials.data[0].image}')`
         }}>
       </div>
       <div class='flex flex-col justify-center px-14 max-md:px-1 max-md:items-left'>

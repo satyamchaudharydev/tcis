@@ -40,7 +40,7 @@ import TickerCard from "./TickerCard.astro";
         </svg>
     </div>
     <Text type="mono" class="group-hover:underline ticker-text mt-1 font-bold transition-opacity transition-smooth duration-500 [&.hide-text]:opacity-0 flex flex-row items-center -top-[2px]" swiper-label>
-      Branded Calendar
+      
     </Text>
     <div class="w-[35px] h-[35px] -scale-100 items-center" data-next="hero-swiper">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 38" fill="none">
@@ -116,19 +116,19 @@ import TickerCard from "./TickerCard.astro";
       },
     });
     swiper.on('transitionStart', () => {
-      swiperLine.classList.add('hide-line')
-      swiperLabel.classList.add('hide-text')
+      swiperLine.style.opacity = 0;
+      swiperLabel.style.opacity = 0;
     })
 
     swiper.on('sliderMove', () => {
-      swiperLine.classList.add('hide-line')
-      swiperLabel.classList.add('hide-text')
+      swiperLine.style.opacity = 0;
+      swiperLabel.style.opacity = 0;
     })
     swiper.on('transitionEnd', (e) => {
       const labelText = swiperData[e.realIndex]?.text
       swiperLabel.innerText = labelText
-      swiperLine.classList.remove('hide-line')
-      swiperLabel.classList.remove('hide-text')
+      swiperLine.style.opacity = 1;
+      swiperLabel.style.opacity = 1;
     })
 
     prevBtn.addEventListener('click', () => {

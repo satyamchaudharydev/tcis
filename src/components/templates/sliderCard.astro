@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import Text from "../system/Text.astro";
+const { activity } = Astro.props
+---
+
+<div class="swiper-slide rounded-[12px]">
+    <Image src={activity.src} alt={activity.alt} class="rounded-[12px] w-full h-full object-cover" width={900} />
+
+    <!-- <Text type="h4" class="z-50 italic font-normal text-cp-5 mt-[10px]" slider-title="swiper">{activity.slideTitle}</Text> -->
+  </div>
