@@ -206,8 +206,8 @@ const kidsActivities = [
 ]
 ---
 
-<Layout 
-  title="Little Elly: Preschool, Playschool, Kindergarten | Best Daycare" 
+<Layout
+  title="Little Elly: Preschool, Playschool, Kindergarten | Best Daycare"
   description="Little Elly top preschool in Bangalore with Learning spaces, qualified staff, and Near by locations. Enroll now"
   keywords="Best preschool near me"
 >
@@ -228,7 +228,7 @@ const kidsActivities = [
         background: 'radial-gradient(91.56% 109.67% at 26.63% 81.51%, rgba(226, 162, 83, 0.00) 0%, #FFCD7C 100%)'
       }}></div>
       <div class="w-full h-full absolute top-0 left-0 z-20">
-        <div class="h-[210px] absolute top-0 left-0 ">
+        <div class="h-[210px] absolute bottom-[150px] md:top-0 left-0 ">
           <Image src={heroDecorationTop} alt="Hero Decoration Top" class="w-full h-full object-contain" />
         </div>
         <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-lg:h-[250px] max-md:h-[200px]">
@@ -240,21 +240,22 @@ const kidsActivities = [
       </div>
 
       <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
-        <div class="flex mb-[6%] ml-[4%] justify-end items-center gap-7">
-          <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px]">
-            <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
+        <div class="flex md:mb-[6%] ml-[4%] max-md:ml-0 max-md:justify-start justify-end items-center gap-7">
+          <div class="w-[118px] max-md:hidden h-[118px] max-lg:w-[80px] max-md:w-[60px]">
+            <Image src={logo} alt="SSRBM Logo" class="w-full h-full  object-contain" />
           </div>
-          <div>
-        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] max-sm:w-[35vw]">SRI SRI RAVI SHANKAR BAL MANDIR</Text>
-            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[28px]">
+          <div class="max-md:px-[19px]">
+        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[10px] ">SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-start font-bold max-md:text-[60px] max-sm:text-[36px]">
               <PracticeBook class="bg-cp-4 ">
-                Pre-school
+                Pre-primary school
             </Text>
+            <Button buttonClass="py-[0px] md:hidden px-[14px] mb-[37px] mt-[12px]">Apply Now</Button>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-full bg-primary h-[15px] relative z-20"></div>
+    <div class="w-full bg-primary h-[15px] max-md:hidden relative z-20"></div>
   </div>
 
   <div class="w-full py-[217px] max-md:px-[20px] flex flex-col items-center relative max-md:py-[160px]">
@@ -279,9 +280,9 @@ const kidsActivities = [
     <div class="w-[68px] h-[72px] -rotate-[30deg] absolute top-[38%] max-md:top-[28%] right-[2%] max-sm:right-0 max-md:w-[38px]">
       <Image src={heart} alt="Air Baloon" class="w-full h-full object-contain" />
     </div>
-<!-- 
+<!--
 <Text type="h4" class="font-normal font-sans text-[33.129px] text-[#121212] uppercase text-center opacity-[0.7] mb-5 relative bottom-[57px]">our philosophy</Text> -->
-    
+
     <Text type="h2" class="italic text-primary text-center">
       <PracticeBook id="practicebook">
         Broaden The <span class="text-cp-1">Vision</span>
@@ -316,7 +317,7 @@ const kidsActivities = [
         <span class="italic font-normal text-cp-4">meets</span>
         <span class="italic text-cp-3">fun</span>
       </Text>
-  
+
       <Text type="base" class="w-[60%] max-md:w-full mt-[20px]">
         SSRBM stands at the intersection of innovation and tradition, fostering holistic development with a curriculum that's as fun as it is formative.
       </Text>
@@ -333,7 +334,7 @@ const kidsActivities = [
     <Text type="base" class="w-[84%] text-center">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
     <div class="pt-[26px]"></div>
     <div class="flex flex-row items-center gap-[64px] max-lg:gap-[30px] max-lg:flex-col">
-      
+
       <div class="flex flex-row max-lg:gap-[60px] gap-10">
         <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]">
           <Text type="h3" class="italic text-[71px]">25</Text>
@@ -383,7 +384,7 @@ const kidsActivities = [
     <div class="pt-[24px]"></div>
     <Text type="base" class="w-[94%] text-center">At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
     <div class="flex w-full flex-row max-lg:flex-col mt-[60px] gap-6">
-      <div 
+      <div
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23CB8733FF' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -408,9 +409,9 @@ const kidsActivities = [
             <Text type="lg"><span class="text-[#C0840F] font-bold">Story Time:</span> Builds early literacy and listening skills.</Text>
           </div>
         </div>
-        
+
       </div>
-      <div 
+      <div
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2378ADF9' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -437,13 +438,13 @@ const kidsActivities = [
           </div>
         </div>
 
-        
 
-        
+
+
       </div>
     </div>
     <div class="flex w-full flex-row max-lg:flex-col mt-[24px] gap-6">
-      <div 
+      <div
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2398B08B' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -469,7 +470,7 @@ const kidsActivities = [
           </div>
         </div>
       </div>
-      <div 
+      <div
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23EE7F82' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -497,7 +498,7 @@ const kidsActivities = [
       </div>
     </div>
   </Section>
-  
+
   <Section class="flex w-full flex-row max-lg:flex-col justify-between h-fit gap-5 ">
     <div class="w-[38%]  h-full flex flex-col justify-center max-lg:w-fit">
       <Text type="h2">
@@ -509,7 +510,7 @@ const kidsActivities = [
       <Text type="base" class="pt-[20px]">
         At SSRBM, every student finds their passion through a diverse range of co-scholastic activities, fostering growth beyond academics. From the field to the stage, these activities encourage students to explore, excel, and express themselves in countless ways.
       </Text>
-    </div> 
+    </div>
     <div class="w-[60%] h-full max-lg:w-full max-md:h-[35%]">
       <div class="w-full h-full relative">
         <div class="swiper sliderData w-full h-full relative rounded-[12px]" data-slider-data={JSON.stringify(kidsActivities)}>
@@ -653,7 +654,7 @@ const kidsActivities = [
         {newsEvents.map((news, index) => (
           <NewsCard
             i={index}
-            image ={news.image} 
+            image ={news.image}
             title={news.title}
             description={news.description}
           />
@@ -664,7 +665,7 @@ const kidsActivities = [
     <!-- <div class="max-md:block hidden hero-swiper no-scrollbar will-change-scroll max-md:w-full" data-swiper-data={JSON.stringify(newsEvents)}>
       <div class="swiper-wrapper mt-5">
         {newsEvents.map((item, i) => (
-          <NewsCard 
+          <NewsCard
             item={item}
             type="swiper"
           />
@@ -686,7 +687,7 @@ const kidsActivities = [
       <div class="bg-yellow rounded-full"></div>
     </div>
 
-    
+
   </div>
 
   <Section class="bg-white flex justify-center items-center">
@@ -700,8 +701,8 @@ const kidsActivities = [
           <PracticeBook class="border-[#98B08B]">
             <span class="text-[66px] text-[#98B08B] capitalize font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">admissions open</span>
           </PracticeBook><br>
-  
-          <PracticeBook class="border-[#4592BA]"> 
+
+          <PracticeBook class="border-[#4592BA]">
             <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
           </PracticeBook>
         </div>
@@ -714,13 +715,13 @@ const kidsActivities = [
       </div>
     </div>
   </Section>
- 
+
 
   <Footer />
 </Layout>
 
 <style>
- 
+
 
 .scroll::-webkit-scrollbar{
     display: none;
