@@ -1,8 +1,8 @@
 ---
 export interface Props {
-	title: string;
-	description: string;
-	keywords: string;
+	title?: string;
+	description?: string;
+	keywords?: string;
 }
 import "../global.css"
 
@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import Text from '../components/system/Text.astro'
-const { title = 'Best CBSE School in Bangalore | Little Elly School', description = '', keywords = '' } = Astro.props;
+const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mandir', description = 'Discover the best pre-schools in India at Sri Sri Ravishankar Bal Mandir. Nurturing young minds with excellence in early education.', keywords = '' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ const { title = 'Best CBSE School in Bangalore | Little Elly School', descriptio
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="icon" type="image/x-icon" href="/favicon.svg">
 		<!-- <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
