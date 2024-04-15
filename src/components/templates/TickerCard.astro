@@ -6,11 +6,12 @@ import { Image } from "astro:assets";
 // import Slide from './system/Slide.astro';
 
 const { item, type, fill, i } = Astro.props
+console.log(item)
 ---
 <div class={tw("!flex swiper-slide md:!w-[auto] flex-col items-center group ml-0 max-md:ml-0")}>
-    <div 
+    <div
       class={tw(
-        `ticker__item text-5xl 
+        `ticker__item text-5xl
         text-center text-black flex items-center
         max-md:w-full
         justify-center relative`,
@@ -24,14 +25,14 @@ const { item, type, fill, i } = Astro.props
           width={600}
         />
     </div>
-  
-    <Text 
+
+    <Text
       class={tw(
         "mt-[20px] ticker-text text-[28px] gap-[48px] font-[750] max-md:hidden",
         item.textClass,
         i % 2 === 0 ? "-translate-y-[65px]" : "translate-y-[65px]"
       )}
-      type="base" 
+      type="base"
     >
       {item.text}
     </Text>
