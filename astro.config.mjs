@@ -9,7 +9,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: "https://www.ssrbm.com/",
     integrations: [sitemap(), react(), tailwind()],
-    output: 'static',
+    output: 'hybrid',
     adapter: cloudflare({
         imageService: 'compile'
     }),
