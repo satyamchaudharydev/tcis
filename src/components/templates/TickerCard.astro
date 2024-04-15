@@ -13,7 +13,7 @@ const { item, type, fill, i } = Astro.props
         `ticker__item text-5xl 
         text-center text-black flex items-center
         max-md:w-full
-        justify-center relative`,
+        justify-center relative max-md:translate-y-0`,
         item.imageClass,
         i % 2 === 0 ? "-translate-y-[65px]" : "translate-y-[65px]"
       )}>
@@ -27,7 +27,7 @@ const { item, type, fill, i } = Astro.props
   
     <Text 
       class={tw(
-        "mt-[20px] ticker-text text-[28px] gap-[48px] font-[750] max-md:hidden",
+        "mt-[20px] ticker-text text-[28px] gap-[48px] font-[750] max-md:hidden max-md:translate-y-0",
         item.textClass,
         i % 2 === 0 ? "-translate-y-[65px]" : "translate-y-[65px]"
       )}
