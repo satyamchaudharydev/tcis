@@ -8,6 +8,7 @@ import Text from "../components/system/Text.astro"
 import PracticeBook from '../components/utils/PracticeBook.astro'
 import Section from "../components/system/Section.astro"
 import concept from '../assets/concept.png'
+import mobileConcept from '../assets/concept2.png'
 import playActivity from '../assets/activities/play.png'
 import puzzleActivity from '../assets/activities/puzzle.png'
 import musicActivity from '../assets/activities/music.png'
@@ -205,7 +206,11 @@ const kidsActivities = [
 ]
 ---
 
-<Layout>
+<Layout 
+  title="Little Elly: Preschool, Playschool, Kindergarten | Best Daycare" 
+  description="Little Elly top preschool in Bangalore with Learning spaces, qualified staff, and Near by locations. Enroll now"
+  keywords="Best preschool near me"
+>
   <div class="w-screen h-[100svh] flex flex-col overflow-hidden relative">
     <TopNavigationBar />
     <div class="w-full flex-1">
@@ -236,16 +241,13 @@ const kidsActivities = [
 
       <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
         <div class="flex mb-[6%] ml-[4%] justify-end items-center gap-7">
-          <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-duration={1.2}>
+          <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px]">
             <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
           </div>
-          <!-- <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px] opacity-0 pointer-events-none">
-            <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
-          </div> -->
           <div>
-        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] max-sm:w-[35vw]" data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] max-sm:w-[35vw]">SRI SRI RAVI SHANKAR BAL MANDIR</Text>
             <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[28px]">
-              <PracticeBook class="bg-cp-4" gsap delay={0.3}>
+              <PracticeBook class="bg-cp-4 ">
                 Pre-school
             </Text>
           </div>
@@ -259,99 +261,102 @@ const kidsActivities = [
     <div class="w-[277px] h-[274px] absolute top-[4%] left-[1%] -rotate-[26.66deg] max-lg:-top-[1%] max-md:-top-[7%] max-sm:-top-[7%] max-lg:w-[180px] max-md:w-[120px]">
       <Image src={topKidPuzzle} alt="Top Kid Puzzle" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[358px] h-[266px] absolute bottom-[4%] -right-[2%] rotate-[13.04deg] max-md:bottom-[2%] max-lg:w-[250px] max-md:w-[220px] max-sm:w-[140px]">
+    <div class="w-[358px] h-[266px] absolute bottom-[4%] -right-[2%] rotate-[13.04deg] max-md:bottom-[2%] max-lg:w-[250px] max-md:w-[220px] max-sm:w-[120px] max-sm:-bottom-[6%]">
       <Image src={bottomKidPuzzle} alt="Bottom Kid Puzzle" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[161px] h-[119px] absolute top-[55%] -left-[3.2%] -rotate-[34deg] max-md:top-[46%] max-md:w-[100px] max-sm:w-[70px]">
+    <div class="w-[161px] h-[119px] absolute top-[55%] -left-[3.2%] max-md:-left-[3%] -rotate-[34deg] max-md:top-[44%] max-md:w-[40px] max-sm:w-[40px] ">
       <Image src={rainbow} alt="Rainbow" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[330px] h-[254px] absolute bottom-[4%] left-[2%] max-lg:w-[270px] max-md:w-[240px] max-sm:w-[130px]">
+    <div class="w-[330px] h-[254px] absolute bottom-[4%] left-[2%] max-lg:w-[270px] max-md:w-[240px] max-sm:w-[130px] max-sm:-bottom-[6%]">
       <Image src={hands} alt="Hands" class="w-full h-full object-contain" />
     </div>
     <div class="w-[260px] h-[173px] absolute top-[3%] -right-[2%] max-lg:top-[1%] max-md:-top-[3%] max-lg:-right-3 max-lg:w-[200px] max-md:w-[130px]">
       <Image src={yellowCloud} alt="Yellow Cloud" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[75px] h-[100px] absolute top-[49%] right-[8%] max-md:right-[4.5%] max-md:w-[50px]">
+    <div class="w-[75px] h-[100px] absolute top-[49%] right-[8%] max-md:right-[4.5%] max-md:w-[50px] max-md:hidden">
       <Image src={airBaloon} alt="Air Baloon" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[68px] h-[72px] -rotate-[30deg] absolute top-[38%] right-[2%] max-md:w-[45px]">
+    <div class="w-[68px] h-[72px] -rotate-[30deg] absolute top-[38%] max-md:top-[28%] right-[2%] max-sm:right-0 max-md:w-[38px]">
       <Image src={heart} alt="Air Baloon" class="w-full h-full object-contain" />
     </div>
 <!-- 
 <Text type="h4" class="font-normal font-sans text-[33.129px] text-[#121212] uppercase text-center opacity-[0.7] mb-5 relative bottom-[57px]">our philosophy</Text> -->
     
-    <Text type="h2" class="italic text-primary text-center" id="broaden-vision">
-      <PracticeBook gsap>
+    <Text type="h2" class="italic text-primary text-center">
+      <PracticeBook id="practicebook">
         Broaden The <span class="text-cp-1">Vision</span>
       </PracticeBook>
     </Text>
     <Text type="h2" class="italic text-primary text-center">
-      <PracticeBook class="border-cp-2" gsap delay={0.5} target="#broaden-vision">
+      <PracticeBook class="border-cp-2">
         Deepen The <span class="text-cp-2">Roots</span>
       </PracticeBook>
     </Text>
 
-    <Text type="lg" class="w-[55%]  max-md:w-[80%] mt-[30px] text-center" data-lines data-delay={0.9} data-target="#broaden-vision">
+    <Text type="lg" class="w-[55%]  max-md:w-fit mt-[30px] text-center">
       At SSRBM pre-primary School, we believe in nurturing young minds through holistic education that engages the mind, heart, body, and spirit. Our goal is to cultivate students who not only thrive academically but also embody values of respect, integrity, and environmental awareness. We emphasise the importance of academic excellence, active play, cultural appreciation, and emotional development, empowering our little learners to explore, express, and grow freely.
     </Text>
 
-    <div class="w-[138px] mt-[26px] max-sm:w-[75px]" data-gsap data-delay={1.5} data-target="#broaden-vision">
+    <div class="w-[138px] mt-[26px] max-sm:w-[75px]">
       <Image src={starFootNote} alt="Star Foot Note" class="w-full h-full object-contain" />
     </div>
   </div>
 
   <Section class="border-[0.75px] border-cp-4 max-lg:flex-col ">
-    <Team data={team}/>
+    <Team data={team} />
   </Section>
 
-  <div class="w-full" id="where-learning-section">
+  <div class="w-full" data-gsap-parent="where-learning-section">
     <Section class="pb-0">
-      <Text type="h2" class="italic text-primary [&_.line]:!inline">
-        <span class="italic font-normal text-cp-4" data-text data-target="#where-learning-section">Where</span><span></span>
-        <PracticeBook target="#where-learning-section">
+      <Text type="h2" class="italic text-primary">
+        <span class="italic font-normal text-cp-4">Where</span>
+        <PracticeBook>
          learning
         </PracticeBook>
-        <span class="italic font-normal text-cp-4" data-text data-target="#where-learning-section">meets</span>
-        <span class="italic text-cp-3" data-text data-target="#where-learning-section">fun</span>
+        <span class="italic font-normal text-cp-4">meets</span>
+        <span class="italic text-cp-3">fun</span>
       </Text>
   
-      <Text type="base" class="w-[60%] max-md:w-full mt-[20px]" data-lines data-target="#where-learning-section" data-delay={0.8}>
+      <Text type="base" class="w-[60%] max-md:w-full mt-[20px]">
         SSRBM stands at the intersection of innovation and tradition, fostering holistic development with a curriculum that's as fun as it is formative.
       </Text>
     </Section>
-    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section" />
+    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12 max-md:hidden" />
+    <div class="w-[75%] mx-auto">
+      <Image src={mobileConcept} alt="SSRBM mobile Concept" class="hidden w-full max-md:block max-md:mt-1 max-md:transform -translate-y-8 max-md:pr-3" />
+    </div>
   </div>
 
   <Section class="px-0" class="flex flex-col items-center pb-0 max-lg:mt-[60px]">
-    <Text type="h2" class="font-[400] text-cp-4 [&_.line]:!inline text-center" id="ssrvm-community"><span data-text>The SSRVM</span><span></span> <PracticeBook class="border-cp-1"><span class="font-bold italic text-cp-1">Community</span></PracticeBook></Text>
-    <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" data-gsap data-delay={0.6} data-target="#ssrvm-community" data-duration={1.9} />
-    <Text type="base" class="w-[84%] text-center" data-lines data-delay={0.8} data-target="#ssrvm-community">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
+    <Text type="h2" class="font-[400] text-cp-4 max-[384px]:text-[27px]">The SSRBM <PracticeBook class="border-cp-1"><span class="font-bold italic text-cp-1">Community</span></PracticeBook></Text>
+    <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" />
+    <Text type="base" class="w-[84%] text-center">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
     <div class="pt-[26px]"></div>
     <div class="flex flex-row items-center gap-[64px] max-lg:gap-[30px] max-lg:flex-col">
       
       <div class="flex flex-row max-lg:gap-[60px] gap-10">
-        <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]" data-delay={0.1 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
+        <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]">
           <Text type="h3" class="italic text-[71px]">25</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Years of<br/> Excellence</Text>
         </div>
-        <div class="text-cp-4 flex flex-col items-center" data-delay={0.2 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
+        <div class="text-cp-4 flex flex-col items-center">
           <Text type="h3" class="italic text-[71px]">14+</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">States<br/> In India</Text>
         </div>
       </div>
 
       <div class="flex flex-row gap-[60px]">
-        <div class="text-cp-3 flex flex-col items-center" data-delay={0.3 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
-          <Text type="h3" class="italic text-[71px]" >40,000+</Text>
+        <div class="text-cp-3 flex flex-col items-center">
+          <Text type="h3" class="italic text-[71px]">40,000+</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Students</Text>
         </div>
-        <div class="text-cp-2 flex flex-col items-center" data-delay={0.4 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
+        <div class="text-cp-2 flex flex-col items-center">
           <Text type="h3" class="italic text-[71px]">2500+</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Teachers</Text>
         </div>
       </div>
 
-      <div class="text-cp-8 flex flex-col items-center" data-delay={0.5 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
+      <div class="text-cp-8 flex flex-col items-center">
         <Text type="h3" class="italic text-[71px]">90+</Text>
         <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Institutions including SSU, SSCASRH</Text>
       </div>
@@ -360,9 +365,9 @@ const kidsActivities = [
     <div class="mt-[65px]">
     </div>
   </Section>
-  <Image src={communityGallery} width={1920} alt="Community Gallery" class="w-full" data-gsap data-duration={1.3} data-delay={0.3} />
+  <Image src={communityGallery} width={1920} alt="Community Gallery" class="w-full" />
 
-  <div class="h-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
+  <div class="h-[calc(100vw/12)] overflow-hidden z-[999] sticky" data-gsap-sticky="where-learning-section">
     <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
       <div class="bg-primary rounded-full"></div>
       <div class="bg-primary rounded-full"></div>
@@ -374,14 +379,11 @@ const kidsActivities = [
   </div>
 
   <Section class="flex flex-col items-center max-lg:mt-[40px]">
-    <Text type="h2"><span class="font-[400] text-cp-4 [&_.line]:!inline" data-text>{'Our '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
+    <Text type="h2"><span class="font-[400] text-cp-4">{'Our '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
     <div class="pt-[24px]"></div>
-    <Text type="base" class="w-[93%] text-center" data-lines data-delay={0.7}>At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
+    <Text type="base" class="w-[94%] text-center">At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
     <div class="flex w-full flex-row max-lg:flex-col mt-[60px] gap-6">
-      <div
-        data-gsap
-        data-y={80}
-        data-delay={0.3}
+      <div 
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23CB8733FF' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -409,9 +411,6 @@ const kidsActivities = [
         
       </div>
       <div 
-        data-gsap
-        data-y={80}
-        data-delay={0.5}
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2378ADF9' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -445,9 +444,6 @@ const kidsActivities = [
     </div>
     <div class="flex w-full flex-row max-lg:flex-col mt-[24px] gap-6">
       <div 
-        data-gsap
-        data-y={80}
-        data-delay={0.3}
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2398B08B' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -474,9 +470,6 @@ const kidsActivities = [
         </div>
       </div>
       <div 
-        data-gsap
-        data-y={80}
-        data-delay={0.5}
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23EE7F82' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -505,19 +498,19 @@ const kidsActivities = [
     </div>
   </Section>
   
-  <Section class="flex w-full flex-row max-lg:flex-col justify-between h-[784px]">
+  <Section class="flex w-full flex-row max-lg:flex-col justify-between h-fit gap-5 ">
     <div class="w-[38%]  h-full flex flex-col justify-center max-lg:w-fit">
       <Text type="h2">
-        <span class="text-cp-4 font-normal" data-text>Kids</span>
+        <span class="text-cp-4 font-normal">Kids</span><br/>
         <PracticeBook class="border-cp-4">
           <span class="text-cp-3 italic">Activities</span>
         </PracticeBook>
       </Text>
-      <Text type="base" class="pt-[20px]" data-lines data-delay={0.4}>
+      <Text type="base" class="pt-[20px]">
         At SSRBM, every student finds their passion through a diverse range of co-scholastic activities, fostering growth beyond academics. From the field to the stage, these activities encourage students to explore, excel, and express themselves in countless ways.
       </Text>
     </div> 
-    <div class="w-[60%] h-full max-lg:w-full">
+    <div class="w-[60%] h-full max-lg:w-full max-md:h-[35%]">
       <div class="w-full h-full relative">
         <div class="swiper sliderData w-full h-full relative rounded-[12px]" data-slider-data={JSON.stringify(kidsActivities)}>
           <div class="swiper-wrapper">
@@ -529,26 +522,26 @@ const kidsActivities = [
           </div>
         </div>
         <div class="w-full h-full top-0 left-0 absolute z-10 pointer-events-none">
-          <div class="flex flex-row gap-[9px] absolute right-[95px] max-sm:right-10 -bottom-[30px] pointer-events-auto">
-            <div data-prev="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center">
-              <div class="w-[25px]" set:html={arrowIcon}></div>
+          <div class="flex flex-row gap-[9px] absolute right-[95px] max-sm:right-10 -bottom-[30px] max-sm:-bottom-[20px] pointer-events-auto">
+            <div data-prev="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center max-sm:w-10 max-sm:h-10">
+              <div class="w-[25px] max-sm:w-4" set:html={arrowIcon}></div>
             </div>
-            <div data-next="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center">
-              <div class="w-[25px] -scale-100" set:html={arrowIcon}></div>
+            <div data-next="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center max-sm:w-10 max-sm:h-10">
+              <div class="w-[25px] -scale-100 max-sm:w-4" set:html={arrowIcon}></div>
             </div>
           </div>
         </div>
       </div>
 
-      <Text type="h4" class="sliderTitle italic font-normal text-cp-5 mt-[10px] max-md:mt-[40px] transition duration-200 ease-in" >Puzzle and Problem-Solving Game</Text>
+      <Text type="h4" class="sliderTitle italic font-normal text-cp-5 mt-[10px]  max-md:mt-10 max-sm:mt-5 max-sm:text-[22.5px] transition duration-200 ease-in" >Puzzle and Problem-Solving Game</Text>
     </div>
   </Section>
 
-  <Section class="!px-0 max-lg:mt-[250px] max-md:mt-[100px]">
+  <Section class="!px-0 max-lg:mt-[40px] ">
     <div class="px-section-x max-md:px-section-x-mb">
-      <Text type="h2" class="text-cp-4"><span class="font-[400] [&_.line]:!inline" data-text>{'SSRBM '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
+      <Text type="h2" class="text-cp-4"><span class="font-[400]">{'SSRBM '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
       <div class="pt-[26px]"></div>
-      <Text type="base" class="w-[70%]" data-lines>At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
+      <Text type="base" class="w-[70%]">At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
     </div>
     <div></div>
     <Ticker
@@ -639,21 +632,21 @@ const kidsActivities = [
   <Section class="pr-0 flex gap-[24px] relative flex-row max-md:flex-col items-center" style={{
     background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
   }}>
-    <div class="flex-shrink-0" id="news-updates-section">
-      <Text type="subtitle" class="text-[#89C6E5]" data-text data-target="#news-updates-section">OUR LATEST NEWS</Text>
-      <Text type="h3" class="text-white pt-[22px] leading-[140%]"><span data-text data-target="#news-updates-section">See what's</span> <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> <span data-text data-target="#news-updates-section">at SSRBM</span></Text>
+    <div class="flex-shrink-0">
+      <Text type="subtitle" class="text-[#89C6E5]">OUR LATEST NEWS</Text>
+      <Text type="h3" class="text-white pt-[22px] leading-[140%]">See what's<br/> <span class="text-yellow italic">happening</span><br/> at SSRBM</Text>
       <div class="flex flex-row gap-[12px] mt-[42px]">
-        <div class="cursor-pointer w-16 h-16 relative -scale-100" id="leftBtn" data-target="#news-updates-section" data-gsap data-delay={0.2} data-y={60}>
+        <div class="cursor-pointer w-16 h-16 relative -scale-100" id="leftBtn">
           <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
           <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
         </div>
-        <div class="cursor-pointer w-16 h-16 relative" id="rightBtn" data-target="#news-updates-section" data-gsap data-delay={0.4} data-y={60}>
+        <div class="cursor-pointer w-16 h-16 relative" id="rightBtn">
           <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
           <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
         </div>
       </div>
     </div>
-    <div class="scroll flex flex-row overflow-scroll py-[15px] gap-[125px] pl-8 snap-x" data-mask-scroll-x data-gsap data-dealy={0.7} data-duration={0.9}>
+    <div class="scroll flex flex-row overflow-scroll py-[15px] gap-[125px] pl-8 snap-x" data-mask-scroll-x>
       <!-- <div class="absolute top-0 right-0 w-[150px] h-full z-20 pointer-events-none " style={{
         'mask-image': 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgb(0, 0, 0) 100%)'
       }}></div> -->
@@ -683,7 +676,7 @@ const kidsActivities = [
   </Section>
   <Testimonial />
 
-  <div class="h-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
+  <div class="h-[calc(100vw/12)] overflow-hidden z-[997] sticky" data-gsap-sticky="where-learning-section">
     <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
       <div class="bg-yellow rounded-full"></div>
       <div class="bg-yellow rounded-full"></div>
@@ -697,19 +690,19 @@ const kidsActivities = [
   </div>
 
   <Section class="bg-white flex justify-center items-center">
-    <div class="border border-[#4592BA] rounded-[21px] gap-8 flex justify-between overflow-hidden max-md:flex-col-reverse" id="admission-cta">
+    <div class="border border-[#4592BA] rounded-[21px] flex justify-between overflow-hidden max-md:flex-col-reverse">
       <div class="w-fit py-[30px] pl-[47px] pr-[16px]">
         <div class="w-[96px] max-md:w-[70px] max-sm:w-[60px]">
           <Image src={logo} alt="Logo" />
         </div>
 
         <div class="py-[33px]">
-          <PracticeBook target="#admission-cta" class="border-[#98B08B]" thirdLineClass="bottom-[23%]" secondLineClass="top-[52%]" firstLineClass="top-[25%]">
-            <span class="text-[66px] text-[#98B08B] font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">Admissions Open</span>
+          <PracticeBook class="border-[#98B08B]">
+            <span class="text-[66px] text-[#98B08B] capitalize font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">admissions open</span>
           </PracticeBook><br>
   
-          <PracticeBook target="#admission-cta" class="border-[#4592BA]" thirdLineClass="bottom-[27%]"> 
-            <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] font-sans leading-normal max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
+          <PracticeBook class="border-[#4592BA]"> 
+            <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
           </PracticeBook>
         </div>
 
