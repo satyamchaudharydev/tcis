@@ -1,49 +1,48 @@
-import campus1 from './src/images/campus/gas/gallery/1.jpeg';
+
+import campus1 from './src/assets/concept.png';
 
 // putting knk campus bg images here
-import campusbg1 from './src/images/campus/knk/slides/1.jpeg';
-import campusbg2 from './src/images/campus/knk/slides/2.jpeg';
-import campusbg3 from './src/images/campus/knk/slides/3.jpeg';
-import campusbg4 from './src/images/campus/knk/slides/4.jpeg';
-import campusbg6 from './src/images/campus/knk/slides/6.jpeg';
-import principalknk from "./src/images/campus/knk/knk_principal.jpeg"
-import kindergartenknk from "./src/images/campus/knk/kindergartenknk.jpeg"
-import grade6knk from "./src/images/campus/knk/6-10knk.jpeg"
-import grade1knk from "./src/images/campus/knk/1-5knk.jpeg"
-import principalmrth from "./src/images/campus/marth/marth_principal.jpeg"
+import dummy from './src/assets/concept.png';
+import campusbg2 from './src/assets/concept.png';
+import campusbg3 from './src/assets/concept.png';
+import campusbg4 from './src/assets/concept.png';
+import campusbg6 from './src/assets/concept.png';
+import principalknk from "./src/assets/concept.png"
+import kindergartenknk from "./src/assets/concept.png"
+import grade6knk from "./src/assets/concept.png"
+import grade1knk from "./src/assets/concept.png"
+import principalmrth from "./src/assets/concept.png"
 
 // putting marth campus bg images here
-import marthcampusbg1 from './src/images/campus/marth/slides/1.jpeg';
-import marthcampusbg2 from './src/images/campus/marth/slides/2.jpeg';
-import marthcampusbg3 from './src/images/campus/marth/slides/3.jpeg';
-import marthcampusbg4 from './src/images/campus/marth/slides/4.jpeg';
-import marthcampusbg5 from './src/images/campus/marth/slides/6.jpeg';
+import marthcampusbg1 from './src/assets/concept.png';
+import marthcampusbg2 from './src/assets/concept.png';
+import marthcampusbg3 from './src/assets/concept.png';
+import marthcampusbg4 from './src/assets/concept.png';
+import marthcampusbg5 from './src/assets/concept.png';
 
-import RoboticClass from "./src/images/campus/knk/facilities/robotics.jpeg";
-import ComputerClass from "./src/images/campus/knk/facilities/codingandcs.jpeg";
-import KgClass from "./src/images/campus/knk/facilities/acitivitiesroom.jpeg";
-import sports from "./src/images/campus/knk/facilities/sports.jpeg";
-import zumba from "./src/images/campus/knk/facilities/zumba.jpeg";
-import music from "./src/images/campus/knk/facilities/music.jpeg";
+import RoboticClass from "./src/assets/concept.png";
+import ComputerClass from "./src/assets/concept.png";
+import KgClass from "./src/assets/concept.png";
+import sports from "./src/assets/concept.png";
+import zumba from "./src/assets/concept.png";
+import music from "./src/assets/concept.png";
 
-import preview1 from './src/images/campus/gas/preview.png'
-import preview2 from './src/images/campus/gaw/preview.png';
+import preview1 from './src/assets/concept.png'
+import campus2 from './src/assets/concept.png';
+import campus3 from './src/assets/concept.png';
 
-import campus2 from './src/images/campus/gas/gallery/2.jpeg';
-import campus3 from './src/images/campus/gas/gallery/3.jpeg';
+import testimonial1 from './src/assets/concept.png';
+import testimonial2 from './src/assets/concept.png';
+import testimonial3 from './src/assets/concept.png';
 
-import testimonial1 from './src/images/campus/gas/gallery/2.jpeg';
-import testimonial2 from './src/images/campus/gas/gallery/2.jpeg';
-import testimonial3 from './src/images/campus/gas/gallery/2.jpeg';
-
-import leadership1 from "./src/images/leadership/1.png"
-import topper1 from "./src/images/campus/toppers/topper.png"
-import topper2 from "./src/images/campus/toppers/topper2.png"
-import topper3 from "./src/images/campus/toppers/topper3.png"
-import topper4 from "./src/images/campus/toppers/topper4.png"
-import Kindergarten from "./src/images/campus/gaw/updates/1.jpeg"
-import Primary from "./src/images/campus/gaw/updates/1.jpeg"
-import Secondary from "./src/images/campus/gaw/updates/1.jpeg"
+import leadership1 from "./src/assets/concept.png"
+import topper1 from "./src/assets/concept.png"
+import topper2 from "./src/assets/concept.png"
+import topper3 from "./src/assets/concept.png"
+import topper4 from "./src/assets/concept.png"
+import Kindergarten from "./src/assets/concept.png"
+import Primary from "./src/assets/concept.png"
+import Secondary from "./src/assets/concept.png"
 
 
 

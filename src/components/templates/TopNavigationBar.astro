@@ -11,17 +11,22 @@ const menu = [
 ]
 ---
 <div class="fixed z-[99999] flex flex-row justify-end w-full mt-[40px] px-[53px]">
-  <div 
-    class="flex flex-row items-center py-[13px] px-[32px] gap-[23px] bg-white rounded-full mr-[18px]"
-    style={{
-      border: '1.594px solid #89C6E5',
-    }}
-  >
-    {menu.map(menuItem => (
-      <a href={menuItem.link} class="hover:underline opacity-85">
-        <Text type="xs">{menuItem.label}</Text>
-      </a>
-    ))}
+  <div class="p-[1px] px-[2px] rounded-full  mr-[18px] flex justify-center items-center" style={{
+    background: 'linear-gradient(to right, #89C6E5 0%,  #F67E7D 100%)',
+  }}>
+   <div 
+      class="flex flex-row items-center py-[13px] px-[32px] gap-[23px] rounded-full"
+      style={{
+        boxShadow: '0px 2.202px 10.196px 0px rgba(0, 0, 0, 0.05)',
+        background: 'rgba(253, 253, 253, 1)'
+      }}
+    >
+      {menu.map(menuItem => (
+        <a href={menuItem.link} class="hover:underline opacity-85">
+          <Text type="xs" class="text-[#00204D]">{menuItem.label}</Text>
+        </a>
+      ))}
+    </div>
   </div>
   <Button>Apply Now</Button>
 </div>
