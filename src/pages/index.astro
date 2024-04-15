@@ -697,19 +697,19 @@ const kidsActivities = [
   </div>
 
   <Section class="bg-white flex justify-center items-center">
-    <div class="border border-[#4592BA] rounded-[21px] flex justify-between overflow-hidden max-md:flex-col-reverse">
+    <div class="border border-[#4592BA] rounded-[21px] gap-8 flex justify-between overflow-hidden max-md:flex-col-reverse" id="admission-cta">
       <div class="w-fit py-[30px] pl-[47px] pr-[16px]">
         <div class="w-[96px] max-md:w-[70px] max-sm:w-[60px]">
           <Image src={logo} alt="Logo" />
         </div>
 
         <div class="py-[33px]">
-          <PracticeBook class="border-[#98B08B]">
-            <span class="text-[66px] text-[#98B08B] capitalize font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">admissions open</span>
+          <PracticeBook target="#admission-cta" class="border-[#98B08B]" thirdLineClass="bottom-[23%]" secondLineClass="top-[52%]" firstLineClass="top-[25%]">
+            <span class="text-[66px] text-[#98B08B] font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">Admissions Open</span>
           </PracticeBook><br>
   
-          <PracticeBook class="border-[#4592BA]"> 
-            <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
+          <PracticeBook target="#admission-cta" class="border-[#4592BA]" thirdLineClass="bottom-[27%]"> 
+            <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] font-sans leading-normal max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
           </PracticeBook>
         </div>
 

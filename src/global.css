@@ -11,14 +11,147 @@ html {
   /* font-family: roundo, sans; */
 }
 
+
 @font-face {
   font-family: 'Avenir';
-  src: url('/fonts/AvenirRegular.ttf');
-  font-weight: normal;
+  src: url('fonts/avenir/avenirltstd-black-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-black-webfont.woff') format('woff');
+  font-weight: 900;
   font-style: normal;
-  font-display: swap;
+
 }
 
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-blackoblique-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-blackoblique-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-book-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-book-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-bookoblique-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-bookoblique-webfont.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-heavy-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-heavy-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-heavyoblique-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-heavyoblique-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-light-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-lightoblique-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-lightoblique-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-medium-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-medium-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-mediumoblique-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-mediumoblique-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-oblique-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-oblique-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('fonts/avenir/avenirltstd-roman-webfont.woff2') format('woff2'),
+       url('fonts/avenir/avenirltstd-roman-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+
+}
 
 .no-scrollbar::-webkit-scrollbar {
     display: none;
