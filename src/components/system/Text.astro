@@ -1,6 +1,7 @@
 ---
 import { twMerge as tw } from "tailwind-merge";
 import scribble from "../../fillers/scribble.png";
+import type { Code } from "astro:components";
 
 interface Props {
   type:
@@ -39,6 +40,6 @@ if (!tag) {
 }
 const Tag = tag
 ---
-<Tag class={tw(classes[type], className)} style={style}>
+<Tag class={tw(classes[type], className)} style={style} {...props}>
   <slot />
 </Tag>
