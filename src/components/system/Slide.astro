@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets"
 import { twMerge as tw } from "tailwind-merge"
-const { slides, id, width=1440, duration=3000, class: className } = Astro.props
+const { slides, id, width=1920, duration=3000, class: className } = Astro.props
 
 ---
 <div class={tw("relative w-full h-full", className)} data-slides={id} data-duration={duration}>
