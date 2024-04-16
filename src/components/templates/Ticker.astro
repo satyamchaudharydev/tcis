@@ -82,7 +82,9 @@ import TickerCard from "./TickerCard.astro";
 <script>
   import Swiper from "swiper";
 
-  import { Autoplay } from "swiper/modules";
+  // import { Autoplay } from "swiper/modules";
+
+  import { EffectCreative, Autoplay } from "swiper/modules";
   
   
 
@@ -103,10 +105,23 @@ import TickerCard from "./TickerCard.astro";
 
     const swiper = new Swiper(".hero-swiper", {
       // Optional parameters
-      modules: [Autoplay],
+      modules: [Autoplay, EffectCreative],
       direction: "horizontal",
       loop: true,
       effect: "coverflow",
+      // effect: "creative",
+    //   creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: ["-120%", 0, -500],
+    //     opacity: 0.1,
+    //   },
+    //   next: {
+    //     shadow: true,
+    //     translate: ["120%", 0, -500],
+    //     opacity: 0.5,
+    //   },
+    // },
       slidesPerView: 1.2,
       centeredSlides: true,
       spaceBetween: 10,
@@ -126,10 +141,16 @@ import TickerCard from "./TickerCard.astro";
       swiperLabel.style.opacity = 0;
     })
     swiper.on('transitionEnd', (e) => {
-      const labelText = swiperData[e.realIndex]?.text
-      swiperLabel.innerText = labelText
-      swiperLine.style.opacity = 1;
-      swiperLabel.style.opacity = 1;
+      setTimeout(() => {
+        console.log(e);
+        console.log(e.realIndex);
+        const labelText = swiperData[e.realIndex]?.text
+        swiperLabel.innerText = labelText;
+        swiperLabel?.classList.add(swiperData[e.realIndex]?.textClass);
+        swiperLine?.classList.add(swiperData[e.realIndex]?.textClass);
+        swiperLine.style.opacity = 1;
+        swiperLabel.style.opacity = 1;
+      }, 0);
     })
 
     prevBtn.addEventListener('click', () => {
