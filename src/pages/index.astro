@@ -8,6 +8,7 @@ import Text from "../components/system/Text.astro"
 import PracticeBook from '../components/utils/PracticeBook.astro'
 import Section from "../components/system/Section.astro"
 import concept from '../assets/concept.png'
+import mobileConcept from '../assets/concept2.png'
 import playActivity from '../assets/activities/play.png'
 import puzzleActivity from '../assets/activities/puzzle.png'
 import musicActivity from '../assets/activities/music.png'
@@ -261,22 +262,22 @@ const kidsActivities = [
     <div class="w-[277px] h-[274px] absolute top-[4%] left-[1%] -rotate-[26.66deg] max-lg:-top-[1%] max-md:-top-[7%] max-sm:-top-[7%] max-lg:w-[180px] max-md:w-[120px]">
       <Image src={topKidPuzzle} alt="Top Kid Puzzle" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[358px] h-[266px] absolute bottom-[4%] -right-[2%] rotate-[13.04deg] max-md:bottom-[2%] max-lg:w-[250px] max-md:w-[220px] max-sm:w-[140px]">
+    <div class="w-[358px] h-[266px] absolute bottom-[4%] -right-[2%] rotate-[13.04deg] max-md:bottom-[2%] max-lg:w-[250px] max-md:w-[220px] max-sm:w-[120px] max-sm:-bottom-[6%]">
       <Image src={bottomKidPuzzle} alt="Bottom Kid Puzzle" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[161px] h-[119px] absolute top-[55%] -left-[3.2%] -rotate-[34deg] max-md:top-[46%] max-md:w-[100px] max-sm:w-[70px]">
+    <div class="w-[161px] h-[119px] absolute top-[55%] -left-[3.2%] max-md:-left-[3%] -rotate-[34deg] max-md:top-[44%] max-md:w-[40px] max-sm:w-[40px] ">
       <Image src={rainbow} alt="Rainbow" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[330px] h-[254px] absolute bottom-[4%] left-[2%] max-lg:w-[270px] max-md:w-[240px] max-sm:w-[130px]">
+    <div class="w-[330px] h-[254px] absolute bottom-[4%] left-[2%] max-lg:w-[270px] max-md:w-[240px] max-sm:w-[130px] max-sm:-bottom-[6%]">
       <Image src={hands} alt="Hands" class="w-full h-full object-contain" />
     </div>
     <div class="w-[260px] h-[173px] absolute top-[3%] -right-[2%] max-lg:top-[1%] max-md:-top-[3%] max-lg:-right-3 max-lg:w-[200px] max-md:w-[130px]">
       <Image src={yellowCloud} alt="Yellow Cloud" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[75px] h-[100px] absolute top-[49%] right-[8%] max-md:right-[4.5%] max-md:w-[50px]">
+    <div class="w-[75px] h-[100px] absolute top-[49%] right-[8%] max-md:right-[4.5%] max-md:w-[50px] max-md:hidden">
       <Image src={airBaloon} alt="Air Baloon" class="w-full h-full object-contain" />
     </div>
-    <div class="w-[68px] h-[72px] -rotate-[30deg] absolute top-[38%] right-[2%] max-md:w-[45px]">
+    <div class="w-[68px] h-[72px] -rotate-[30deg] absolute top-[38%] max-md:top-[28%] right-[2%] max-sm:right-0 max-md:w-[38px]">
       <Image src={heart} alt="Air Baloon" class="w-full h-full object-contain" />
     </div>
 <!--
@@ -326,7 +327,7 @@ const kidsActivities = [
     </div>
   </div>
 
-  <Section class="px-0" class="flex flex-col items-center pb-0 max-lg:mt-[60px]">
+  <Section class="px-0" class="flex flex-col items-center pb-0 mt-0 lg:mt-[60px]">
     <Text type="h2" class="font-[400] text-cp-4 [&_.line]:!inline text-center" id="ssrvm-community"><span data-text>The SSRVM</span><span></span> <PracticeBook class="border-cp-1"><span class="font-bold italic text-cp-1">Community</span></PracticeBook></Text>
     <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" data-gsap data-delay={0.6} data-target="#ssrvm-community" data-duration={1.9} />
     <Text type="base" class="w-[84%] text-center" data-lines data-delay={0.8} data-target="#ssrvm-community">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
@@ -533,18 +534,18 @@ const kidsActivities = [
           </div>
         </div>
         <div class="w-full h-full top-0 left-0 absolute z-10 pointer-events-none">
-          <div class="flex flex-row gap-[9px] absolute right-[95px] max-sm:right-10 -bottom-[30px] pointer-events-auto">
-            <div data-prev="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center">
-              <div class="w-[25px]" set:html={arrowIcon}></div>
+          <div class="flex flex-row gap-[9px] absolute right-[95px] max-sm:right-10 -bottom-[30px] max-sm:-bottom-[20px] pointer-events-auto">
+            <div data-prev="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center max-sm:w-10 max-sm:h-10">
+              <div class="w-[25px] max-sm:w-4" set:html={arrowIcon}></div>
             </div>
-            <div data-next="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center">
-              <div class="w-[25px] -scale-100" set:html={arrowIcon}></div>
+            <div data-next="swiper" class="cursor-pointer w-[60px] h-[60px] rounded-full bg-primary flex flex-row justify-center items-center max-sm:w-10 max-sm:h-10">
+              <div class="w-[25px] -scale-100 max-sm:w-4" set:html={arrowIcon}></div>
             </div>
           </div>
         </div>
       </div>
 
-      <Text type="h4" class="sliderTitle italic font-normal text-cp-5 mt-[10px] max-md:mt-[40px] transition duration-200 ease-in" >Puzzle and Problem-Solving Game</Text>
+      <Text type="h4" class="sliderTitle italic font-normal text-cp-5 mt-[10px]  max-md:mt-10 max-sm:mt-5 max-sm:text-[22.5px] transition duration-200 ease-in" >Puzzle and Problem-Solving Game</Text>
     </div>
   </Section>
 
@@ -560,7 +561,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker1,
-          imageClass: 'w-[296px] h-[292px]',
+          imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
           textClass: 'text-cp-9',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
@@ -580,7 +581,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker3,
-          imageClass: 'w-[300px] h-[339px]',
+          imageClass: 'w-[300px] h-[339px] max-md:h-[240px]',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-11',
@@ -630,7 +631,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker8,
-          imageClass: 'w-[390px] h-[290px]',
+          imageClass: 'w-[296px] h-[292px]',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-4',
