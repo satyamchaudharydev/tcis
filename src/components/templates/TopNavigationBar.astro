@@ -78,16 +78,17 @@ const maxsm = (stringOfClasses) => {
   return classess.map(c => `max-sm:${c}`).join(' ')
 }
 ---
-<div class="fixed z-[999]">
+<div class="fixed mt-[20px] z-[999]">
 
+  <div class="p-[1px] px-[2px] rounded-full bg-gradient-to-r from-[#89C6E5] sm:bg-none  to-[#F67E7D] ml-[5px]  sm:mx-[18px] flex justify-center items-center" >
   <header
     class={`font-sans w-screen m relative  py-1
     pl-10 px-14 box-border flex flex-row gap-[18px]
-    justify-end items-center h-[130px] max-sm:h-[60px]
-     max-sm:w-[95vw]
-    max-sm:border-[2px] max-sm:border-[#89C6E5] overflow-hidden max-sm:bg-[#fff] max-sm:border-solid max-sm:py-[19px]
-    max-sm:rounded-[5rem] max-sm:mx-[2.5vw] max-sm:px-[28px]
-    max-sm:mt-[20px] max-md:justify-between
+    justify-end items-center h-[130px] max-md:h-[60px]
+     max-md:w-[95vw]
+      overflow-hidden max-md:bg-[#fff] max-md:py-[19px]
+    max-md:rounded-[5rem]  max-md:px-[28px]
+     max-md:justify-between
     `}
 
     >
@@ -106,10 +107,13 @@ const maxsm = (stringOfClasses) => {
         </div>
       </form>
     </div>
-    <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0 border-[3px] bg-gradient-to-r 	border-solid py-[12px] px-[32px] rounded-[5rem]"
+
+    <div class="p-[1px] px-[2px] rounded-full max-md:hidden  mr-[18px] flex justify-center items-center" style={{
+      background: 'linear-gradient(to right, #89C6E5 0%,  #F67E7D 100%)',
+    }}>
+    <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0  bg-gradient-to-r 	border-solid py-[12px] px-[32px] rounded-[5rem]"
       style={{
         background: 'rgba(253, 253, 253, 1)',
-        border: '1.594px solid var(--ssrbm-blue-to-pink-grad, #89C6E5)',
         boxShadow: "0px 3.24px 15px 0px rgba(0, 0, 0, 0.05)",
       }}
     >
@@ -209,11 +213,12 @@ const maxsm = (stringOfClasses) => {
         })
       }
     </div>
+    </div>
 
 
 
 
-    <div class="mobileMenu z-[999] fixed top-0 left-0 w-screen h-screen bg-[#fff3df] flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
+    <div class="mobileMenu z-[999] fixed top-0 left-0 w-screen h-screen bg-[#fff] flex flex-col pt-24 overflow-scroll" class="max-md:visible hidden">
       {menu.map(item => {
         if (item.submenu && item.submenu.length > 0) {
           return (
@@ -251,7 +256,7 @@ const maxsm = (stringOfClasses) => {
         } else {
           return (
             <div class='mobileMenuParent'>
-              <a data-menu-mobile-item href={item.link} class='text-black font-[400] hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-5 mr-8 max-md:mr-0 w-full' style={{
+              <a data-menu-mobile-item href={item.link} class='text-black font-[400] hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-10 sm:px-16 mr-8 max-md:mr-0 w-full' style={{
                 borderBottom: '1px solid rgba(0, 0, 0, 0.2)'
               }}>
                   {item.title}
@@ -265,6 +270,7 @@ const maxsm = (stringOfClasses) => {
 
     <Button class="max-md:hidden">Apply Now</Button>
   </header>
+</div>
 </div>
 
 

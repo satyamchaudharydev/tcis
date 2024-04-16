@@ -47,7 +47,7 @@ import rainbow from '../assets/decorations/vision/rainbow.svg'
 import yellowCloud from '../assets/decorations/vision/yellowCloud.svg'
 import starFootNote from '../assets/decorations/vision/starFootNote.svg'
 import communityGallery from '../assets/communityGallery.png'
-import facilityTicker1 from '../assets/facility/ticker/1.png'
+import facilityTicker1 from '../assets/facility/ticker/5.png'
 import facilityTicker2 from '../assets/facility/ticker/2.png'
 import facilityTicker3 from '../assets/facility/ticker/3.png'
 import facilityTicker4 from '../assets/facility/ticker/4.png'
@@ -76,6 +76,7 @@ import NewsCard from "../components/templates/NewsCard.astro"
 import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
 import TopNavigationBar from "../components/templates/TopNavigationBar.astro"
 import SliderCard from "../components/templates/sliderCard.astro"
+import MobileNewsCard from "../components/templates/MobileNewsCard.astro"
 import Button from "../components/system/Button.astro"
 
 
@@ -280,7 +281,6 @@ const kidsActivities = [
     </div>
 <!--
 <Text type="h4" class="font-normal font-sans text-[33.129px] text-[#121212] uppercase text-center opacity-[0.7] mb-5 relative bottom-[57px]">our philosophy</Text> -->
-
     <Text type="h2" class="italic text-primary text-center" id="broaden-vision">
       <PracticeBook gsap>
         Broaden The <span class="text-cp-1">Vision</span>
@@ -320,7 +320,10 @@ const kidsActivities = [
         SSRBM stands at the intersection of innovation and tradition, fostering holistic development with a curriculum that's as fun as it is formative.
       </Text>
     </Section>
-    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section" />
+    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12 max-md:hidden" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section" />
+    <div class="w-[75%] mx-auto">
+      <Image src={mobileConcept} alt="SSRBM mobile Concept" class="hidden w-full max-md:block max-md:mt-1 max-md:transform -translate-y-8 max-md:-translate-x-[25px]" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section"/>
+    </div>
   </div>
 
   <Section class="px-0" class="flex flex-col items-center pb-0 max-lg:mt-[60px]">
@@ -506,8 +509,8 @@ const kidsActivities = [
     </div>
   </Section>
 
-  <Section class="flex w-full flex-row max-lg:flex-col justify-between h-[784px]">
-    <div class="w-[38%]  h-full flex flex-col justify-center max-lg:w-fit">
+  <Section class="flex w-full flex-row max-lg:flex-col justify-between h-[784px] max-md:h-auto max-md:gap-11">
+    <div class="w-[38%] h-full flex flex-col justify-center max-lg:w-fit">
       <Text type="h2">
         <span class="text-cp-4 font-normal" data-text>Kids</span>
         <PracticeBook class="border-cp-4">
@@ -518,7 +521,7 @@ const kidsActivities = [
         At SSRBM, every student finds their passion through a diverse range of co-scholastic activities, fostering growth beyond academics. From the field to the stage, these activities encourage students to explore, excel, and express themselves in countless ways.
       </Text>
     </div>
-    <div class="w-[60%] h-full max-lg:w-full">
+    <div class="w-[60%] h-full max-lg:w-full max-md:h-[35%]">
       <div class="w-full h-full relative">
         <div class="swiper sliderData w-full h-full relative rounded-[12px]" data-slider-data={JSON.stringify(kidsActivities)}>
           <div class="swiper-wrapper">
@@ -545,7 +548,7 @@ const kidsActivities = [
     </div>
   </Section>
 
-  <Section class="!px-0 max-lg:mt-[250px] max-md:mt-[100px]">
+  <Section class="!px-0 max-lg:mt-[300px] max-md:mt-[45px]">
     <div class="px-section-x max-md:px-section-x-mb">
       <Text type="h2" class="text-cp-4"><span class="font-[400] [&_.line]:!inline" data-text>{'SSRBM '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
       <div class="pt-[26px]"></div>
@@ -567,7 +570,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker2,
-          imageClass: 'w-[393px] h-[243px]',
+          imageClass: 'w-[393px] h-[243px] max-md:h-[240px]',
           textClass: 'text-cp-10',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
@@ -587,7 +590,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker4,
-          imageClass: 'w-[390px] h-[290px]',
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-4',
@@ -597,7 +600,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker5,
-          imageClass: 'w-[390px] h-[290px]',
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-9',
@@ -607,7 +610,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker6,
-          imageClass: 'w-[390px] h-[290px]',
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-10',
@@ -617,7 +620,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker7,
-          imageClass: 'w-[390px] h-[290px]',
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-11',
@@ -637,7 +640,7 @@ const kidsActivities = [
       ]}
     />
   </Section>
-  <Section class="pr-0 flex gap-[24px] relative flex-row max-md:flex-col items-center" style={{
+  <Section class="pr-0 flex gap-[24px] relative flex-row max-md:flex-col items-center max-md:hidden" style={{
     background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
   }}>
     <div class="flex-shrink-0" id="news-updates-section">
@@ -655,9 +658,9 @@ const kidsActivities = [
       </div>
     </div>
     <div class="scroll flex flex-row overflow-scroll py-[15px] gap-[125px] pl-8 snap-x" data-mask-scroll-x data-gsap data-dealy={0.7} data-duration={0.9}>
-      <!-- <div class="absolute top-0 right-0 w-[150px] h-full z-20 pointer-events-none " style={{
+      <div class="absolute top-0 right-0 w-[150px] h-full z-20 pointer-events-none " style={{
         'mask-image': 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgb(0, 0, 0) 100%)'
-      }}></div> -->
+      }}></div>
         {newsEvents.map((news, index) => (
           <NewsCard
             i={index}
@@ -668,20 +671,47 @@ const kidsActivities = [
         ))}
     </div>
 
+  </Section>
 
-    <!-- <div class="max-md:block hidden hero-swiper no-scrollbar will-change-scroll max-md:w-full" data-swiper-data={JSON.stringify(newsEvents)}>
+  <Section class="pr-0 max-md:flex gap-[24px] relative max-md:flex-col items-center hidden max-md:" style={{
+    background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
+  }}>
+  <div class="flex-shrink-0" id="news-updates-section">
+    <Text type="subtitle" class="text-[#89C6E5] max-md:text-[25px]" data-text data-target="#news-updates-section">OUR LATEST NEWS</Text>
+
+
+    <Text type="h3" class="text-white pt-[22px] leading-[140%] block max-md:hidden"><span data-text data-target="#news-updates-section">See what's</span> <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> <span data-text data-target="#news-updates-section">at SSRBM</span></Text>
+
+      <Text type="h3" class="text-white hidden max-md:block mt-[22px]"><span data-text data-target="#news-updates-section">See what's <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> </span> <span data-text data-target="#news-updates-section" class="text-center">at SSRBM</span> </Text>
+
+  </div>
+
+    <div class="max-md:block hidden hero-swiper2 no-scrollbar will-change-scroll max-md:w-full" data-swiper-data={JSON.stringify(newsEvents)}>
       <div class="swiper-wrapper mt-5">
-        {newsEvents.map((item, i) => (
-          <NewsCard
-            item={item}
-            type="swiper"
+        {newsEvents.map((news, index) => (
+          <MobileNewsCard
+            i={index}
+            image ={news.image}
+            title={news.title}
+            description={news.description}
           />
         ))}
       </div>
-      <div class="pt-[30px]"></div>
-    </div> -->
+  </div>
 
+
+  <div class="flex flex-row gap-[12px] mt-[42px]">
+    <div class="cursor-pointer w-16 h-16 relative -scale-100 max-md:w-10 max-md:h-10" id="leftBtn" data-prev="hero-swiper2" data-target="#news-updates-section" data-gsap data-delay={0.2} data-y={60}>
+      <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
+      <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
+    </div>
+    <div class="cursor-pointer w-16 h-16 relative max-md:w-10 max-md:h-10" id="rightBtn" data-next="hero-swiper2" data-target="#news-updates-section" data-gsap data-delay={0.4} data-y={60}>
+      <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
+      <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
+    </div>
+  </div>
   </Section>
+
   <Testimonial />
 
   <div class="h-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
@@ -699,12 +729,12 @@ const kidsActivities = [
 
   <Section class="bg-white flex justify-center items-center">
     <div class="border border-[#4592BA] rounded-[21px] gap-8 flex justify-between overflow-hidden max-md:flex-col-reverse" id="admission-cta">
-      <div class="w-fit py-[30px] pl-[47px] pr-[16px]">
+      <div class="w-fit py-[30px] pl-[47px] max-sm:pl-4 pr-[16px]">
         <div class="w-[96px] max-md:w-[70px] max-sm:w-[60px]">
           <Image src={logo} alt="Logo" />
         </div>
 
-        <div class="py-[33px]">
+        <div class="py-[33px] max-md:py-[15px]">
           <PracticeBook target="#admission-cta" class="border-[#98B08B]" thirdLineClass="bottom-[23%]" secondLineClass="top-[52%]" firstLineClass="top-[25%]">
             <span class="text-[66px] text-[#98B08B] font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">Admissions Open</span>
           </PracticeBook><br>
@@ -823,8 +853,6 @@ const kidsActivities = [
   let newsScrollWidth = document.querySelector(".scroll").offsetWidth;
    let oneCardWidth = 405;
 
-   console.log(window.offsetWidth);
-
   leftBtn.addEventListener("click", ()=>{
     newsScroll?.scrollBy({left:oneCardWidth*(-1),  behavior: "smooth"});
   });
@@ -832,6 +860,42 @@ const kidsActivities = [
   rightBtn.addEventListener("click", ()=>{
     newsScroll?.scrollBy({left:oneCardWidth, behavior: "smooth"});
   });
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+      initSwiper()
+  });
+
+  function initSwiper() {
+    const prevBtn2 = document.querySelector('[data-prev="hero-swiper2"]');
+    const nextBtn2 = document.querySelector('[data-next="hero-swiper2"]');
+
+    const swiper2 = new Swiper(".hero-swiper2", {
+      // Optional parameters
+      modules: [Autoplay],
+      direction: "horizontal",
+      loop: true,
+      effect: "coverflow",
+      grabCursor: true,
+      slidesPerView: 1,
+      centeredSlides: true,
+      speed: 500,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+    });
+
+    prevBtn2.addEventListener('click', () => {
+      swiper2.slidePrev()
+    });
+
+    nextBtn2.addEventListener('click', () => {
+      swiper2.slideNext()
+    });
+
+  }
 </script>
 
 <script src="../scripts/scrollAnimations.ts"></script>
