@@ -847,11 +847,10 @@ const kidsActivities = [
        sliderTitle.textContent = titleText;
    })
 
-  const totalCards = document.querySelectorAll(".cards").length;
+
   const leftBtn = document.getElementById("leftBtn");
   const rightBtn = document.getElementById("rightBtn");
   const newsScroll = document.querySelector(".scroll");
-  let newsScrollWidth = document.querySelector(".scroll").offsetWidth;
    let oneCardWidth = 405;
 
   leftBtn.addEventListener("click", ()=>{
@@ -879,7 +878,7 @@ const kidsActivities = [
       loop: true,
       effect: "coverflow",
       grabCursor: true,
-      slidesPerView: 1,
+      slidesPerView: 1.2,
       centeredSlides: true,
       speed: 500,
       autoplay: {
