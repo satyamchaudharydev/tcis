@@ -1,5 +1,5 @@
 ---
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import { Image } from "astro:assets";
 
 import facebookIcon from '../../icons/socials/Facebook.svg'
@@ -50,15 +50,15 @@ const socialMedia = [
 ];
 
 const footerLinks = [
-  {
-    title: 'Community',
-    containerClass: 'max-w-[120px] max-md:max-w-[100%]',
-    links: [
-      { label: 'SSRVM Bangalore South', href: 'https://ssrvmbs.org/' },
-      { label: 'SSRVM <br class="hidden md:block"/>Pre-University', href: 'https://ssrvm.org/' },
-      { label: 'Art of Living', href: 'https://www.artofliving.org/' }
-    ]
-  },
+  // {
+  //   title: 'Community',
+  //   containerClass: 'max-w-[120px] max-md:max-w-[100%]',
+  //   links: [
+  //     { label: 'SSRVM Bangalore South', href: 'https://ssrvmbs.org/' },
+  //     { label: 'SSRVM <br class="hidden md:block"/>Pre-University', href: 'https://ssrvm.org/' },
+  //     { label: 'Art of Living', href: 'https://www.artofliving.org/' }
+  //   ]
+  // },
   {
     title: 'Contact Us',
     containerClass: '',
@@ -79,7 +79,7 @@ const footerLinks = [
     <div class="flex flex-col">
 
       <div class="w-[118px] max-md:w-[90px]">
-        <Image src={logo} alt="Logo" />
+        <Image src={logo} alt="Logo" class='w-full' />
       </div>
 
       <div class="flex flex-row gap-[22px] mt-[32px]">
@@ -91,7 +91,7 @@ const footerLinks = [
       </div>
     </div>
     <div class="flex flex-row max-md:flex-col"></div>
-    
+
     <div class="pt-[30px] md:hidden"></div>
     <div class="flex flex-row max-md:flex-col gap-[24px] max-md:gap-[14px]">
       {footerLinks.map((footerLinkSection, i) => (
@@ -106,9 +106,9 @@ const footerLinks = [
             ))}
           </div>
         </div>
-        
+
         <div class={twMerge("h-full w-[1px] bg-white/20", footerLinks.length - 1 === i && 'hidden')}></div>
-        
+
       ))}
     </div>
   </div>

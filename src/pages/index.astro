@@ -225,7 +225,7 @@ const kidsActivities = [
         background: 'radial-gradient(91.56% 109.67% at 26.63% 81.51%, rgba(226, 162, 83, 0.00) 0%, #FFCD7C 100%)'
       }}></div>
       <div class="w-full h-full absolute top-0 left-0 z-20">
-        <div class="h-[210px] absolute top-0 left-0 ">
+        <div class="h-[210px] absolute bottom-[150px] md:top-0 left-0 ">
           <Image src={heroDecorationTop} alt="Hero Decoration Top" class="w-full h-full object-contain" />
         </div>
         <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-lg:h-[250px] max-md:h-[200px]">
@@ -238,18 +238,19 @@ const kidsActivities = [
 
       <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
         <div class="flex mb-[6%] ml-[4%] justify-end items-center gap-7">
-          <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-duration={1.2}>
+          <div class="w-[118px] h-[118px] max-md:hidden max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-duration={1.2}>
             <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
           </div>
           <!-- <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px] opacity-0 pointer-events-none">
             <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
           </div> -->
           <div>
-        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] max-sm:w-[35vw]" data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
-            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[28px]">
+        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] " data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[36px]">
               <PracticeBook class="bg-cp-4" gsap delay={0.3}>
                 Pre-school
             </Text>
+            <Button buttonClass="py-[0px] md:hidden px-[14px] mb-[37px] mt-[12px]">Apply Now</Button>
           </div>
         </div>
       </div>
@@ -279,7 +280,7 @@ const kidsActivities = [
     <div class="w-[68px] h-[72px] -rotate-[30deg] absolute top-[38%] max-md:top-[28%] right-[2%] max-sm:right-0 max-md:w-[38px]">
       <Image src={heart} alt="Air Baloon" class="w-full h-full object-contain" />
     </div>
-<!-- 
+<!--
 <Text type="h4" class="font-normal font-sans text-[33.129px] text-[#121212] uppercase text-center opacity-[0.7] mb-5 relative bottom-[57px]">our philosophy</Text> -->
     
     <Text type="h2" class="italic text-primary text-center" id="broaden-vision">
@@ -333,7 +334,7 @@ const kidsActivities = [
     <Text type="base" class="w-[84%] text-center" data-lines data-delay={0.8} data-target="#ssrvm-community">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
     <div class="pt-[26px]"></div>
     <div class="flex flex-row items-center gap-[64px] max-lg:gap-[30px] max-lg:flex-col">
-      
+
       <div class="flex flex-row max-lg:gap-[60px] gap-10">
         <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]" data-delay={0.1 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
           <Text type="h3" class="italic text-[71px]">25</Text>
@@ -411,9 +412,9 @@ const kidsActivities = [
             <Text type="lg"><span class="text-[#C0840F] font-bold">Story Time:</span> Builds early literacy and listening skills.</Text>
           </div>
         </div>
-        
+
       </div>
-      <div 
+      <div
         data-gsap
         data-y={80}
         data-delay={0.5}
@@ -443,13 +444,13 @@ const kidsActivities = [
           </div>
         </div>
 
-        
 
-        
+
+
       </div>
     </div>
     <div class="flex w-full flex-row max-lg:flex-col mt-[24px] gap-6">
-      <div 
+      <div
         data-gsap
         data-y={80}
         data-delay={0.3}
@@ -478,7 +479,7 @@ const kidsActivities = [
           </div>
         </div>
       </div>
-      <div 
+      <div
         data-gsap
         data-y={80}
         data-delay={0.5}
@@ -521,7 +522,7 @@ const kidsActivities = [
       <Text type="base" class="pt-[20px]" data-lines data-delay={0.4}>
         At SSRBM, every student finds their passion through a diverse range of co-scholastic activities, fostering growth beyond academics. From the field to the stage, these activities encourage students to explore, excel, and express themselves in countless ways.
       </Text>
-    </div> 
+    </div>
     <div class="w-[60%] h-full max-lg:w-full max-md:h-[35%]">
       <div class="w-full h-full relative">
         <div class="swiper sliderData w-full h-full relative rounded-[12px]" data-slider-data={JSON.stringify(kidsActivities)}>
@@ -557,89 +558,89 @@ const kidsActivities = [
     </div>
     <div></div>
     <Ticker
-    items={[
-      {
-        type: 'image',
-        src: facilityTicker1,
-        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-        textClass: 'text-cp-9',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        alt: "CLASSROOMS",
-        text: "CLASSROOMS",
-      },
-      {
-        type: 'image',
-        src: facilityTicker2,
-        imageClass: 'w-[393px] h-[243px] max-md:h-[240px]',
-        textClass: 'text-cp-10',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        alt: "INDOOR PLAY AREA",
-        text: "INDOOR PLAY AREA",
-      },
-      {
-        type: 'image',
-        src: facilityTicker3,
-        imageClass: 'w-[300px] h-[339px] max-md:h-[240px]',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        textClass: 'text-cp-11',
-        alt: "OUTDOOR PLAY AREA",
-        text: "OUTDOOR PLAY AREA",
-      },
-      {
-        type: 'image',
-        src: facilityTicker4,
-        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        textClass: 'text-cp-11',
-        alt: "DAYCARE FACILITIES",
-        text: "DAYCARE FACILITIES",
-      },
-      {
-        type: 'image',
-        src: facilityTicker5,
-        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        textClass: 'text-cp-11',
-        alt: "SNACK AREA",
-        text: "SNACK AREA",
-      },
-      {
-        type: 'image',
-        src: facilityTicker6,
-        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        textClass: 'text-cp-11',
-        alt: "LIBRARY",
-        text: "LIBRARY",
-      },
-      {
-        type: 'image',
-        src: facilityTicker7,
-        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        textClass: 'text-cp-11',
-        alt: "XXXX",
-        text: "XXXX",
-      },
-      {
-        type: 'image',
-        src: facilityTicker8,
-        imageClass: 'w-[296px] h-[292px]',
-        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        borderColor: 'rgba(141, 134, 239, 0.40)',
-        textClass: 'text-cp-11',
-        alt: "MEDICAL ROOM",
-        text: "MEDICAL ROOM",
-      },
-    ]}
-  />
+      items={[
+        {
+          type: 'image',
+          src: facilityTicker1,
+          imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
+          textClass: 'text-cp-9',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          alt: "CLASSROOMS",
+          text: "CLASSROOMS",
+        },
+        {
+          type: 'image',
+          src: facilityTicker2,
+          imageClass: 'w-[393px] h-[243px] max-md:h-[240px]',
+          textClass: 'text-cp-10',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          alt: "INDOOR PLAY AREA",
+          text: "INDOOR PLAY AREA",
+        },
+        {
+          type: 'image',
+          src: facilityTicker3,
+          imageClass: 'w-[300px] h-[339px] max-md:h-[240px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-11',
+          alt: "OUTDOOR PLAY AREA",
+          text: "OUTDOOR PLAY AREA",
+        },
+        {
+          type: 'image',
+          src: facilityTicker4,
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-4',
+          alt: "DAYCARE FACILITIES",
+          text: "DAYCARE FACILITIES",
+        },
+        {
+          type: 'image',
+          src: facilityTicker5,
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-9',
+          alt: "SNACK AREA",
+          text: "SNACK AREA",
+        },
+        {
+          type: 'image',
+          src: facilityTicker6,
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-10',
+          alt: "LIBRARY",
+          text: "LIBRARY",
+        },
+        {
+          type: 'image',
+          src: facilityTicker7,
+          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-11',
+          alt: "XXXX",
+          text: "XXXX",
+        },
+        {
+          type: 'image',
+          src: facilityTicker8,
+          imageClass: 'w-[296px] h-[292px]',
+          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+          borderColor: 'rgba(141, 134, 239, 0.40)',
+          textClass: 'text-cp-4',
+          alt: "MEDICAL ROOM",
+          text: "MEDICAL ROOM",
+        },
+      ]}
+    />
   </Section>
   <Section class="pr-0 flex gap-[24px] relative flex-row max-md:flex-col items-center max-md:hidden" style={{
     background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
@@ -665,7 +666,7 @@ const kidsActivities = [
         {newsEvents.map((news, index) => (
           <NewsCard
             i={index}
-            image ={news.image} 
+            image ={news.image}
             title={news.title}
             description={news.description}
           />
@@ -725,7 +726,7 @@ const kidsActivities = [
       <div class="bg-yellow rounded-full"></div>
     </div>
 
-    
+
   </div>
 
   <Section class="bg-white flex justify-center items-center">
@@ -753,13 +754,13 @@ const kidsActivities = [
       </div>
     </div>
   </Section>
- 
+
 
   <Footer />
 </Layout>
 
 <style>
- 
+
 
 .scroll::-webkit-scrollbar{
     display: none;
@@ -847,9 +848,11 @@ const kidsActivities = [
        sliderTitle.textContent = titleText;
    })
 
+  const totalCards = document.querySelectorAll(".cards").length;
   const leftBtn = document.getElementById("leftBtn");
   const rightBtn = document.getElementById("rightBtn");
   const newsScroll = document.querySelector(".scroll");
+  let newsScrollWidth = document.querySelector(".scroll").offsetWidth;
    let oneCardWidth = 405;
 
   leftBtn.addEventListener("click", ()=>{
