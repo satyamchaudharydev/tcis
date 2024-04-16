@@ -1,0 +1,29 @@
+---
+import { twMerge as tw } from "tailwind-merge"
+import Text from '../system/Text.astro'
+import { Image } from 'astro:assets'
+
+const colors = [
+  'bg-[#F67E7D]',
+  'bg-[#98B08B]',
+  'bg-[#EEB956]',
+]
+
+const { i, image, title, description } = Astro.props
+
+const currentColor = colors[i % colors.length]
+const rotation = i % 2 === 0 ? '-3.8deg' : '2.96deg'
+---
+
+  <div class="swiper-slide">
+    <div class=" relative h-[420px] max-md:flex flex-col items-center w-full" >
+      <div class="w-[280px] py-2 px-[12px] bg-white relative z-10 h-[420px]">
+        <div class="h-[230px]">
+          <Image src={image} alt="news" class="w-[280px] h-full object-cover" />
+        </div>
+        <Text type="sm" class="font-display font-bold italic text-center mt-[16px] text-[#F67E7D]" >{title}</Text>
+        <Text type="xs" class="mt-[14px] italic text-cp-4 text-center leading-[160%]">{description}</Text>
+      </div>
+      <div class={tw("absolute top-[10px] left-[80px] w-[67.5%] h-full", currentColor)}></div>
+    </div>
+</div>

@@ -48,7 +48,7 @@ import rainbow from '../assets/decorations/vision/rainbow.svg'
 import yellowCloud from '../assets/decorations/vision/yellowCloud.svg'
 import starFootNote from '../assets/decorations/vision/starFootNote.svg'
 import communityGallery from '../assets/communityGallery.png'
-import facilityTicker1 from '../assets/facility/ticker/1.png'
+import facilityTicker1 from '../assets/facility/ticker/5.png'
 import facilityTicker2 from '../assets/facility/ticker/2.png'
 import facilityTicker3 from '../assets/facility/ticker/3.png'
 import facilityTicker4 from '../assets/facility/ticker/4.png'
@@ -77,6 +77,7 @@ import NewsCard from "../components/templates/NewsCard.astro"
 import FilledArrowCircle from "../icons/FilledArrowCircle.astro"
 import TopNavigationBar from "../components/templates/TopNavigationBar.astro"
 import SliderCard from "../components/templates/sliderCard.astro"
+import MobileNewsCard from "../components/templates/MobileNewsCard.astro"
 import Button from "../components/system/Button.astro"
 
 
@@ -206,11 +207,7 @@ const kidsActivities = [
 ]
 ---
 
-<Layout 
-  title="Little Elly: Preschool, Playschool, Kindergarten | Best Daycare" 
-  description="Little Elly top preschool in Bangalore with Learning spaces, qualified staff, and Near by locations. Enroll now"
-  keywords="Best preschool near me"
->
+<Layout>
   <div class="w-screen h-[100svh] flex flex-col overflow-hidden relative">
     <TopNavigationBar />
     <div class="w-full flex-1">
@@ -241,13 +238,16 @@ const kidsActivities = [
 
       <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
         <div class="flex mb-[6%] ml-[4%] justify-end items-center gap-7">
-          <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px]">
+          <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-duration={1.2}>
             <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
           </div>
+          <!-- <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px] opacity-0 pointer-events-none">
+            <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
+          </div> -->
           <div>
-        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] max-sm:w-[35vw]">SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] max-sm:w-[35vw]" data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
             <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[28px]">
-              <PracticeBook class="bg-cp-4 ">
+              <PracticeBook class="bg-cp-4" gsap delay={0.3}>
                 Pre-school
             </Text>
           </div>
@@ -282,81 +282,81 @@ const kidsActivities = [
 <!-- 
 <Text type="h4" class="font-normal font-sans text-[33.129px] text-[#121212] uppercase text-center opacity-[0.7] mb-5 relative bottom-[57px]">our philosophy</Text> -->
     
-    <Text type="h2" class="italic text-primary text-center">
-      <PracticeBook id="practicebook">
+    <Text type="h2" class="italic text-primary text-center" id="broaden-vision">
+      <PracticeBook gsap>
         Broaden The <span class="text-cp-1">Vision</span>
       </PracticeBook>
     </Text>
     <Text type="h2" class="italic text-primary text-center">
-      <PracticeBook class="border-cp-2">
+      <PracticeBook class="border-cp-2" gsap delay={0.5} target="#broaden-vision">
         Deepen The <span class="text-cp-2">Roots</span>
       </PracticeBook>
     </Text>
 
-    <Text type="lg" class="w-[55%]  max-md:w-fit mt-[30px] text-center">
+    <Text type="lg" class="w-[55%]  max-md:w-[80%] mt-[30px] text-center" data-lines data-delay={0.9} data-target="#broaden-vision">
       At SSRBM pre-primary School, we believe in nurturing young minds through holistic education that engages the mind, heart, body, and spirit. Our goal is to cultivate students who not only thrive academically but also embody values of respect, integrity, and environmental awareness. We emphasise the importance of academic excellence, active play, cultural appreciation, and emotional development, empowering our little learners to explore, express, and grow freely.
     </Text>
 
-    <div class="w-[138px] mt-[26px] max-sm:w-[75px]">
+    <div class="w-[138px] mt-[26px] max-sm:w-[75px]" data-gsap data-delay={1.5} data-target="#broaden-vision">
       <Image src={starFootNote} alt="Star Foot Note" class="w-full h-full object-contain" />
     </div>
   </div>
 
   <Section class="border-[0.75px] border-cp-4 max-lg:flex-col ">
-    <Team data={team} />
+    <Team data={team}/>
   </Section>
 
-  <div class="w-full" data-gsap-parent="where-learning-section">
+  <div class="w-full" id="where-learning-section">
     <Section class="pb-0">
-      <Text type="h2" class="italic text-primary">
-        <span class="italic font-normal text-cp-4">Where</span>
-        <PracticeBook>
+      <Text type="h2" class="italic text-primary [&_.line]:!inline">
+        <span class="italic font-normal text-cp-4" data-text data-target="#where-learning-section">Where</span><span></span>
+        <PracticeBook target="#where-learning-section">
          learning
         </PracticeBook>
-        <span class="italic font-normal text-cp-4">meets</span>
-        <span class="italic text-cp-3">fun</span>
+        <span class="italic font-normal text-cp-4" data-text data-target="#where-learning-section">meets</span>
+        <span class="italic text-cp-3" data-text data-target="#where-learning-section">fun</span>
       </Text>
   
-      <Text type="base" class="w-[60%] max-md:w-full mt-[20px]">
+      <Text type="base" class="w-[60%] max-md:w-full mt-[20px]" data-lines data-target="#where-learning-section" data-delay={0.8}>
         SSRBM stands at the intersection of innovation and tradition, fostering holistic development with a curriculum that's as fun as it is formative.
       </Text>
     </Section>
-    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12 max-md:hidden" />
+    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12 max-md:hidden" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section" />
     <div class="w-[75%] mx-auto">
-      <Image src={mobileConcept} alt="SSRBM mobile Concept" class="hidden w-full max-md:block max-md:mt-1 max-md:transform -translate-y-8 max-md:-translate-x-[25px]" />
+      <Image src={mobileConcept} alt="SSRBM mobile Concept" class="hidden w-full max-md:block max-md:mt-1 max-md:transform -translate-y-8 max-md:-translate-x-[25px]" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section"/>
     </div>
   </div>
 
   <Section class="px-0" class="flex flex-col items-center pb-0 max-lg:mt-[60px]">
-    <Text type="h2" class="font-[400] text-cp-4 max-[384px]:text-[27px]">The SSRBM <PracticeBook class="border-cp-1"><span class="font-bold italic text-cp-1">Community</span></PracticeBook></Text>
-    <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" />
-    <Text type="base" class="w-[84%] text-center">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
+    <Text type="h2" class="font-[400] text-cp-4 [&_.line]:!inline text-center" id="ssrvm-community"><span data-text>The SSRVM</span><span></span> <PracticeBook class="border-cp-1"><span class="font-bold italic text-cp-1">Community</span></PracticeBook></Text>
+    <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" data-gsap data-delay={0.6} data-target="#ssrvm-community" data-duration={1.9} />
+    <Text type="base" class="w-[84%] text-center" data-lines data-delay={0.8} data-target="#ssrvm-community">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
     <div class="pt-[26px]"></div>
     <div class="flex flex-row items-center gap-[64px] max-lg:gap-[30px] max-lg:flex-col">
       
       <div class="flex flex-row max-lg:gap-[60px] gap-10">
-        <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]">
+        <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]" data-delay={0.1 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
           <Text type="h3" class="italic text-[71px]">25</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Years of<br/> Excellence</Text>
         </div>
-        <div class="text-cp-4 flex flex-col items-center">
+        <div class="text-cp-4 flex flex-col items-center" data-delay={0.2 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
           <Text type="h3" class="italic text-[71px]">14+</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">States<br/> In India</Text>
         </div>
       </div>
 
       <div class="flex flex-row gap-[60px]">
-        <div class="text-cp-3 flex flex-col items-center">
-          <Text type="h3" class="italic text-[71px]">40,000+</Text>
+        <div class="text-cp-3 flex flex-col items-center" data-delay={0.3 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
+          <Text type="h3" class="italic text-[71px]" >40,000+</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Students</Text>
         </div>
-        <div class="text-cp-2 flex flex-col items-center">
+        <div class="text-cp-2 flex flex-col items-center" data-delay={0.4 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
           <Text type="h3" class="italic text-[71px]">2500+</Text>
           <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Teachers</Text>
         </div>
       </div>
 
-      <div class="text-cp-8 flex flex-col items-center">
+      <div class="text-cp-8 flex flex-col items-center" data-delay={0.5 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
         <Text type="h3" class="italic text-[71px]">90+</Text>
         <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Institutions including SSU, SSCASRH</Text>
       </div>
@@ -365,9 +365,9 @@ const kidsActivities = [
     <div class="mt-[65px]">
     </div>
   </Section>
-  <Image src={communityGallery} width={1920} alt="Community Gallery" class="w-full" />
+  <Image src={communityGallery} width={1920} alt="Community Gallery" class="w-full" data-gsap data-duration={1.3} data-delay={0.3} />
 
-  <div class="h-[calc(100vw/12)] overflow-hidden z-[999] sticky" data-gsap-sticky="where-learning-section">
+  <div class="h-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
     <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
       <div class="bg-primary rounded-full"></div>
       <div class="bg-primary rounded-full"></div>
@@ -379,11 +379,14 @@ const kidsActivities = [
   </div>
 
   <Section class="flex flex-col items-center max-lg:mt-[40px]">
-    <Text type="h2"><span class="font-[400] text-cp-4">{'Our '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
+    <Text type="h2"><span class="font-[400] text-cp-4 [&_.line]:!inline" data-text>{'Our '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
     <div class="pt-[24px]"></div>
-    <Text type="base" class="w-[94%] text-center">At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
+    <Text type="base" class="w-[93%] text-center" data-lines data-delay={0.7}>At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
     <div class="flex w-full flex-row max-lg:flex-col mt-[60px] gap-6">
-      <div 
+      <div
+        data-gsap
+        data-y={80}
+        data-delay={0.3}
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23CB8733FF' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -411,6 +414,9 @@ const kidsActivities = [
         
       </div>
       <div 
+        data-gsap
+        data-y={80}
+        data-delay={0.5}
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2378ADF9' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -444,6 +450,9 @@ const kidsActivities = [
     </div>
     <div class="flex w-full flex-row max-lg:flex-col mt-[24px] gap-6">
       <div 
+        data-gsap
+        data-y={80}
+        data-delay={0.3}
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%2398B08B' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -470,6 +479,9 @@ const kidsActivities = [
         </div>
       </div>
       <div 
+        data-gsap
+        data-y={80}
+        data-delay={0.5}
         class="flex-1 rounded-[18px] p-[32px]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='18' ry='18' stroke='%23EE7F82' stroke-width='4' stroke-dasharray='10%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
@@ -498,15 +510,15 @@ const kidsActivities = [
     </div>
   </Section>
   
-  <Section class="flex w-full flex-row max-lg:flex-col justify-between h-fit gap-5 ">
-    <div class="w-[38%]  h-full flex flex-col justify-center max-lg:w-fit">
+  <Section class="flex w-full flex-row max-lg:flex-col justify-between h-[784px] max-md:h-auto max-md:gap-11">
+    <div class="w-[38%] h-full flex flex-col justify-center max-lg:w-fit">
       <Text type="h2">
-        <span class="text-cp-4 font-normal">Kids</span><br/>
+        <span class="text-cp-4 font-normal" data-text>Kids</span>
         <PracticeBook class="border-cp-4">
           <span class="text-cp-3 italic">Activities</span>
         </PracticeBook>
       </Text>
-      <Text type="base" class="pt-[20px]">
+      <Text type="base" class="pt-[20px]" data-lines data-delay={0.4}>
         At SSRBM, every student finds their passion through a diverse range of co-scholastic activities, fostering growth beyond academics. From the field to the stage, these activities encourage students to explore, excel, and express themselves in countless ways.
       </Text>
     </div> 
@@ -537,120 +549,119 @@ const kidsActivities = [
     </div>
   </Section>
 
-  <Section class="!px-0 max-lg:mt-[40px] ">
+  <Section class="!px-0 max-lg:mt-[300px] max-md:mt-[45px]">
     <div class="px-section-x max-md:px-section-x-mb">
-      <Text type="h2" class="text-cp-4"><span class="font-[400]">{'SSRBM '}</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
+      <Text type="h2" class="text-cp-4"><span class="font-[400] [&_.line]:!inline" data-text>{'SSRBM '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
       <div class="pt-[26px]"></div>
-      <Text type="base" class="w-[70%]">At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
+      <Text type="base" class="w-[70%]" data-lines>At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
     </div>
     <div></div>
     <Ticker
-      items={[
-        {
-          type: 'image',
-          src: facilityTicker1,
-          imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-          textClass: 'text-cp-9',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          alt: "CLASSROOMS",
-          text: "CLASSROOMS",
-        },
-        {
-          type: 'image',
-          src: facilityTicker2,
-          imageClass: 'w-[393px] h-[243px]',
-          textClass: 'text-cp-10',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          alt: "INDOOR PLAY AREA",
-          text: "INDOOR PLAY AREA",
-        },
-        {
-          type: 'image',
-          src: facilityTicker3,
-          imageClass: 'w-[300px] h-[339px] max-md:h-[240px]',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-11',
-          alt: "OUTDOOR PLAY AREA",
-          text: "OUTDOOR PLAY AREA",
-        },
-        {
-          type: 'image',
-          src: facilityTicker4,
-          imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-11',
-          alt: "DAYCARE FACILITIES",
-          text: "DAYCARE FACILITIES",
-        },
-        {
-          type: 'image',
-          src: facilityTicker5,
-          imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-11',
-          alt: "SNACK AREA",
-          text: "SNACK AREA",
-        },
-        {
-          type: 'image',
-          src: facilityTicker6,
-          imageClass: 'w-[296px] h-[292px]',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-11',
-          alt: "LIBRARY",
-          text: "LIBRARY",
-        },
-        {
-          type: 'image',
-          src: facilityTicker7,
-          imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-11',
-          alt: "XXXX",
-          text: "XXXX",
-        },
-        {
-          type: 'image',
-          src: facilityTicker8,
-          imageClass: 'w-[296px] h-[292px]',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-11',
-          alt: "MEDICAL ROOM",
-          text: "MEDICAL ROOM",
-        },
-      ]}
-    />
+    items={[
+      {
+        type: 'image',
+        src: facilityTicker1,
+        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
+        textClass: 'text-cp-9',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        alt: "CLASSROOMS",
+        text: "CLASSROOMS",
+      },
+      {
+        type: 'image',
+        src: facilityTicker2,
+        imageClass: 'w-[393px] h-[243px] max-md:h-[240px]',
+        textClass: 'text-cp-10',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        alt: "INDOOR PLAY AREA",
+        text: "INDOOR PLAY AREA",
+      },
+      {
+        type: 'image',
+        src: facilityTicker3,
+        imageClass: 'w-[300px] h-[339px] max-md:h-[240px]',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        textClass: 'text-cp-11',
+        alt: "OUTDOOR PLAY AREA",
+        text: "OUTDOOR PLAY AREA",
+      },
+      {
+        type: 'image',
+        src: facilityTicker4,
+        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        textClass: 'text-cp-11',
+        alt: "DAYCARE FACILITIES",
+        text: "DAYCARE FACILITIES",
+      },
+      {
+        type: 'image',
+        src: facilityTicker5,
+        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        textClass: 'text-cp-11',
+        alt: "SNACK AREA",
+        text: "SNACK AREA",
+      },
+      {
+        type: 'image',
+        src: facilityTicker6,
+        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        textClass: 'text-cp-11',
+        alt: "LIBRARY",
+        text: "LIBRARY",
+      },
+      {
+        type: 'image',
+        src: facilityTicker7,
+        imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        textClass: 'text-cp-11',
+        alt: "XXXX",
+        text: "XXXX",
+      },
+      {
+        type: 'image',
+        src: facilityTicker8,
+        imageClass: 'w-[296px] h-[292px]',
+        background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        borderColor: 'rgba(141, 134, 239, 0.40)',
+        textClass: 'text-cp-11',
+        alt: "MEDICAL ROOM",
+        text: "MEDICAL ROOM",
+      },
+    ]}
+  />
   </Section>
-  <Section class="pr-0 flex gap-[24px] relative flex-row max-md:flex-col items-center max-md:hidden"  style={{
+  <Section class="pr-0 flex gap-[24px] relative flex-row max-md:flex-col items-center max-md:hidden" style={{
     background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
   }}>
-    <div class="flex-shrink-0">
-      <Text type="subtitle" class="text-[#89C6E5]">OUR LATEST NEWS</Text>
-      <Text type="h3" class="text-white pt-[22px] leading-[140%]">See what's<br/> <span class="text-yellow italic">happening</span><br/> at SSRBM</Text>
+    <div class="flex-shrink-0" id="news-updates-section">
+      <Text type="subtitle" class="text-[#89C6E5]" data-text data-target="#news-updates-section">OUR LATEST NEWS</Text>
+      <Text type="h3" class="text-white pt-[22px] leading-[140%]"><span data-text data-target="#news-updates-section">See what's</span> <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> <span data-text data-target="#news-updates-section">at SSRBM</span></Text>
       <div class="flex flex-row gap-[12px] mt-[42px]">
-        <div class="cursor-pointer w-16 h-16 relative -scale-100" id="leftBtn" data-prev="hero-swiper">
+        <div class="cursor-pointer w-16 h-16 relative -scale-100" id="leftBtn" data-target="#news-updates-section" data-gsap data-delay={0.2} data-y={60}>
           <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
           <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
         </div>
-        <div class="cursor-pointer w-16 h-16 relative" id="rightBtn" data-prev="hero-swiper">
+        <div class="cursor-pointer w-16 h-16 relative" id="rightBtn" data-target="#news-updates-section" data-gsap data-delay={0.4} data-y={60}>
           <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
           <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
         </div>
       </div>
     </div>
-
-    <div class="scroll flex flex-row overflow-scroll py-[15px] gap-[125px] pl-8 snap-x max-md:hidden" data-mask-scroll-x>
-      <!-- <div class="absolute top-0 right-0 w-[150px] h-full z-20 pointer-events-none " style={{
+    <div class="scroll flex flex-row overflow-scroll py-[15px] gap-[125px] pl-8 snap-x" data-mask-scroll-x data-gsap data-dealy={0.7} data-duration={0.9}>
+      <div class="absolute top-0 right-0 w-[150px] h-full z-20 pointer-events-none " style={{
         'mask-image': 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgb(0, 0, 0) 100%)'
-      }}></div> -->
+      }}></div>
         {newsEvents.map((news, index) => (
           <NewsCard
             i={index}
@@ -660,13 +671,26 @@ const kidsActivities = [
           />
         ))}
     </div>
+
   </Section>
 
-  <Section class="max-md:block">
-    <div class="max-md:block hidden hero-swiper no-scrollbar will-change-scroll max-md:w-full" data-swiper-data={JSON.stringify(newsEvents)}>
+  <Section class="pr-0 max-md:flex gap-[24px] relative max-md:flex-col items-center hidden max-md:" style={{
+    background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
+  }}>
+  <div class="flex-shrink-0" id="news-updates-section">
+    <Text type="subtitle" class="text-[#89C6E5] max-md:text-[25px]" data-text data-target="#news-updates-section">OUR LATEST NEWS</Text>
+    
+  
+    <Text type="h3" class="text-white pt-[22px] leading-[140%] block max-md:hidden"><span data-text data-target="#news-updates-section">See what's</span> <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> <span data-text data-target="#news-updates-section">at SSRBM</span></Text>
+
+      <Text type="h3" class="text-white hidden max-md:block mt-[22px]"><span data-text data-target="#news-updates-section">See what's <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> </span> <span data-text data-target="#news-updates-section" class="text-center">at SSRBM</span> </Text>
+
+  </div>
+
+    <div class="max-md:block hidden hero-swiper2 no-scrollbar will-change-scroll max-md:w-full" data-swiper-data={JSON.stringify(newsEvents)}>
       <div class="swiper-wrapper mt-5">
         {newsEvents.map((news, index) => (
-          <NewsCard
+          <MobileNewsCard
             i={index}
             image ={news.image} 
             title={news.title}
@@ -674,10 +698,24 @@ const kidsActivities = [
           />
         ))}
       </div>
+  </div>
+
+
+  <div class="flex flex-row gap-[12px] mt-[42px]">
+    <div class="cursor-pointer w-16 h-16 relative -scale-100 max-md:w-10 max-md:h-10" id="leftBtn" data-prev="hero-swiper2" data-target="#news-updates-section" data-gsap data-delay={0.2} data-y={60}>
+      <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
+      <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
+    </div>
+    <div class="cursor-pointer w-16 h-16 relative max-md:w-10 max-md:h-10" id="rightBtn" data-next="hero-swiper2" data-target="#news-updates-section" data-gsap data-delay={0.4} data-y={60}>
+      <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
+      <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
+    </div>
+  </div>
   </Section>
+
   <Testimonial />
 
-  <div class="h-[calc(100vw/12)] overflow-hidden z-[997] sticky" data-gsap-sticky="where-learning-section">
+  <div class="h-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
     <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
       <div class="bg-yellow rounded-full"></div>
       <div class="bg-yellow rounded-full"></div>
@@ -691,19 +729,19 @@ const kidsActivities = [
   </div>
 
   <Section class="bg-white flex justify-center items-center">
-    <div class="border border-[#4592BA] rounded-[21px] flex justify-between overflow-hidden max-md:flex-col-reverse">
+    <div class="border border-[#4592BA] rounded-[21px] gap-8 flex justify-between overflow-hidden max-md:flex-col-reverse" id="admission-cta">
       <div class="w-fit py-[30px] pl-[47px] max-sm:pl-4 pr-[16px]">
         <div class="w-[96px] max-md:w-[70px] max-sm:w-[60px]">
           <Image src={logo} alt="Logo" />
         </div>
 
         <div class="py-[33px] max-md:py-[15px]">
-          <PracticeBook class="border-[#98B08B]">
-            <span class="text-[66px] text-[#98B08B] capitalize font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">admissions open</span>
+          <PracticeBook target="#admission-cta" class="border-[#98B08B]" thirdLineClass="bottom-[23%]" secondLineClass="top-[52%]" firstLineClass="top-[25%]">
+            <span class="text-[66px] text-[#98B08B] font-display font-[700] max-[1120px]:text-[5vw] max-md:text-[8vw]">Admissions Open</span>
           </PracticeBook><br>
   
-          <PracticeBook class="border-[#4592BA]"> 
-            <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
+          <PracticeBook target="#admission-cta" class="border-[#4592BA]" thirdLineClass="bottom-[27%]"> 
+            <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] font-sans leading-normal max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
           </PracticeBook>
         </div>
 
@@ -814,8 +852,6 @@ const kidsActivities = [
   const newsScroll = document.querySelector(".scroll");
    let oneCardWidth = 405;
 
-   console.log(window.offsetWidth);
-
   leftBtn.addEventListener("click", ()=>{
     newsScroll?.scrollBy({left:oneCardWidth*(-1),  behavior: "smooth"});
   });
@@ -826,9 +862,39 @@ const kidsActivities = [
 
 
 
-  const swiper2 = new swiper(".hero-swiper", {
-
+  document.addEventListener("DOMContentLoaded", function() {
+      initSwiper()
   });
+
+  function initSwiper() {
+    const prevBtn2 = document.querySelector('[data-prev="hero-swiper2"]');
+    const nextBtn2 = document.querySelector('[data-next="hero-swiper2"]');
+
+    const swiper2 = new Swiper(".hero-swiper2", {
+      // Optional parameters
+      modules: [Autoplay],
+      direction: "horizontal",
+      loop: true,
+      effect: "coverflow",
+      grabCursor: true,
+      slidesPerView: 1,
+      centeredSlides: true,
+      speed: 500,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+    });
+
+    prevBtn2.addEventListener('click', () => {
+      swiper2.slidePrev()
+    });
+
+    nextBtn2.addEventListener('click', () => {
+      swiper2.slideNext()
+    });
+    
+  }
 </script>
 
 <script src="../scripts/scrollAnimations.ts"></script>
