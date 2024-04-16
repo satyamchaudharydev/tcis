@@ -8,7 +8,7 @@ const { data, ...props } = Astro.props
 ---
 <div class="flex flex-row max-lg:flex-col justify-items-start gap-[20px] h-fit max-md:h-auto" {...props}>
   {data.map((testimonial, index) => (
-    <div  data-gsap data-delay={0.3 + index * 0.3} data-y={100} data-duration={0.7}  class="flex-1 flex border-[2.5px] border-[#E2E2E2] overflow-hidden flex-row max-md:flex-col w-full bg-white rounded-[12px]">
+    <div data-gsap data-delay={0.3 + index * 0.3} data-y={100} data-duration={0.7}  class="flex-1 flex border-[2.5px] border-[#E2E2E2] overflow-hidden flex-row max-md:flex-col w-full bg-white rounded-[12px]">
       <div class="w-[45%] max-md:w-full max-md:h-[260px] h-auto">
         <Image src={testimonial.image} alt={testimonial.alt} class="object-cover object-center w-full h-full" />
       </div>

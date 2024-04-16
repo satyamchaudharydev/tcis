@@ -30,6 +30,8 @@ import 'swiper/css/effect-creative'
 import Slide from "../components/system/Slide.astro"
 
 import logo from '../assets/logo.svg'
+import logoColored from '../assets/logoColored.svg'
+import logoMain from '../assets/logoMain.svg'
 
 import slide1 from '../assets/slides/1.png'
 import slide2 from '../assets/slides/2.png'
@@ -241,20 +243,21 @@ const kidsActivities = [
       </div>
 
       <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
-        <div class="flex mb-[6%] ml-[4%] justify-end items-center gap-7">
-          <div class="w-[118px] h-[118px] max-md:hidden max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-duration={1.2}>
-            <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
+        <div class="flex mb-[6%] ml-[4%] justify-end gap-12 items-end">
+          <div class="w-[119px] max-md:hidden max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-duration={1.2}>
+            <Image src={logoMain} alt="SSRBM Logo" class="w-full h-full object-contain absolute top-0 left-0" data-logo-main />
+            <Image src={logoColored} alt="SSRBM Logo" class="w-full h-full object-contain absolute top-0 left-0  opacity-0" data-logo-colored />
+            <Image src={logoColored} alt="SSRBM Logo" class="w-full h-full object-contain invisible" />
           </div>
-          <!-- <div class="w-[118px] h-[118px] max-lg:w-[80px] max-md:w-[60px] opacity-0 pointer-events-none">
-            <Image src={logo} alt="SSRBM Logo" class="w-full h-full object-contain" />
-          </div> -->
-          <div>
-        <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] " data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+        <div>
+          <div data-hero-text>
+            <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] " data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
             <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[36px]">
               <PracticeBook class="bg-cp-4" gsap delay={0.3}>
                 Pre-school
             </Text>
             <Button buttonClass="py-[0px] md:hidden px-[14px] mb-[37px] mt-[12px]">Apply Now</Button>
+          </div>
           </div>
         </div>
       </div>

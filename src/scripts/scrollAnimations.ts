@@ -16,12 +16,14 @@ practiceBookTitles.forEach((practiceBookTitle) => {
 
   const targetSelector = practiceBookTitle.getAttribute('data-target')
   const target = targetSelector ? document.querySelector(targetSelector) : practiceBookTitle
+  const start = practiceBookTitle.getAttribute('data-start') || "top 80%"
+  const end = practiceBookTitle.getAttribute('data-end') || "top 50%"
 
   gsap.from(practiceBookLines, {
     scrollTrigger: {
       trigger: target,
-      start: "top 80%",
-      end: "top 50%",
+      start,
+      end,
       toggleActions: "play none none reverse",
     },
     width: 0,
@@ -36,8 +38,8 @@ practiceBookTitles.forEach((practiceBookTitle) => {
   gsap.from(titleCharacters, {
     scrollTrigger: {
       trigger: target,
-      start: "top 80%",
-      end: "top 50%",
+      start,
+      end,
       toggleActions: "play none none reverse",
     },
     delay: Number(delay),
@@ -62,11 +64,13 @@ lines.forEach(line => {
   const delay = Number(line.getAttribute('data-delay') || 0)
   const targetSelector = line.getAttribute('data-target')
   const target = targetSelector ? document.querySelector(targetSelector) : line
+  const start = line.getAttribute('data-start') || "top 80%"
+  const end = line.getAttribute('data-end') || "top 50%"
   gsap.from(textLineNodes, {
     scrollTrigger: {
       trigger: target,
-      start: "top 80%",
-      end: "top 50%",
+      start,
+      end,
       toggleActions: "play none none reverse",
     },
     y: 50,
@@ -85,11 +89,13 @@ texts.forEach(text => {
   const delay = Number(text.getAttribute('data-delay') || 0)
   const targetSelector = text.getAttribute('data-target')
   const target = targetSelector ? document.querySelector(targetSelector) : text
+  const start = text.getAttribute('data-start') || "top 80%"
+  const end = text.getAttribute('data-end') || "top 50%"
   gsap.from(textCharacters, {
     scrollTrigger: {
       trigger: target,
-      start: "top 80%",
-      end: "top 50%",
+      start,
+      end,
       toggleActions: "play none none reverse",
     },
     delay: Number(delay),
@@ -115,6 +121,8 @@ gsapElements.forEach(gsapElement => {
   const target = targetSelector ? document.querySelector(targetSelector) : gsapElement
   const y = Number(gsapElement.getAttribute('data-y') || 0)
   const duration = Number(gsapElement.getAttribute('data-duration') || 0.5)
+  const start = gsapElement.getAttribute('data-start') || "top 80%"
+  const end = gsapElement.getAttribute('data-end') || "top 50%"
 
   gsap.from(gsapElement, {
     scrollTrigger: {
@@ -147,14 +155,63 @@ gsap.to(mainLogo, {
 gsap.to(mainLogo, {
   scrollTrigger: {
     trigger: mainLogo,
-    start: "bottom 90%",
+    start: "bottom 25%",
     end: "bottom 10%",
+    markers: true,
     toggleActions: "play none none reverse",
     scrub: true,
   },
   scale: 0.7,
   x: -40,
 })
+
+gsap.to(mainLogo?.querySelector('[data-logo-main]'), {
+  scrollTrigger: {
+    trigger: mainLogo,
+    start: "bottom 25%",
+    end: "bottom 10%",
+    markers: true,
+    toggleActions: "play none none reverse",
+    scrub: true,
+  },
+  opacity: 0,
+})
+
+gsap.to(mainLogo?.querySelector('[data-logo-colored]'), {
+  scrollTrigger: {
+    trigger: mainLogo,
+    start: "bottom 25%",
+    end: "bottom 10%",
+    markers: true,
+    toggleActions: "play none none reverse",
+    scrub: true,
+  },
+  opacity: 1,
+})
+gsap.to(mainLogo?.querySelector('[data-logo-colored]'), {
+  scrollTrigger: {
+    trigger: mainLogo,
+    start: "bottom 25%",
+    end: "bottom 10%",
+    markers: true,
+    toggleActions: "play none none reverse",
+    scrub: true,
+  },
+  opacity: 1,
+})
+gsap.to(document?.querySelector('[data-hero-text]'), {
+  scrollTrigger: {
+    trigger: mainLogo,
+    start: "bottom 25%",
+    end: "bottom 10%",
+    markers: true,
+    toggleActions: "play none none reverse",
+    scrub: true,
+  },
+  opacity: 0,
+  y: -90,
+})
+
 
 
 
