@@ -39,6 +39,7 @@ import slide5 from '../assets/slides/5.png'
 import heroDecorationTop from '../assets/decorations/heroDecorationTop.svg'
 import heroDecorationRight from '../assets/decorations/heroDecorationRight.svg'
 import heroDecorationBottomRight from '../assets/decorations/heroDecorationBottomRight.svg'
+import paperPlaneWithBlackDots from '../assets/decorations/paperPlaneWithBlackDots.svg'
 import bottomKidPuzzle from '../assets/decorations/vision/bottomKidPuzzle.png'
 import topKidPuzzle from '../assets/decorations/vision/topKidPuzzle.png'
 import airBaloon from '../assets/decorations/vision/airBaloon.svg'
@@ -228,11 +229,14 @@ const kidsActivities = [
         <div class="h-[210px] absolute bottom-[150px] md:top-0 left-0 ">
           <Image src={heroDecorationTop} alt="Hero Decoration Top" class="w-full h-full object-contain" />
         </div>
-        <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-lg:h-[250px] max-md:h-[200px]">
+        <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-md:hidden max-lg:h-[250px] max-md:h-[200px]">
           <Image src={heroDecorationRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
         </div>
-        <div class="h-[372px] absolute right-0 -bottom-[10%] max-lg:-right-6 max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
+        <div class="h-[372px] max-md:hidden block absolute right-0 -bottom-[10%] max-lg:-right-6 max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
           <Image src={heroDecorationBottomRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
+        </div>
+        <div class="h-[372px] absolute max-md:block hidden right-0 -bottom-[10%]  max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
+          <Image src={paperPlaneWithBlackDots} alt="Hero Decoration Right" class="w-full h-full object-contain" />
         </div>
       </div>
 

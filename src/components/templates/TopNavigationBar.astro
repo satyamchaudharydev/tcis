@@ -80,21 +80,21 @@ const maxsm = (stringOfClasses) => {
 ---
 <div class="fixed mt-[20px] z-[999]">
 
-  <div class="p-[1px] px-[2px] rounded-full bg-gradient-to-r from-[#89C6E5] sm:bg-none  to-[#F67E7D] ml-[5px]  sm:mx-[18px] flex justify-center items-center" >
+  <div class="p-[1px] px-[1px] rounded-full bg-gradient-to-r from-[#89C6E5] sm:bg-none  to-[#F67E7D] ml-[5px]  sm:mx-[18px] flex justify-center items-center" >
   <header
     class={`font-sans w-screen m relative  py-1
     pl-10 px-14 box-border flex flex-row gap-[18px]
     justify-end items-center h-[130px] max-md:h-[60px]
      max-md:w-[95vw]
       overflow-hidden max-md:bg-[#fff] max-md:py-[19px]
-    max-md:rounded-[5rem]  max-md:px-[28px]
+    max-md:rounded-[5rem]  max-md:px-[19px]
      max-md:justify-between
     `}
 
     >
     <div class="flex flex-row items-center ">
       <a href="/" class="relative z-[9999] daisy daisy-fixed daisy-1 w-[195px] max-md:w-[60%] max-sm:max-w-[260px] max-md:pl-4 max-sm:p-0">
-        <img src={logo.src} alt="Little Elly's Logo" class="hidden w-[135px] max-md:w-[80px]  max-md:block" />
+        <img src={logo.src} alt="Little Elly's Logo" class="hidden w-[26px] max-md:w-[80px]  max-md:block" />
       </a>
     </div>
     <div class="max-md:block hidden relative z-[9999] ">
@@ -111,7 +111,7 @@ const maxsm = (stringOfClasses) => {
     <div class="p-[1px] px-[2px] rounded-full max-md:hidden  mr-[18px] flex justify-center items-center" style={{
       background: 'linear-gradient(to right, #89C6E5 0%,  #F67E7D 100%)',
     }}>
-    <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0  bg-gradient-to-r 	border-solid py-[12px] px-[32px] rounded-[5rem]"
+    <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0  bg-gradient-to-r 	border-solid py-[12px] px-[33px] rounded-[5rem]"
       style={{
         background: 'rgba(253, 253, 253, 1)',
         boxShadow: "0px 3.24px 15px 0px rgba(0, 0, 0, 0.05)",
@@ -256,7 +256,7 @@ const maxsm = (stringOfClasses) => {
         } else {
           return (
             <div class='mobileMenuParent'>
-              <a data-menu-mobile-item href={item.link} class='text-black font-[400] hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-10 sm:px-16 mr-8 max-md:mr-0 w-full' style={{
+              <a data-menu-mobile-item href={item.link} class='text-black font-[400] hover:underline flex flex-row gap-2 items-center first-letter:relative py-[14px] px-7 sm:px-14 mr-8 max-md:mr-0 w-full' style={{
                 borderBottom: '1px solid rgba(0, 0, 0, 0.2)'
               }}>
                   {item.title}
@@ -365,6 +365,10 @@ const menu = [
       transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
       background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
       opacity 0.55s ease;
+  }
+
+  #menuToggle span{
+    height: 2.1px
   }
 
   #menuToggle span:first-child {
