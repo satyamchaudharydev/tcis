@@ -11,6 +11,7 @@ const {
   textClass = "",
   buttonClass,
   iconClass = "",
+  ...props
 } = Astro.props;
 
 const Icon = icon ? icon : FilledArrowCircle;
@@ -22,7 +23,7 @@ const buttonClassName = {
 };
 ---
 
-<div class:list={[
+<div {...props} class:list={[
   className,
   "flex-shrink-0 font-sans",
   "[&.loading_.icon]:!hidden [&.loading_.loading-icon]:!block"

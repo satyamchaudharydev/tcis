@@ -19,8 +19,8 @@ const { data, ...props } = Astro.props
           <Text type="sm" set:html={testimonial.testimonial} />
         </div>
         <div>
-          <Text type="sm" class={tw('text-[#121212] text-[24px] font-[700] pt-7')}>{testimonial.name}</Text>
-          <Text type="sm" class={tw('text-[#121212]', testimonial.designationClass)}>{testimonial.designation}</Text>
+          <Text type="sm" class={tw('text-[#121212] text-[24px] font-[500] max-md:font-[600] pt-7')}>{testimonial.name}</Text>
+          <Text type="sm" class={tw('text-[#121212] font-[500] max-md:mt-[2px]', testimonial.designationClass)}>{testimonial.designation}</Text>
         </div>
       </div>
     </div>

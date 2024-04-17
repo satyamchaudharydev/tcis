@@ -28,8 +28,8 @@ import TickerCard from "./TickerCard.astro";
   </div>
   <div class="pt-[30px]"></div>
 </div>
-<div class="w-full hidden max-md:flex flex-col items-center -mt-[30px]">
-  <div class="h-[clamp(25px,2.187vw,42px)] w-[1px]">
+<div class="w-full hidden max-md:flex flex-col items-center -mt-[35px]">
+  <div class="h-[40px] w-[1px]">
     <div class="h-full bg-[#898987] w-full transition-[height] transition-smooth duration-500 [&.hide-line]:h-0" swiper-line></div>
   </div>
   <div class="flex flex-row justify-between w-[96%] max-w-[350px]"> 
@@ -132,25 +132,28 @@ import TickerCard from "./TickerCard.astro";
       },
     });
     swiper.on('transitionStart', () => {
-      swiperLine.style.opacity = 0;
+      swiperLine.classList.add('hide-line')
       swiperLabel.style.opacity = 0;
     })
 
     swiper.on('sliderMove', () => {
-      swiperLine.style.opacity = 0;
+      swiperLine.classList.add('hide-line')
       swiperLabel.style.opacity = 0;
     })
     swiper.on('transitionEnd', (e) => {
-      setTimeout(() => {
-        console.log(e);
-        console.log(e.realIndex);
-        const labelText = swiperData[e.realIndex]?.text
-        swiperLabel.innerText = labelText;
-        swiperLabel?.classList.add(swiperData[e.realIndex]?.textClass);
-        swiperLine?.classList.add(swiperData[e.realIndex]?.textClass);
-        swiperLine.style.opacity = 1;
-        swiperLabel.style.opacity = 1;
-      }, 0);
+      console.log(e);
+      console.log(e.realIndex);
+      const labelText = swiperData[e.realIndex]?.text
+      swiperLabel.innerText = labelText;
+      swiperLabel?.classList.forEach((className) => {
+        if (className.includes('text-cp')) {
+          swiperLabel.classList.remove(className)
+        }
+      })
+      swiperLabel?.classList.add(swiperData[e.realIndex]?.textClass);
+      swiperLine?.classList.add(swiperData[e.realIndex]?.textClass);
+      swiperLine.classList.remove('hide-line')
+      swiperLabel.style.opacity = 1;
     })
 
     prevBtn.addEventListener('click', () => {

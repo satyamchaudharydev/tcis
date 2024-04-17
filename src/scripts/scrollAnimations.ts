@@ -127,8 +127,8 @@ gsapElements.forEach(gsapElement => {
   gsap.from(gsapElement, {
     scrollTrigger: {
       trigger: target,
-      start: "top 80%",
-      end: "top 50%",
+      start: start,
+      end: end,
       toggleActions: "play none none reverse",
     },
     y,
@@ -160,8 +160,8 @@ gsap.to(mainLogo, {
     toggleActions: "play none none reverse",
     scrub: true,
   },
-  scale: 0.7,
-  x: -40,
+  scale: 0.8,
+  x: -20,
 })
 
 gsap.to(mainLogo?.querySelector('[data-logo-main]'), {

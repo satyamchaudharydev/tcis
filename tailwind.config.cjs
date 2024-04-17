@@ -54,7 +54,7 @@ module.exports = {
 			padding: {
 				'section-y': '80px',
 				'section-x': '67px',
-				'section-y-mb': '20px',
+				'section-y-mb': '30px',
 				'section-x-mb': '20px',
 				// 'section-t-mb': '20px',
 				// 'section-b-mb': '20px',

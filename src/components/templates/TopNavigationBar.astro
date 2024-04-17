@@ -2,7 +2,9 @@
 import Button from "../system/Button.astro"
 import Text from ".././system/Text.astro";
 // import logo from "../images/logo.png";
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logoMain.svg'
+import logoMainMb from '../../assets/logoMainMb.svg'
+import { twMerge } from "tailwind-merge";
 // import config from "../../../config";
 
 interface Menu {
@@ -61,14 +63,10 @@ const removeHash = url => {
 }
 
 const shouldBeActive = (item, activePath) => {
-  // item.link === activePath ||
-  // item.submenu.map(({ link }) => removeHash(link)).includes(activePath)
   const submenuItem = item.submenu.find(({ link }) => {
     const active = removeHash(link) === activePath
     return active
   })
-  console.log('submenuItem...', submenuItem)
-
 
   return item.link === activePath || (!!submenuItem && !submenuItem.forceInactive)
 }
@@ -77,14 +75,15 @@ const maxsm = (stringOfClasses) => {
   const classess = stringOfClasses.split(' ')
   return classess.map(c => `max-sm:${c}`).join(' ')
 }
+
 ---
-<div class="fixed mt-[20px] z-[999]">
+<div class="fixed mt-[30px] max-md:mt-[20px] z-[999]">
 
   <div class="p-[1px] px-[1px] rounded-full bg-gradient-to-r from-[#89C6E5] sm:bg-none  to-[#F67E7D] ml-[5px]  sm:mx-[18px] flex justify-center items-center" >
   <header
     class={`font-sans w-screen m relative  py-1
     pl-10 px-14 box-border flex flex-row gap-[18px]
-    justify-end items-center h-[130px] max-md:h-[60px]
+    justify-end items-center h-auto max-md:h-[60px]
      max-md:w-[95vw]
       overflow-hidden max-md:bg-[#fff] max-md:py-[19px]
     max-md:rounded-[5rem]  max-md:px-[19px]
@@ -94,7 +93,7 @@ const maxsm = (stringOfClasses) => {
     >
     <div class="flex flex-row items-center ">
       <a href="/" class="relative z-[9999] daisy daisy-fixed daisy-1 w-[195px] max-md:w-[60%] max-sm:max-w-[260px] max-md:pl-4 max-sm:p-0">
-        <img src={logo.src} alt="Little Elly's Logo" class="hidden w-[26px] max-md:w-[80px]  max-md:block" />
+        <img src={logoMainMb.src} alt="Little Elly's Logo" class="hidden w-[26px] max-md:w-auto max-md:h-[80px]  max-md:block" />
       </a>
     </div>
     <div class="max-md:block hidden relative z-[9999] ">
@@ -108,7 +107,7 @@ const maxsm = (stringOfClasses) => {
       </form>
     </div>
 
-    <div class="p-[1px] px-[2px] rounded-full max-md:hidden  mr-[18px] flex justify-center items-center" style={{
+    <div class="p-[1px] px-[2px] rounded-full max-md:hidden  flex justify-center items-center" style={{
       background: 'linear-gradient(to right, #89C6E5 0%,  #F67E7D 100%)',
     }}>
     <div class="flex flex-row items-center max-md:hidden text-lg flex-shrink-0  bg-gradient-to-r 	border-solid py-[12px] px-[33px] rounded-[5rem]"
@@ -201,10 +200,11 @@ const maxsm = (stringOfClasses) => {
             return (
               <a
                 href={item?.link}
-                class:list={[
-                  "text-[#00204D]  hover:underline text-[15px] mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-sans capitalize font-[400]",
+                class:list={twMerge(
+                  "text-[#00204D]  hover:underline text-[17px] mr-8 max-md:mr-0 daisy daisy-fixed daisy-2 font-sans capitalize font-[400]",
                   item.link === activePath && "!text-primary !font-bold",
-                ]}
+                  i === menu.length - 1 && "!mr-0",
+                )}
               >
                 {item.title}
               </a>

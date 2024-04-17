@@ -29,9 +29,11 @@ import 'swiper/css/effect-creative'
 
 import Slide from "../components/system/Slide.astro"
 
-import logo from '../assets/logo.svg'
+import logo from '../assets/logoMain.svg'
 import logoColored from '../assets/logoColored.svg'
 import logoMain from '../assets/logoMain.svg'
+import logoMainMb from '../assets/logoMainMb.svg'
+
 
 import slide1 from '../assets/slides/1.png'
 import slide2 from '../assets/slides/2.png'
@@ -228,10 +230,10 @@ const kidsActivities = [
         background: 'radial-gradient(91.56% 109.67% at 26.63% 81.51%, rgba(226, 162, 83, 0.00) 0%, #FFCD7C 100%)'
       }}></div>
       <div class="w-full h-full absolute top-0 left-0 z-20">
-        <div class="h-[210px] absolute bottom-[150px] md:top-0 left-0 ">
+        <div class="h-[210px] absolute top-[50px] md:top-0 left-0 ">
           <Image src={heroDecorationTop} alt="Hero Decoration Top" class="w-full h-full object-contain" />
         </div>
-        <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-md:hidden max-lg:h-[250px] max-md:h-[200px]">
+        <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-md:hidden max-lg:h-[250px] max-md:h-auto max-md:w-[65%] object-contain object-center">
           <Image src={heroDecorationRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
         </div>
         <div class="h-[372px] max-md:hidden block absolute right-0 -bottom-[10%] max-lg:-right-6 max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
@@ -244,20 +246,20 @@ const kidsActivities = [
 
       <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
         <div class="flex mb-[6%] ml-[4%] justify-end gap-12 items-end">
-          <div class="w-[119px] max-md:hidden max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-duration={1.2}>
+          <div class="w-[119px] max-md:hidden max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-start="top 100%" data-end="top 10%" data-duration={1.2}>
             <Image src={logoMain} alt="SSRBM Logo" class="w-full h-full object-contain absolute top-0 left-0" data-logo-main />
             <Image src={logoColored} alt="SSRBM Logo" class="w-full h-full object-contain absolute top-0 left-0  opacity-0" data-logo-colored />
             <Image src={logoColored} alt="SSRBM Logo" class="w-full h-full object-contain invisible" />
           </div>
         <div>
           <div data-hero-text>
-            <Text type="base" class="uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[14px] max-sm:text-[13px] " data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
-            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[36px]">
-              <PracticeBook class="bg-cp-4" gsap delay={0.3}>
+            <Text type="base" class="max-md:mb-[10px] mb-0 uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[18px] max-sm:text-[17px] " data-start="top 100%" data-end="top 10%" data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[56px]">
+              <PracticeBook class="bg-cp-4" gsap delay={0.3} start="top 100%" end="top 10%">
                 Pre-school
             </Text>
-            <Button buttonClass="py-[0px] md:hidden px-[14px] mb-[37px] mt-[12px]">Apply Now</Button>
           </div>
+          <Button buttonClass="md:hidden mb-[37px] mt-[12px]" data-gsap data-delay={0.3} data-start="top 100%" data-end="top 10%" data-y={30}>Apply Now</Button>
           </div>
         </div>
       </div>
@@ -328,7 +330,7 @@ const kidsActivities = [
         SSRBM stands at the intersection of innovation and tradition, fostering holistic development with a curriculum that's as fun as it is formative.
       </Text>
     </Section>
-    <Image src={concept} widths={[500, 600, 800, 1920]} alt="SSRBM Concept" class="w-full mt-12 max-md:hidden" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section" />
+    <Image src={concept} widths={[500, 600, 800, 1440, 1920]} alt="SSRBM Concept" class="w-full mt-12 max-md:hidden" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section" />
     <div class="w-[75%] mx-auto">
       <Image src={mobileConcept} alt="SSRBM mobile Concept" class="hidden w-full max-md:block max-md:mt-1 max-md:transform -translate-y-8 max-md:-translate-x-[25px]" data-gsap data-delay={1.2} data-duration={1.4} data-target="#where-learning-section"/>
     </div>
@@ -339,40 +341,40 @@ const kidsActivities = [
     <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" data-gsap data-delay={0.6} data-target="#ssrvm-community" data-duration={1.9} />
     <Text type="base" class="w-[84%] text-center" data-lines data-delay={0.8} data-target="#ssrvm-community">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
     <div class="pt-[26px]"></div>
-    <div class="flex flex-row items-center gap-[64px] max-lg:gap-[30px] max-lg:flex-col">
+    <div class="flex flex-row items-center gap-10 max-lg:gap-[30px] max-lg:flex-col">
 
-      <div class="flex flex-row max-lg:gap-[60px] gap-10">
+      <div class="flex flex-row max-lg:gap-[40px] gap-10 flex-shrink-0">
         <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]" data-delay={0.1 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
-          <Text type="h3" class="italic text-[71px]">25</Text>
-          <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Years of<br/> Excellence</Text>
+          <Text type="h3" class="italic text-[71px] max-md:text-[46px]">25</Text>
+          <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">Years of<br/> Excellence</Text>
         </div>
         <div class="text-cp-4 flex flex-col items-center" data-delay={0.2 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
-          <Text type="h3" class="italic text-[71px]">14+</Text>
-          <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">States<br/> In India</Text>
+          <Text type="h3" class="italic text-[71px] max-md:text-[46px]">14+</Text>
+          <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">States In<br/> India</Text>
         </div>
       </div>
 
-      <div class="flex flex-row gap-[60px]">
+      <div class="flex flex-row gap-[40px] md:gap-10">
         <div class="text-cp-3 flex flex-col items-center" data-delay={0.3 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
-          <Text type="h3" class="italic text-[71px]" >40,000+</Text>
-          <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Students</Text>
+          <Text type="h3" class="italic text-[71px] max-md:text-[46px]" >40,000+</Text>
+          <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">Students</Text>
         </div>
         <div class="text-cp-2 flex flex-col items-center" data-delay={0.4 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
-          <Text type="h3" class="italic text-[71px]">2500+</Text>
-          <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Teachers</Text>
+          <Text type="h3" class="italic text-[71px] max-md:text-[46px]">2500+</Text>
+          <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">Teachers</Text>
         </div>
       </div>
 
       <div class="text-cp-8 flex flex-col items-center" data-delay={0.5 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
-        <Text type="h3" class="italic text-[71px]">90+</Text>
-        <Text type="base" class="uppercase font-bold text-center tracking-[2.25px]">Institutions including SSU, SSCASRH</Text>
+        <Text type="h3" class="italic text-[71px] max-md:text-[46px]">90+</Text>
+        <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">Institutions<br/> including SSU,<br/> SSCASRH</Text>
       </div>
     </div>
 
-    <div class="mt-[65px]">
+    <div class="mt-[65px] max-md:mt-[45px]">
     </div>
   </Section>
-  <Image src={communityGallery} width={1920} alt="Community Gallery" class="w-full" data-gsap data-duration={1.3} data-delay={0.3} />
+  <Image src={communityGallery} width={1920} alt="Community Gallery" class="w-full object-contain h-auto max-md:h-[130px] max-md:object-cover" data-gsap data-duration={1.3} data-delay={0.3} />
 
   <div class="h-[calc(100vw/12)] overflow-hidden sticky" data-gsap-sticky="where-learning-section">
     <div class="grid grid-cols-6 [&>div]:[aspect-ratio:1/1] absolute bottom-0 left-0 w-full">
@@ -556,19 +558,19 @@ const kidsActivities = [
     </div>
   </Section>
 
-  <Section class="!px-0 max-lg:mt-[300px] max-md:mt-[45px]">
+  <Section class="!px-0">
     <div class="px-section-x max-md:px-section-x-mb">
       <Text type="h2" class="text-cp-4"><span class="font-[400] [&_.line]:!inline" data-text>{'SSRBM '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
       <div class="pt-[26px]"></div>
-      <Text type="base" class="w-[70%]" data-lines>At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
+      <Text type="base" class="w-[70%] max-md:w-full" data-lines>At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
     </div>
-    <div></div>
+    <div class="max-md:mt-[45px] mt-[0]"></div>
     <Ticker
       items={[
         {
           type: 'image',
           src: facilityTicker1,
-          imageClass: 'w-[296px] h-[292px] max-md:h-[240px]',
+          imageClass: 'w-[296px] h-[292px] max-md:h-auto max-md:w-[54%] object-contain object-center',
           textClass: 'text-cp-9',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
@@ -578,7 +580,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker2,
-          imageClass: 'w-[393px] h-[243px] max-md:h-[240px]',
+          imageClass: 'w-[393px] h-[243px] max-md:h-auto max-md:w-[90%] object-contain object-center',
           textClass: 'text-cp-10',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
@@ -588,7 +590,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker3,
-          imageClass: 'w-[300px] h-[339px] max-md:h-[240px]',
+          imageClass: 'w-[300px] h-[339px] max-md:h-auto max-md:w-[51%] object-contain object-center',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-11',
@@ -598,7 +600,7 @@ const kidsActivities = [
         {
           type: 'image',
           src: facilityTicker4,
-          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
+          imageClass: 'w-[390px] h-[290px] max-md:h-auto max-md:w-[78%] object-contain object-center',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-4',
@@ -607,38 +609,18 @@ const kidsActivities = [
         },
         {
           type: 'image',
-          src: facilityTicker5,
-          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
+          src: facilityTicker1,
+          imageClass: 'w-[390px] h-[290px] max-md:h-auto max-md:w-[58%] object-contain object-center',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-9',
-          alt: "SNACK AREA",
-          text: "SNACK AREA",
-        },
-        {
-          type: 'image',
-          src: facilityTicker6,
-          imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
-          background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-          borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-10',
           alt: "LIBRARY",
           text: "LIBRARY",
         },
-        // {
-        //   type: 'image',
-        //   src: facilityTicker7,
-        //   imageClass: 'w-[390px] h-[290px] max-md:h-[240px]',
-        //   background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
-        //   borderColor: 'rgba(141, 134, 239, 0.40)',
-        //   textClass: 'text-cp-11',
-        //   alt: "XXXX",
-        //   text: "XXXX",
-        // },
         {
           type: 'image',
           src: facilityTicker8,
-          imageClass: 'w-[296px] h-[292px]',
+          imageClass: 'w-[296px] h-[292px]  max-md:h-auto max-md:w-[74%] object-contain object-center',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
           textClass: 'text-cp-4',
@@ -681,16 +663,16 @@ const kidsActivities = [
 
   </Section>
 
-  <Section class="pr-0 max-md:flex gap-[24px] relative max-md:flex-col items-center hidden max-md:" style={{
+  <Section class="pr-0 max-md:flex gap-[24px] relative max-md:flex-col items-center hidden" style={{
     background: 'linear-gradient(180deg, #4592BA 0%, #193C4E 100%)'
   }}>
-  <div class="flex-shrink-0" id="news-updates-section">
-    <Text type="subtitle" class="text-[#89C6E5] max-md:text-[25px]" data-text data-target="#news-updates-section">OUR LATEST NEWS</Text>
+  <div class="flex-shrink-0" id="news-updates-section-mb">
+    <Text type="subtitle" class="text-[#89C6E5] max-md:text-[18px]" data-text data-target="#news-updates-section-mb">OUR LATEST NEWS</Text>
 
 
-    <Text type="h3" class="text-white pt-[22px] leading-[140%] block max-md:hidden"><span data-text data-target="#news-updates-section">See what's</span> <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> <span data-text data-target="#news-updates-section">at SSRBM</span></Text>
+    <Text type="h3" class="text-white pt-[22px] leading-[140%] block max-md:hidden"><span data-text data-target="#news-updates-section-mb">See what's</span> <span class="text-yellow italic" data-text data-target="#news-updates-section-mb">happening</span> <span data-text data-target="#news-updates-section-mb">at SSRBM</span></Text>
 
-      <Text type="h3" class="text-white hidden max-md:block mt-[22px]"><span data-text data-target="#news-updates-section">See what's <span class="text-yellow italic" data-text data-target="#news-updates-section">happening</span> </span> <span data-text data-target="#news-updates-section" class="text-center">at SSRBM</span> </Text>
+      <Text type="h3" class="text-white hidden max-md:block mt-[22px] max-md:mt-[10px]"><span data-text data-target="#news-updates-section-mb">See what's <span class="text-yellow italic" data-text data-target="#news-updates-section-mb">happening</span> </span> <span data-text data-target="#news-updates-section-mb" class="text-center">at SSRBM</span> </Text>
 
   </div>
 
@@ -709,11 +691,11 @@ const kidsActivities = [
 
 
   <div class="flex flex-row gap-[12px] mt-[42px]">
-    <div class="cursor-pointer w-16 h-16 relative -scale-100 max-md:w-10 max-md:h-10" id="leftBtn" data-prev="hero-swiper2" data-target="#news-updates-section" data-gsap data-delay={0.2} data-y={60}>
+    <div class="cursor-pointer w-16 h-16 relative -scale-100 max-md:w-10 max-md:h-10" id="leftBtn" data-prev="hero-swiper2" data-target="#news-updates-section-mb" data-gsap data-delay={0.2} data-y={60}>
       <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
       <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
     </div>
-    <div class="cursor-pointer w-16 h-16 relative max-md:w-10 max-md:h-10" id="rightBtn" data-next="hero-swiper2" data-target="#news-updates-section" data-gsap data-delay={0.4} data-y={60}>
+    <div class="cursor-pointer w-16 h-16 relative max-md:w-10 max-md:h-10" id="rightBtn" data-next="hero-swiper2" data-target="#news-updates-section-mb" data-gsap data-delay={0.4} data-y={60}>
       <FilledArrowCircle pathClass="fill-white" svgClass="relative z-10" />
       <div class="w-[60%] h-[50%] top-[20%] left-[24%] bg-[#114A8D] absolute"></div>
     </div>
@@ -737,9 +719,12 @@ const kidsActivities = [
 
   <Section class="bg-white flex justify-center items-center">
     <div class="border border-[#4592BA] rounded-[21px] gap-8 flex justify-between overflow-hidden max-md:flex-col-reverse" id="admission-cta">
-      <div class="w-fit py-[30px] pl-[47px] max-sm:pl-4 pr-[16px]">
-        <div class="w-[96px] max-md:w-[70px] max-sm:w-[60px]">
+      <div class="w-fit max-md:w-auto max-md:pt-0 py-[30px] pl-[47px] max-sm:pl-4 pr-[16px]">
+        <div class="w-[96px] max-md:hidden">
           <Image src={logo} alt="Logo" />
+        </div>
+        <div class="hidden max-md:block max-md:w-[150px]">
+          <Image src={logoMainMb} alt="Logo" />
         </div>
 
         <div class="py-[33px] max-md:py-[15px]">
@@ -811,12 +796,12 @@ const kidsActivities = [
       prev: {
         shadow: true,
         translate: ["-120%", 0, -500],
-        opacity: 0.1,
+        opacity: 0,
       },
       next: {
         shadow: true,
         translate: ["120%", 0, -500],
-        opacity: 0.5,
+        opacity: 0,
       },
     },
     slidesPerView: 1,
@@ -886,6 +871,7 @@ const kidsActivities = [
       effect: "coverflow",
       grabCursor: true,
       slidesPerView: 1.2,
+      spaceBetween: 40,
       centeredSlides: true,
       speed: 500,
       autoplay: {

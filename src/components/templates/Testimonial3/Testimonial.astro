@@ -48,7 +48,7 @@ const subtitle = testimonials.subtitle;
     </PracticeBook>
   </Text>
   <div class="p-2" />
-  <Text type={'base'} data-gsap>Shaping a Brighter Future for Your Child</Text>
+  <Text data-lines type={'base'} data-gsap>Shaping a Brighter Future for Your Child</Text>
   <div class="p-2" />
 
   <!-- <div class="w-full gap-7 flex flex-row max-md:flex-col mt-7">
@@ -104,15 +104,16 @@ const subtitle = testimonials.subtitle;
   </div> -->
 
 
-   <div class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto bg-slate-300'>
+   <div data-gsap class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto bg-slate-300'>
       <div class='
         min-w-[34vw] max-md:w-[100%]
         max-md:min-h-[136px] bg-cover bg-center
         rounded-lg
         rounded-r-none
+        max-md:rounded-r-lg
         '
         style={{
-          backgroundImage: `url('${testimonials.data[0].image}')`
+          backgroundImage: `url('${testimonials.data[0].image.src}')`
         }}>
       </div>
       <div class='flex flex-col justify-center px-14 max-md:px-1 max-md:items-left'>
