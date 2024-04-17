@@ -267,7 +267,7 @@ const kidsActivities = [
     <div class="w-full bg-primary h-[15px] relative z-20"></div>
   </div>
 
-  <div class="w-full py-[217px] max-md:px-[20px] flex flex-col items-center relative max-md:py-[160px]">
+  <div id="about-us" data-scroll-delta={100} class="w-full py-[217px] max-md:px-[20px] flex flex-col items-center relative max-md:py-[160px]">
     <div class="w-[277px] h-[274px] absolute top-[4%] left-[1%] -rotate-[26.66deg] max-lg:-top-[1%] max-md:-top-[7%] max-sm:-top-[7%] max-lg:w-[180px] max-md:w-[120px]">
       <Image src={topKidPuzzle} alt="Top Kid Puzzle" class="w-full h-full object-contain" />
     </div>
@@ -387,7 +387,7 @@ const kidsActivities = [
     </div>
   </div>
 
-  <Section class="flex flex-col items-center max-lg:mt-[40px]">
+  <Section class="flex flex-col items-center max-lg:mt-[40px]" id="programs">
     <Text type="h2"><span class="font-[400] text-cp-4 [&_.line]:!inline" data-text>{'Our '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Programs'}</span></PracticeBook></Text>
     <div class="pt-[24px]"></div>
     <Text type="base" class="w-[93%] text-center" data-lines data-delay={0.7}>At SSRBM, each program is meticulously designed to cater to the unique developmental stages of young learners. From Playschool to UKG, our curriculum blends innovative teaching methods with endless fun, setting the foundation for lifelong learning.</Text>
@@ -519,7 +519,7 @@ const kidsActivities = [
     </div>
   </Section>
 
-  <Section class="flex w-full flex-row max-lg:flex-col justify-between h-[784px] max-md:h-auto max-md:gap-11">
+  <Section id="activities" data-scroll-delta={80} class="flex w-full flex-row max-lg:flex-col justify-between h-[784px] max-md:h-auto max-md:gap-11">
     <div class="w-[38%] h-full flex flex-col justify-center max-lg:w-fit">
       <Text type="h2">
         <span class="text-cp-4 font-normal" data-text>Kids</span>
@@ -558,7 +558,7 @@ const kidsActivities = [
     </div>
   </Section>
 
-  <Section class="!px-0">
+  <Section class="!px-0" id="facilities" data-scroll-delta={60}>
     <div class="px-section-x max-md:px-section-x-mb">
       <Text type="h2" class="text-cp-4"><span class="font-[400] [&_.line]:!inline" data-text>{'SSRBM '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
       <div class="pt-[26px]"></div>

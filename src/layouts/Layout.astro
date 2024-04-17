@@ -81,100 +81,20 @@ const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mand
 
 
 <script>
+	// when any anchor link that starts with hash is clicked, then do something
 
-	// import { gsap } from "gsap";
-	// import { ScrollTrigger } from "gsap/ScrollTrigger";
-	// import Lenis from '@studio-freight/lenis'
-
-	// let lenis = null
-
-	// const isPhone = window.innerWidth < 768
-
-	// // const shouldLenis = !isPhone
-	// const shouldLenis = false
-	// // if url contains blog
-	// if (shouldLenis) {
-	// 	lenis = new Lenis({
-	// 		duration: 0.6,
-	// 		// easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-	// 	})
-	
-	// 	lenis.on('scroll', ScrollTrigger.update)
-
-	// }
-
-	// gsap.registerPlugin(ScrollTrigger);
-	// if (shouldLenis && lenis) {
-	// 	gsap.ticker.add((time)=>{
-	// 		lenis.raf(time * 1000)
-	// 	})
-	
-	// 	gsap.ticker.lagSmoothing(0)
-	// }
-
-	// const gsapStickyElements = document.querySelectorAll('[data-gsap-sticky]')
-
-	// gsapStickyElements.forEach(stickyElement => {
-	// 	const parentId = stickyElement.dataset.gsapSticky
-	// 	const parent = document.querySelector(`[data-gsap-parent="${parentId}"]`)
-	// 	if (parent) {
-	// 		const parentHeight = parent.offsetHeight
-	// 		console.log('Height...', parentHeight)
-	// 		gsap.to(stickyElement, {
-	// 			scrollTrigger: {
-	// 				trigger: stickyElement,
-	// 				start: 'top top',
-	// 				end: () => `+=${parentHeight + stickyElement.offsetHeight + 100}`,
-	// 				scrub: true,
-	// 				pin: true,
-	// 				pinSpacing: false
-	// 			}
-	// 		})
-	// 	}
-	// })
-
-
-// 	const scrollSectionHeight = document.getElementById('scrollSection').offsetHeight;
-
-// gsap.to("#pinSection", {
-//   scrollTrigger: {
-//     trigger: "#pinSection",
-//     start: "top top", // When the top of the trigger hits the top of the viewport
-//     end: () => `+=${scrollSectionHeight}`, // Dynamically set end based on the height of the scrollSection
-//     pin: true,
-//     pinSpacing: true // Adjusts document flow to avoid sudden jumps when pinning/unpining
-//   }
-// });
-
-
-// 	const circle = document.getElementById('circle');
-//  let inverted = false; // Track color state
-
-//  document.addEventListener('mousemove', (e) => {
-//      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-//      // Invert colors on mouse move
-//      inverted = !inverted;
-//      // circle.style.backgroundColor = inverted ? 'white' : 'black';
-//      // circle.style.borderColor = inverted ? 'black' : 'white'; // Invert border color as well
-//      // circle.style.mixBlendMode = inverted ? 'difference' : 'normal'; // Invert blend mode as well
-
-//      // Calculate cursor position including scroll offsets
-//      const cursorX = e.clientX + scrollLeft;
-//     const cursorY = e.clientY + scrollTop;
-
-//     // Use GSAP to animate the circle to follow the cursor with a swing effect
-//     gsap.to(circle, {
-//         x: cursorX - circle.offsetWidth / 2,
-//         y: cursorY - circle.offsetHeight / 2,
-//         duration: 0.5,
-//         ease: "power2.out", // This creates a swinging effect
-//         overwrite: 'auto' // Ensures new animations override previous ones smoothly
-//     });
-// });
-
-// // hide actual cursor
-// document.body.style.cursor = 'none';
-
+	document.addEventListener('click', function (event) {
+		if (!event.target.matches('a[href^="#"]')) return;
+		event.preventDefault();
+		const elementToScroll = document.querySelector(event.target.hash)
+		const scrollDelta = Number(elementToScroll.dataset.scrollDelta) || 200;
+		const elementPosition = elementToScroll.offsetTop;
+		console.log('elementToScroll..', event.target.hash, elementPosition)
+		window.scrollTo({
+			top: elementPosition - scrollDelta,
+			behavior: "smooth"
+		});
+		history.pushState(null, null, event.target.hash);
+	});
 </script>
+
