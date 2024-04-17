@@ -5,7 +5,7 @@ import TickerCard from "./TickerCard.astro";
 ---
 
 <div class="ticker max-md:!hidden block no-scrollbar will-change-scroll max-md:w-full py-[75px]" data-ticker>
-  <div class="ticker__list">
+  <div class="ticker__list ml-[30px] max-md:ml-0">
     {items.map((item, i) => (
       <TickerCard 
         item={item}

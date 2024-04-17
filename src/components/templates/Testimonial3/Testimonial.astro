@@ -12,12 +12,12 @@ import PracticeBook from '../../utils/PracticeBook.astro';
 // import Scribble from '../Scribble.astro';
 
 const testimonials = {
-    title: 'Ekam Voices',
+    title: 'SSRBM Voices',
     subtitle: 'Stories of Transformation and Growth',
     data: [
       {
         image: testimonial1,
-        quote: "Ekam’s warm and supportive environment has played a vital role in shaping my child's educational journey and personal development. We’re delighted to call our child an Edifian!",
+        quote: "SSRBM’s warm and supportive environment has played a vital role in shaping my child's educational journey and personal development. We’re delighted to call our child an Edifian!",
         ctaText: 'Watch Video',
         ctaLink: '',
         author: '- MS. VIJAYALAKSHMI, PARENT'
@@ -25,12 +25,12 @@ const testimonials = {
       {
         image: testimonial2,
         quote: "Experiencing continuous growth over the past year, I've felt supported and welcomed since day one. This school provides an excellent platform for me to build confidence.",
-        author: '- PRERnA (grade 10)',
+        author: '- PRERnA, PlaySchool',
       },
       {
         image: testimonial3,
         quote: 'I cherish my school for its supportive and friendly teachers who not only enhance our skill sets but also instill invaluable moral values, creating a nurturing learning environment.',
-        author: '- VIHANA, STAGE 6, igcse',
+        author: '- VIHANA, Nursery',
 
       },
     ],
@@ -50,59 +50,6 @@ const subtitle = testimonials.subtitle;
   <div class="p-2" />
   <Text data-lines type={'base'} data-gsap>Shaping a Brighter Future for Your Child</Text>
   <div class="p-2" />
-
-  <!-- <div class="w-full gap-7 flex flex-row max-md:flex-col mt-7">
-    <div class="border border-black/20 flex flex-row max-md:flex-col rounded-lg overflow-hidden flex-1"> 
-      <div class='min-w-[232px] max-md:min-h-[350px] max-md:bg-top bg-cover bg-center' style={{
-        backgroundImage: `url(${testimonial1.src})`,
-        backgroundSize: 'cover',
-        
-      }}>
-      </div>
-      <div class=" p-6">
-        <Text type={'base'}>
-          “We are very happy with the school because of the individual attention it gives to the children, and the entire team behind Glentree Academy is so helpful and supportive as well!”
-        </Text>
-
-        <Text type={'sm'} class='text-black font-semibold mt-3 max-md:mt-4'>Dr. Priya Gupta</Text>
-        <Text type={'xs'} class='text-primary mt-2'>Parent of Arohan Sen gupta</Text>
-        <div data-video-open="1">
-          <Button class='mt-4 max-md:mt-4'>
-            <span>Watch Video</span>
-            <svg slot="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM13.2313 8.72996C12.9466 8.53003 12.6242 8.32321 12.2903 8.1202C11.0034 7.33764 10.36 6.94636 9.7829 7.37957C9.2058 7.81278 9.15335 8.71968 9.04846 10.5335C9.01879 11.0464 9 11.5493 9 12.0001C9 12.4508 9.01879 12.9537 9.04846 13.4666C9.15335 15.2804 9.2058 16.1873 9.7829 16.6205C10.36 17.0537 11.0034 16.6625 12.2903 15.8799C12.6242 15.6769 12.9466 15.4701 13.2313 15.2702C13.5559 15.0423 13.909 14.7688 14.2651 14.4783C15.555 13.426 16.2 12.8999 16.2 12.0001C16.2 11.1002 15.555 10.5741 14.2651 9.52182C13.909 9.23134 13.5559 8.95785 13.2313 8.72996Z" fill="white"/>
-            </svg>
-          </Button>
-        </div>
-
-      </div>
-    </div>
-    <div class="border border-black/20 flex flex-row max-md:flex-col rounded-lg overflow-hidden flex-1"> 
-      <div class='min-w-[232px] max-md:min-h-[350px] max-md:bg-top bg-cover bg-center' style={{
-        backgroundImage: `url(${testimonial2.src})`,
-        backgroundSize: 'cover'
-      }}>
-      </div>
-      <div class="p-6">
-        <Text type={'base'}>
-          “The teachers are like magicians, because they help us at every point of turn and  help me with my career path. They are always there for me no matter what.”
-        </Text>
-
-        <Text type={'sm'} class='text-black font-semibold mt-3 max-md:mt-4'>Muskaan Jangid</Text>
-        <Text type={'xs'} class='text-primary mt-2'>Student</Text>
-        <div data-video-open="2">
-          <Button class='mt-4 max-md:mt-4'>
-            <span>Watch Video</span>
-            <svg slot="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24ZM13.2313 8.72996C12.9466 8.53003 12.6242 8.32321 12.2903 8.1202C11.0034 7.33764 10.36 6.94636 9.7829 7.37957C9.2058 7.81278 9.15335 8.71968 9.04846 10.5335C9.01879 11.0464 9 11.5493 9 12.0001C9 12.4508 9.01879 12.9537 9.04846 13.4666C9.15335 15.2804 9.2058 16.1873 9.7829 16.6205C10.36 17.0537 11.0034 16.6625 12.2903 15.8799C12.6242 15.6769 12.9466 15.4701 13.2313 15.2702C13.5559 15.0423 13.909 14.7688 14.2651 14.4783C15.555 13.426 16.2 12.8999 16.2 12.0001C16.2 11.1002 15.555 10.5741 14.2651 9.52182C13.909 9.23134 13.5559 8.95785 13.2313 8.72996Z" fill="white"/>
-            </svg>
-          </Button>
-        </div>
-
-      </div>
-    </div>
-  </div> -->
-
 
    <div data-gsap class='w-full h-[192px] rounded-2xl bg-white mt-7 border-gray-300 border overflow-hidden flex flex-row max-md:flex-col max-md:px-2 max-md:py-4 max-md:h-auto bg-slate-300'>
       <div class='

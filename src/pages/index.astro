@@ -61,6 +61,7 @@ import facilityTicker5 from '../assets/facility/ticker/6.png'
 import facilityTicker6 from '../assets/facility/ticker/7.png'
 import facilityTicker7 from '../assets/facility/ticker/8.png'
 import facilityTicker8 from '../assets/facility/ticker/9.png'
+import facilityTicker10 from '../assets/facility/ticker/10.png'
 import Testimonial from "../components/templates/Testimonial3/Testimonial.astro"
 import admissionBanner from '../assets/admissionBanner.jpeg';
 
@@ -341,9 +342,9 @@ const kidsActivities = [
     <Image src={FancyLine} alt="Fancy Line" class="w-[252px] my-[26px]" data-gsap data-delay={0.6} data-target="#ssrvm-community" data-duration={1.9} />
     <Text type="base" class="w-[84%] text-center" data-lines data-delay={0.8} data-target="#ssrvm-community">For 25+ years, our community cultivates knowledge, values, and resilience across India, weaving tradition with modernity for a transformative educational future.</Text>
     <div class="pt-[26px]"></div>
-    <div class="flex flex-row items-center gap-10 max-lg:gap-[30px] max-lg:flex-col">
+    <div class="flex flex-row items-center gap-12 max-lg:gap-[30px] max-lg:flex-col">
 
-      <div class="flex flex-row max-lg:gap-[40px] gap-10 flex-shrink-0">
+      <div class="flex flex-row max-lg:gap-[40px] gap-12 flex-shrink-0">
         <div class="text-cp-1 flex flex-col items-center max-md:text-[50px]" data-delay={0.1 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
           <Text type="h3" class="italic text-[71px] max-md:text-[46px]">25</Text>
           <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">Years of<br/> Excellence</Text>
@@ -354,7 +355,7 @@ const kidsActivities = [
         </div>
       </div>
 
-      <div class="flex flex-row gap-[40px] md:gap-10">
+      <div class="flex flex-row gap-[40px] md:gap-12">
         <div class="text-cp-3 flex flex-col items-center" data-delay={0.3 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
           <Text type="h3" class="italic text-[71px] max-md:text-[46px]" >40,000+</Text>
           <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">Students</Text>
@@ -367,7 +368,7 @@ const kidsActivities = [
 
       <div class="text-cp-8 flex flex-col items-center" data-delay={0.5 + 0.4} data-y={60} data-target="#ssrvm-community" data-gsap>
         <Text type="h3" class="italic text-[71px] max-md:text-[46px]">90+</Text>
-        <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px]">Institutions<br/> including SSU,<br/> SSCASRH</Text>
+        <Text type="base" class="uppercase mt-[5px] font-bold text-center tracking-[2.25px] flex-shrink-0">Institutions<br/> including SSU, SSCASRH</Text>
       </div>
     </div>
 
@@ -609,7 +610,7 @@ const kidsActivities = [
         },
         {
           type: 'image',
-          src: facilityTicker1,
+          src: facilityTicker5,
           imageClass: 'w-[390px] h-[290px] max-md:h-auto max-md:w-[58%] object-contain object-center',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
@@ -619,14 +620,24 @@ const kidsActivities = [
         },
         {
           type: 'image',
-          src: facilityTicker8,
-          imageClass: 'w-[296px] h-[292px]  max-md:h-auto max-md:w-[74%] object-contain object-center',
+          src: facilityTicker10,
+          imageClass: 'w-[390px] h-[290px] max-md:h-auto max-md:w-[58%] object-contain object-center',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-4',
-          alt: "MEDICAL ROOM",
-          text: "MEDICAL ROOM",
+          textClass: 'text-cp-9',
+          alt: "GARDEN",
+          text: "GARDEN",
         },
+        // {
+        //   type: 'image',
+        //   src: facilityTicker8,
+        //   imageClass: 'w-[296px] h-[292px]  max-md:h-auto max-md:w-[74%] object-contain object-center',
+        //   background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
+        //   borderColor: 'rgba(141, 134, 239, 0.40)',
+        //   textClass: 'text-cp-4',
+        //   alt: "MEDICAL ROOM",
+        //   text: "MEDICAL ROOM",
+        // },
       ]}
     />
   </Section>

@@ -11,11 +11,11 @@ import PhoneIcon from '../../icons/Phone.svg'
 import EmailIcon from '../../icons/Email.svg'
 import Text from "../system/Text.astro";
 import { twMerge } from "tailwind-merge";
-import theDotStudioLogo from '../../assets/theDotStudioLogo.svg'
+import theDotStudioLogo from '../../assets/theDotStudioLogo.png'
 
 const socialMediaLinks = {
-  facebook: "https://www.facebook.com/thedotstudio",
-  instagram: "https://www.instagram.com/thedotstudio",
+  facebook: "https://www.facebook.com/share/ANc7jxNymGJBiemx",
+  instagram: "https://www.instagram.com/ssrbm.rrnagar",
   linkedin: "https://www.linkedin.com/company/thedotstudio",
   twitter: "https://twitter.com/thedotstudio",
   youtube: "https://www.youtube.com/channel/UC9Q6J9Z9Q9Q9Q9Q9Q9Q9Q9Q",
@@ -63,14 +63,15 @@ const footerLinks = [
     title: 'Contact Us',
     containerClass: '',
     links: [
-      { label: 'admissions@ssrbmbangalore.com', href: 'mailto:admissions@ssrbmbangalore.com', icon: EmailIcon },
-      { label: '+91 76763 10000', href: '+917676310000', icon: PhoneIcon },
+      { label: 'bangalore.rrn@ssrvm.org', href: 'mailto:bangalore.rrn@ssrvm.org', icon: EmailIcon },
+      { label: '+91 7337809948', href: '+917337809948', icon: PhoneIcon },
     ]
   }
 ]
 
 // const currentDomainBase = Astro.env.DOMAIN_BASE;
 
+const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=footer&utm_content=BalMandir`
 ---
 
 
@@ -116,8 +117,8 @@ const footerLinks = [
   <div class="flex flex-row mt-[54px] justify-between items-center max-md:flex-col max-md:mt-[50px] max-md:gap-[10px]">
     <Text type="xs">Copyright © {new Date().getFullYear()}</Text>
 
-    <a href="https://thedotstudio.in/" target="_blank">
-      <Image src={theDotStudioLogo} class="w-[250px] max-md:w-[200px]" alt={"The Dot Studio Logo"} />
+    <a href={url} target="_blank">
+      <Image src={theDotStudioLogo} class="w-[180px] max-md:w-[200px]" alt={"The Dot Studio Logo"} />
     </a>
   </div>
 </div>
