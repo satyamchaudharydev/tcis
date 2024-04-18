@@ -4,7 +4,7 @@ export interface Props {
 	description?: string;
 	keywords?: string;
 }
-import "../global.css"
+import globalCSS from "../global.css?url"
 
 import "swiper/css";
 
@@ -28,10 +28,16 @@ const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mand
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords}>
+		
 	
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+		<link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="preload" as="style">
+		<link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+		<link rel="preload" href={globalCSS} as="style">
+		<link rel="stylesheet" href={globalCSS}>
 
 		<script async
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW4mmhYRbPA2nPi-wzuJBPalXSuInbKks&loading=async&libraries=places">
