@@ -47,9 +47,9 @@ const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mand
 
 
 	</head>
-	<body>
+	<body class="overflow-y-hidden">
 		<slot />
-		<!-- <div id="circle"></div> -->
+		<div id="page-loader" class="top-0 left-0 fixed w-screen h-screen z-[999999] bg-red-100"></div>
 
 
 	</body>
@@ -102,5 +102,9 @@ const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mand
 		});
 		history.pushState(null, null, event.target.hash);
 	});
+
+	setTimeout(() => {
+		document.getElementById('page-loader').style.display = 'none';
+	}, 2000)
 </script>
 
