@@ -19,18 +19,18 @@ practiceBookTitles.forEach((practiceBookTitle) => {
   const start = practiceBookTitle.getAttribute('data-start') || "top 80%"
   const end = practiceBookTitle.getAttribute('data-end') || "top 50%"
 
-  gsap.from(practiceBookLines, {
-    scrollTrigger: {
-      trigger: target,
-      start,
-      end,
-      toggleActions: "play none none reverse",
-    },
-    width: 0,
-    delay: Number(delay) + 0.3,
-    duration: 0.7,
-    ease: "sine.inOut"
-  })
+  // gsap.from(practiceBookLines, {
+  //   scrollTrigger: {
+  //     trigger: target,
+  //     start,
+  //     end,
+  //     toggleActions: "play none none reverse",
+  //   },
+  //   width: 0,
+  //   delay: Number(delay) + 0.3,
+  //   duration: 0.7,
+  //   ease: "sine.inOut"
+  // })
   const title = practiceBookTitle?.querySelector('[data-practice-text]')
   const text = new SplitType(title)
   
