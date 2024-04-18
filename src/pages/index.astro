@@ -85,6 +85,7 @@ import TopNavigationBar from "../components/templates/TopNavigationBar.astro"
 import SliderCard from "../components/templates/sliderCard.astro"
 import MobileNewsCard from "../components/templates/MobileNewsCard.astro"
 import Button from "../components/system/Button.astro"
+import RegisterFormWithModal from "../components/register/RegisterFormWithModal.astro"
 
 
 const arrowIcon = `<svg width="100%" height="100%" viewBox="0 0 40 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,7 +261,9 @@ const kidsActivities = [
                 Pre-school
             </Text>
           </div>
-          <Button buttonClass="md:hidden mb-[37px] mt-[12px]" data-gsap data-delay={0.3} data-start="top 100%" data-end="top 10%" data-y={30}>Apply Now</Button>
+              <div data-modal-target="applyNow">
+                 <Button buttonClass="md:hidden mb-[37px] mt-[12px]" data-gsap data-delay={0.3} data-start="top 100%" data-end="top 10%" data-y={30}>Apply Now</Button>
+              </div>
           </div>
         </div>
       </div>
@@ -747,8 +750,9 @@ const kidsActivities = [
             <span class="w-fit text-[66px] text-[#4592BA] capitalize font-[700] font-sans leading-normal max-[1120px]:text-[5vw] max-md:text-[10vw]">2024-25</span>
           </PracticeBook>
         </div>
-
-        <Button class="max-md:w-[1500px]">Apply Now</Button>
+        <div data-modal-target="applyNow">
+          <Button class="max-md:w-[1500px]">Apply Now</Button>
+        </div>
       </div>
 
       <div class="w-[385px] max-[1120px]:w-[30vw] max-md:w-fit">
@@ -759,6 +763,7 @@ const kidsActivities = [
 
 
   <Footer />
+  <RegisterFormWithModal/>
 </Layout>
 
 <style>
