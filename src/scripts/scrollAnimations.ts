@@ -2,11 +2,11 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import SplitType from 'split-type'
 
-
 gsap.registerPlugin(ScrollTrigger);
 
-setTimeout(() => {
-  
+
+document.fonts.ready.then(function () {
+  document.getElementById('page-loader').style.display = 'none';
   const practiceBookTitles = document.querySelectorAll('[data-practice-book]')
   
   console.log('practiceBookTitles...', practiceBookTitles)
@@ -207,50 +207,6 @@ setTimeout(() => {
     opacity: 0,
     y: -90,
   })
+});
+
   
-  
-  
-  
-  const maskScrollXElements =  document.querySelectorAll('[data-mask-scroll-x]')
-  
-  
-  let scrollTimeout = null
-  // maskScrollXElements.forEach((maskScrollX) => {
-  //   maskScrollX.addEventListener('scroll', () => {
-  //     clearTimeout(scrollTimeout)
-  //     maskScrollX.classList.add('bg-red-200')
-  //     scrollTimeout = setTimeout(() => {
-  //       console.log('removing')
-  //       maskScrollX.classList.remove('bg-red-200')
-  //     }, 500)
-  //   })
-  // })
-  
-  // maskScrollXElements.forEach((maskScrollX) => {
-  //   gsap.to(maskScrollX, {
-  //     scrollTrigger: {
-  //       scroller: maskScrollX,
-  //       trigger: maskScrollX.children[0],
-  //       start: "30% 20%",
-  //       end: "90% 80%",
-  //       horizontal: true,
-  //     },
-  //     duration: 0.4,
-  //     onStart: (...args) => {
-  //       console.log('on start...')
-  //     },
-  //     onReverseComplete: (...args) => {
-  //       console.log('reverse complete...')
-  //     },
-  //     onComplete: (...args) => {
-  //       console.log('complete...')
-  //     },
-  //     onRepeat: (...args) => {
-  //       console.log('repeat...')
-  //     },
-  //     onInterrupt: (...args) => {
-  //       console.log('interrupt...')
-  //     }
-  //   })
-  // })
-}, 2000)
