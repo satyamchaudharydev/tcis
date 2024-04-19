@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import Loader from '../components/templates/Loader.astro'
 import Text from '../components/system/Text.astro'
 const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mandir', description = 'Discover the best pre-schools in India at Sri Sri Ravishankar Bal Mandir. Nurturing young minds with excellence in early education.', keywords = '' } = Astro.props;
 ---
@@ -49,7 +50,7 @@ const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mand
 	</head>
 	<body class="overflow-y-hidden">
 		<slot />
-		<div id="page-loader" class="top-0 left-0 fixed w-screen h-screen z-[999999] bg-red-100"></div>
+		<Loader />
 
 
 	</body>
