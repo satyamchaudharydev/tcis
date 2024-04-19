@@ -40,6 +40,13 @@ import slide2 from '../assets/slides/2.png'
 import slide3 from '../assets/slides/3.png'
 import slide4 from '../assets/slides/4.png'
 import slide5 from '../assets/slides/5.png'
+
+import slide1Mobile from '../assets/slides/mobileImages/1.png'
+import slide2Mobile from '../assets/slides/mobileImages/2.png'
+import slide3Mobile from '../assets/slides/mobileImages/3.png'
+import slide4Mobile from '../assets/slides/mobileImages/4.png'
+import slide5Mobile from '../assets/slides/mobileImages/5.png'
+
 import heroDecorationTop from '../assets/decorations/heroDecorationTop.svg'
 import heroDecorationRight from '../assets/decorations/heroDecorationRight.svg'
 import heroDecorationBottomRight from '../assets/decorations/heroDecorationBottomRight.svg'
@@ -218,13 +225,23 @@ const kidsActivities = [
   <div class="w-screen h-[100svh] flex flex-col overflow-hidden relative">
     <TopNavigationBar />
     <div class="w-full flex-1">
-      <Slide
+
+      <Slide class='max-md:hidden block' id="desktop"
         slides={[
           {slide: slide1, alt: "Slide 1", position: 'center'},
           {slide: slide2, alt: "Slide 2", position: 'center'},
           {slide: slide3, alt: "Slide 3", position: 'center'},
           {slide: slide4, alt: "Slide 4", position: 'center'},
           {slide: slide5, alt: "Slide 5", position: 'center'},
+        ]}
+      />
+      <Slide class='max-md:block hidden' id="mobile"
+        slides={[
+          {slide: slide1Mobile, alt: "Slide 1", position: 'center'},
+          {slide: slide2Mobile, alt: "Slide 2", position: 'center'},
+          {slide: slide3Mobile, alt: "Slide 3", position: 'center'},
+          {slide: slide4Mobile, alt: "Slide 4", position: 'center'},
+          {slide: slide5Mobile, alt: "Slide 5", position: 'center'},
         ]}
       />
       <div class="w-full h-full top-0 left-0 z-10 absolute rotate-180" style={{
@@ -238,7 +255,7 @@ const kidsActivities = [
         <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-md:hidden max-lg:h-[250px] max-md:h-auto max-md:w-[65%] object-contain object-center">
           <Image src={heroDecorationRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
         </div>
-        <div class="h-[372px] max-md:hidden block absolute right-0 -bottom-[10%] max-lg:-right-6 max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
+        <div class="h-[372px] max-md:hidden block absolute right-[-80px] -bottom-[10%] max-lg:-right-20 max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
           <Image src={heroDecorationBottomRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
         </div>
         <div class="h-[372px] absolute max-md:block hidden right-0 -bottom-[10%]  max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
@@ -255,14 +272,26 @@ const kidsActivities = [
           </div>
         <div>
           <div data-hero-text>
-            <Text type="base" class="max-md:mb-[10px] mb-0 uppercase text-cp-4 font-[400] max-lg:text-[20px] max-md:text-[18px] max-sm:text-[17px] " data-start="top 100%" data-end="top 10%" data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
-            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[48px]">
+            <Text type="base" class="max-md:mb-2  mb-3 uppercase text-cp-4 font-[400] lg:text-[26px] max-md:text-[18px] max-sm:text-[17px] " data-start="top 100%" data-end="top 10%" data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
+            <div class="max-md:hidden block">
+            <Text type="h1" class="text-cp-4  italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[48px]">
               <PracticeBook class="bg-cp-4" gsap delay={0.3} start="top 100%" end="top 10%">
                 Pre-Primary School
             </Text>
           </div>
+            <div class="max-md:block hidden">
+            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[48px]">
+              <PracticeBook class="bg-cp-4" gsap delay={0.3} start="top 100%" end="top 10%">
+                Pre-Primary
+            </Text>
+            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[48px]">
+              <PracticeBook class="bg-cp-4" gsap delay={0.3} start="top 100%" end="top 10%">
+              School
+            </Text>
+          </div>
+          </div>
               <div data-modal-target="applyNow">
-                 <Button buttonClass="md:hidden mb-[37px] mt-[12px]" data-gsap data-delay={0.3} data-start="top 100%" data-end="top 10%" data-y={30}>Apply Now</Button>
+                 <Button buttonClass="tracking-[2px] font-bold uppercase md:hidden mb-[37px] mt-[12px]" data-gsap data-delay={0.3} data-start="top 100%" data-end="top 10%" data-y={30}>Apply Now</Button>
               </div>
           </div>
         </div>
@@ -271,7 +300,7 @@ const kidsActivities = [
     <div class="w-full bg-primary h-[15px] relative z-20"></div>
   </div>
 
-  <div id="about-us" data-scroll-delta={100} class="w-full py-[217px] max-md:px-[20px] flex flex-col items-center relative max-md:py-[160px]">
+  <div id="about-us" data-scroll-delta={100} class="w-full py-[217px]  flex flex-col items-center relative max-md:py-[160px]">
     <div class="w-[277px] h-[274px] absolute top-[4%] left-[1%] -rotate-[26.66deg] max-lg:-top-[1%] max-md:-top-[7%] max-sm:-top-[7%] max-lg:w-[180px] max-md:w-[120px]">
       <Image src={topKidPuzzle} alt="Top Kid Puzzle" class="w-full h-full object-contain" />
     </div>
@@ -295,7 +324,7 @@ const kidsActivities = [
     </div>
 <!--
 <Text type="h4" class="font-normal font-sans text-[33.129px] text-[#121212] uppercase text-center opacity-[0.7] mb-5 relative bottom-[57px]">our philosophy</Text> -->
-    <Text type="h2" class="italic text-primary text-center" id="broaden-vision">
+    <Text type="h2" class="italic max-md:text-[2.3rem] text-primary text-center" id="broaden-vision">
       <PracticeBook gsap>
         Broaden The <span class="text-cp-1">Vision</span>
       </PracticeBook>
@@ -306,7 +335,7 @@ const kidsActivities = [
       </PracticeBook>
     </Text>
 
-    <Text type="lg" class="w-[55%]  max-md:w-[80%] mt-[30px] text-center" data-lines data-delay={0.9} data-target="#broaden-vision">
+    <Text type="lg" class="w-[55%] max-md:px-[20px] text-[20px] max-md:w-[80%] mt-[30px] text-center" data-lines data-delay={0.9} data-target="#broaden-vision">
       At SSRBM pre-primary School, we believe in nurturing young minds through holistic education that engages the mind, heart, body, and spirit. Our goal is to cultivate students who not only thrive academically but also embody values of respect, integrity, and environmental awareness. We emphasise the importance of academic excellence, active play, cultural appreciation, and emotional development, empowering our little learners to explore, express, and grow freely.
     </Text>
 
@@ -321,8 +350,8 @@ const kidsActivities = [
 
   <div class="w-full" id="where-learning-section">
     <Section class="pb-0">
-      <Text type="h2" class="italic text-primary [&_.line]:!inline">
-        <span class="italic font-normal text-cp-4" data-text data-target="#where-learning-section">Where</span><span></span>
+      <Text type="h2" class="italic max-md:text-center text-primary [&_.line]:!inline">
+        <span class="italic font-normal  text-cp-4" data-text data-target="#where-learning-section">Where</span><span></span>
         <PracticeBook target="#where-learning-section">
          learning
         </PracticeBook>
@@ -330,7 +359,7 @@ const kidsActivities = [
         <span class="italic text-cp-3" data-text data-target="#where-learning-section">fun</span>
       </Text>
 
-      <Text type="base" class="w-[60%] max-md:w-full mt-[20px]" data-lines data-target="#where-learning-section" data-delay={0.8}>
+      <Text type="base" class="w-[60%] max-md:text-center max-md:w-full mt-[20px]" data-lines data-target="#where-learning-section" data-delay={0.8}>
         SSRBM stands at the intersection of innovation and tradition, fostering holistic development with a curriculum that's as fun as it is formative.
       </Text>
     </Section>
@@ -525,13 +554,13 @@ const kidsActivities = [
 
   <Section id="activities" data-scroll-delta={80} class="flex w-full flex-row max-lg:flex-col justify-between h-[784px] max-md:h-auto max-md:gap-11">
     <div class="w-[38%] h-full flex flex-col justify-center max-lg:w-fit">
-      <Text type="h2">
+      <Text type="h2" class="max-md:text-center">
         <span class="text-cp-4 font-normal" data-text>Kids</span>
         <PracticeBook class="border-cp-4">
           <span class="text-cp-3 italic">Activities</span>
         </PracticeBook>
       </Text>
-      <Text type="base" class="pt-[20px]" data-lines data-delay={0.4}>
+      <Text type="base" class="pt-[20px] max-md:text-center" data-lines data-delay={0.4}>
         At SSRBM, every student finds their passion through a diverse range of co-scholastic activities, fostering growth beyond academics. From the field to the stage, these activities encourage students to explore, excel, and express themselves in countless ways.
       </Text>
     </div>
@@ -563,10 +592,10 @@ const kidsActivities = [
   </Section>
 
   <Section class="!px-0" id="facilities" data-scroll-delta={60}>
-    <div class="px-section-x max-md:px-section-x-mb">
-      <Text type="h2" class="text-cp-4"><span class="font-[400] [&_.line]:!inline" data-text>{'SSRBM '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
+    <div class="px-section-x  max-md:px-section-x-mb">
+      <Text type="h2" class="text-cp-4 max-md:text-center"><span class="font-[400] [&_.line]:!inline" data-text>{'SSRBM '}</span><span>&nbsp;</span><PracticeBook class="text-cp-2"><span class="font-bold italic text-cp-2">{'Facilities'}</span></PracticeBook></Text>
       <div class="pt-[26px]"></div>
-      <Text type="base" class="w-[70%] max-md:w-full" data-lines>At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
+      <Text type="base" class="w-[70%] max-md:text-center max-md:w-full" data-lines>At SSRBM, our facilities are crafted with care, from vibrant classrooms to expansive outdoor play areas, ensuring a nurturing environment for every learner.</Text>
     </div>
     <div class="max-md:mt-[45px] mt-[0]"></div>
     <Ticker
@@ -627,7 +656,7 @@ const kidsActivities = [
           imageClass: 'w-[390px] h-[290px] max-md:h-auto max-md:w-[58%] object-contain object-center',
           background: "linear-gradient(0deg, #E8F5FF 0%, #E8F5FF 100%)",
           borderColor: 'rgba(141, 134, 239, 0.40)',
-          textClass: 'text-cp-9',
+          textClass: 'text-cp-11',
           alt: "GARDEN",
           text: "GARDEN",
         },
@@ -751,7 +780,7 @@ const kidsActivities = [
           </PracticeBook>
         </div>
         <div data-modal-target="applyNow">
-          <Button class="max-md:w-[1500px]">Apply Now</Button>
+          <Button buttonClass="tracking-[2px] font-bold uppercase" class="max-md:w-[1500px]">Apply Now</Button>
         </div>
       </div>
 

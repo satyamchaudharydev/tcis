@@ -1,1 +1,39 @@
-<div id="page-loader" class="top-0 left-0 fixed w-screen h-screen z-[999999] bg-red-100"></div>
+---
+import { Image } from "astro:assets";
+import desktopImage from '../../icons/loaderImages/desktop.png'
+import mobileImage from '../../icons/loaderImages/mobile.png'
+import desktopLogo from '../../icons/loaderImages/desktopLogo.png'
+import mobileLogo from '../../icons/loaderImages/mobileLogo.png'
+---
+
+<div id="page-loader" class="top-0 left-0 fixed w-screen h-screen z-[999999]">
+    <div class="w-full relative h-full max-md:hidden block">
+        <Image src={desktopImage} alt='loader' class="top-0 absolute -z-50 w-full object-cover" />
+        <div class="w-full  h-full flex justify-center items-center ">
+          <Image src={desktopLogo} alt='loader' class="h-[158px] fading w-[400px] " />
+       </div>
+    </div>
+    <div class="w-full relative h-full max-md:block hidden">
+        <Image src={mobileImage} alt='loader' class="top-0 absolute h-full -z-50 w-full object-cover" />
+        <div class="w-full  h-full flex justify-center fading ml-10 items-center ">
+          <Image src={mobileLogo} alt='loader' class="" />
+       </div>
+    </div>
+</div>
+
+<style>
+    @keyframes fade-up {
+        0%{
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0px) scale(1);
+        }
+        }
+
+        .fading {
+        animation: fade-up 0.5s;
+        }
+</style>

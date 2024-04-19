@@ -50,15 +50,17 @@ const socialMedia = [
 ];
 
 const footerLinks = [
-  // {
-  //   title: 'Community',
-  //   containerClass: 'max-w-[120px] max-md:max-w-[100%]',
-  //   links: [
-  //     { label: 'SSRVM Bangalore South', href: 'https://ssrvmbs.org/' },
-  //     { label: 'SSRVM <br class="hidden md:block"/>Pre-University', href: 'https://ssrvm.org/' },
-  //     { label: 'Art of Living', href: 'https://www.artofliving.org/' }
-  //   ]
-  // },
+  {
+    title: 'Explore',
+    containerClass: 'max-w-[120px] max-md:max-w-[100%]',
+    links: [
+      { label: 'Home', href: '/' },
+      { label: 'AboutUs', href: '#about-us' },
+      { label: 'Programs', href: '#programs' },
+      { label: 'Activities', href: '#activities' },
+      { label: 'Facilities', href: '#facilities' }
+    ]
+  },
   {
     title: 'Contact Us',
     containerClass: '',
@@ -83,7 +85,7 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
         <Image src={logo} alt="Logo" class='w-full' />
       </div>
 
-      <div class="flex flex-row gap-[22px] mt-[32px]">
+      <div class="flex flex-row max-md:ml-5 md:justify-center gap-[22px] mt-[32px]">
         {socialMedia.map((social) => (
           <a href={social.link} target="_blank" rel="noopener noreferrer">
             <Image src={social.icon} alt={social.name} class="object-contain object-center" />

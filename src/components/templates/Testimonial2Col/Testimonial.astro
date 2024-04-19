@@ -14,7 +14,7 @@ const { data, ...props } = Astro.props
       </div>
       <div class="w-[55%] max-md:w-full p-6 flex flex-col justify-between">
         <div>
-          <Text type="h4" class={tw(testimonial.titleClass, "text-[37px] max-lg:text-[25px]")} set:html={testimonial.title} />
+          <Text type="h4" class={tw(testimonial.titleClass, "text-[37px] leading-[120%] max-lg:text-[25px]")} set:html={testimonial.title} />
           <div class="pt-[12px]" />
           <Text type="sm" set:html={testimonial.testimonial} />
         </div>
