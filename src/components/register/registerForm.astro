@@ -159,6 +159,8 @@ import { Image } from 'astro:assets';
     opacity: 1;
   }
 
+
+
   .tippy-box {
     font-size: 24px !important;
   }
@@ -226,6 +228,11 @@ import { Image } from 'astro:assets';
         const email = await convertToSHA256(formData.get('Email'))
         const phone = await convertToSHA256(formData.get('Phone'))
         const parentName = await convertToSHA256(formData.get('Parent Name'))
+       const formCloseBtn = document.querySelector('.formClose')
+
+       formCloseBtn.classList.remove('top-[10px]', 'md:top-[15px]')
+       formCloseBtn.classList.add('top-[-7px]', 'md:top-[-7px]')
+
 
         console.log(
           formData,
@@ -254,6 +261,7 @@ import { Image } from 'astro:assets';
     datePlaceHolderTargets.forEach(dateTarget => {
       const placeholderId = dateTarget.dataset.datePlaceholder
       const placeholderEl = document.getElementById(placeholderId)
+
 
       dateTarget.addEventListener('focus', (e) => {
         console.log('date focus')
