@@ -5,18 +5,15 @@ import SplitType from 'split-type'
 gsap.registerPlugin(ScrollTrigger);
 
 function manageLoading(callback, imageElementIds) {
-  const loaderShowTimeMin = 3000; // Minimum loader display time in milliseconds
-  const loaderShowTimeMax = 10000; // Maximum loader display time in milliseconds
+  const loaderShowTimeMin = 1500; // Minimum loader display time in milliseconds
+  const loaderShowTimeMax = 5000; // Maximum loader display time in milliseconds
 
   let startTime = Date.now();
 
   // Show the loader
-  console.log("Showing loader...");
 
   // Promise to wait for all fonts to load
-  const fontsLoadPromise = document.fonts.ready.then(() => {
-      console.log("Fonts loaded");
-  });
+  const fontsLoadPromise = document.fonts.ready
 
   // Promise to wait for all specified image elements to load
   const imagesLoadPromise = Promise.all(imageElementIds.map(id => {
@@ -28,11 +25,9 @@ function manageLoading(callback, imageElementIds) {
               return;
           }
           if (img.complete && img.naturalHeight !== 0) {
-            console.log(`Image with ID ${id} is already loaded or cached.`);
             resolve();
           } else {
               img.onload = () => {
-                  console.log(`Image with ID ${id} loaded.`);
                   resolve();
               };
               img.onerror = () => {
@@ -46,7 +41,6 @@ function manageLoading(callback, imageElementIds) {
   // Promise to enforce the minimum display time of the loader
   const minTimePromise = new Promise(resolve => {
       setTimeout(() => {
-          console.log("Minimum display time passed");
           resolve();
       }, loaderShowTimeMin);
   });
@@ -54,14 +48,12 @@ function manageLoading(callback, imageElementIds) {
   // Promise to handle the maximum waiting time for images
   const maxTimePromise = new Promise(resolve => {
       setTimeout(() => {
-          console.log("Maximum time reached for images");
           resolve();
       }, loaderShowTimeMax);
   });
 
   // Combining promises
   Promise.all([fontsLoadPromise, minTimePromise, Promise.race([imagesLoadPromise, maxTimePromise])]).then(() => {
-      console.log("Conditions met, executing callback...");
       callback();
   });
 }
@@ -74,7 +66,6 @@ function main()  {
 
   const practiceBookTitles = document.querySelectorAll('[data-practice-book]')
   
-  console.log('practiceBookTitles...', practiceBookTitles)
   
   practiceBookTitles.forEach((practiceBookTitle) => {
     const practiceBookLines = practiceBookTitle.querySelectorAll('[data-practice-line]')

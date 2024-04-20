@@ -19,7 +19,7 @@ interface Menu {
 const menu: Array<Menu> = [
   {
     title: "Home",
-    link: "/",
+    link: "#home",
   },
   {
     title: "About Us",
@@ -452,8 +452,6 @@ const menu = [
       clearTimeout(removeTimeout);
       menuChild.forEach((elC) => {
         if (elC !== menu) {
-          console.log("elC...", elC);
-          console.log("el...", el);
           elC.classList.remove("visible");
         }
       });

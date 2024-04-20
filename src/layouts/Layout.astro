@@ -49,6 +49,7 @@ const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mand
 
 	</head>
 	<body class="overflow-y-hidden">
+		<div id="home"></div>
 		<slot />
 		<Loader />
 
@@ -91,12 +92,15 @@ const { title = 'One of Best Pre Schools in india I Sri Sri Ravishankar Bal Mand
 	// when any anchor link that starts with hash is clicked, then do something
 
 	document.addEventListener('click', function (event) {
-		if (!event.target.matches('a[href^="#"]')) return;
+		if (
+			!event.target.matches('a[href^="#"]') &&
+			!event.target.parentElement.matches('a[href^="#"]')
+		) return;
 		event.preventDefault();
-		const elementToScroll = document.querySelector(event.target.hash)
+		const hash = event.target.hash || event.target.parentElement.hash;
+		const elementToScroll = document.querySelector(hash)
 		const scrollDelta = Number(elementToScroll.dataset.scrollDelta) || 200;
 		const elementPosition = elementToScroll.offsetTop;
-		console.log('elementToScroll..', event.target.hash, elementPosition)
 		window.scrollTo({
 			top: elementPosition - scrollDelta,
 			behavior: "smooth"

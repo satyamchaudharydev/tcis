@@ -8,7 +8,7 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.ssrbm.com/",
-    integrations: [sitemap(), react(), tailwind()],
+    integrations: [sitemap(), react(),  tailwind()],
     output: 'hybrid',
     adapter: cloudflare({
         imageService: 'compile'

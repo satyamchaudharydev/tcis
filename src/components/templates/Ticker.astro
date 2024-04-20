@@ -141,8 +141,6 @@ import TickerCard from "./TickerCard.astro";
       swiperLabel.style.opacity = 0;
     })
     swiper.on('transitionEnd', (e) => {
-      console.log(e);
-      console.log(e.realIndex);
       const labelText = swiperData[e.realIndex]?.text
       swiperLabel.innerText = labelText;
       swiperLabel?.classList.forEach((className) => {

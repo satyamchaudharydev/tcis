@@ -13,7 +13,7 @@ import { Image } from 'astro:assets';
 
 <div class="p-[22px] px-[32px] scale-90 max-md:px-[18px] bg-white border border-blue-500 text-black rounded-[4px] items-center w-full max-w-[534px] relative z-20 transition-opacity duration-300" id="register-form-container-desktop">
   <div class="w-full form">
-    <Text type="h3" class='text-[32px] font-display  text-center'>Register Now</Text>
+    <Text type="h3" class='text-[32px] font-display  text-center text-cp-4'>Register Now</Text>
     <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm mt-2">Fill the form below and we’ll get in touch shortly!</Text>
 
     <form class="flex-col flex gap-5 max-md:gap-3 mt-8 max-md:mt-6" id="register-form"  method="POST">
@@ -129,8 +129,8 @@ import { Image } from 'astro:assets';
   </div>
   <div class="w-full success-msg flex flex-col gap-2">
     <div class="p-3" />
-    <Text type="h3" class='text-[32px] text-center'><span class="text-green-600">Thank you</span> for registering!</Text>
-    <Text type="sm" class="text-black/70 text-center font-semibold max-md:text-sm">We've received your details and will be in touch soon.</Text>
+    <Text type="h3" class='text-[32px] text-cp-4 font-bold text-center'><span class="text-cp-7">Thank you</span> for registering!</Text>
+    <Text type="sm" class="text-black/70 mt-2 text-center font-semibold max-md:text-sm">We've received your details and will be in touch soon.</Text>
     <div class="p-3" />
   </div>
 </div>
@@ -165,8 +165,6 @@ import { Image } from 'astro:assets';
 </style>
 
 <script>
- // import tippy from 'tippy.js';
-
   const convertToSHA256 = (string: string) => {
     const encoder = new TextEncoder();
     const data = encoder.encode(string);
@@ -178,12 +176,14 @@ import { Image } from 'astro:assets';
     });
   };
 
+
    const registerForm = document.getElementById('register-form')
    let loading = false
    registerForm?.addEventListener('submit', async (e) => {
       e.preventDefault()
       if (loading) return
       loading = true
+      console.log('submit....')
       const formData = new FormData(e.target as HTMLFormElement);
       const grade1 = formData.get('grade1')
       const grade2 = formData.get('grade2')
@@ -233,14 +233,15 @@ import { Image } from 'astro:assets';
           'phone', formData.get('Phone'), phone, '\n',
           'parentName', formData.get('Parent Name'), parentName, '\n',
         )
-
-        fbq('track', 'CompleteRegistration', {
-          value: 0.00,
-          currency: 'INR',
-          em: email,
-          ph: phone,
-          fn: parentName,
-        })
+        if (typeof fbq !== "undefined" && fbq) {
+          fbq('track', 'CompleteRegistration', {
+            value: 0.00,
+            currency: 'INR',
+            em: email,
+            ph: phone,
+            fn: parentName,
+          })
+        }
         if(window.gtag_report_conversion) {
           window.gtag_report_conversion()
         }
