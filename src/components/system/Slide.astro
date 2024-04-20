@@ -16,6 +16,7 @@ const { slides, id, width=1920, duration=3000, class: className } = Astro.props
           "object-no-repeat object-cover w-full h-full",
         ]}
         src={slide}
+        id={id + '-' + i}
         style={{
           objectPosition: position,
         }}

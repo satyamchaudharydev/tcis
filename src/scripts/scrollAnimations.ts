@@ -4,9 +4,74 @@ import SplitType from 'split-type'
 
 gsap.registerPlugin(ScrollTrigger);
 
+function manageLoading(callback, imageElementIds) {
+  const loaderShowTimeMin = 3000; // Minimum loader display time in milliseconds
+  const loaderShowTimeMax = 10000; // Maximum loader display time in milliseconds
 
-document.fonts.ready.then(function () {
-  document.getElementById('page-loader').style.display = 'none';
+  let startTime = Date.now();
+
+  // Show the loader
+  console.log("Showing loader...");
+
+  // Promise to wait for all fonts to load
+  const fontsLoadPromise = document.fonts.ready.then(() => {
+      console.log("Fonts loaded");
+  });
+
+  // Promise to wait for all specified image elements to load
+  const imagesLoadPromise = Promise.all(imageElementIds.map(id => {
+      return new Promise((resolve) => {
+          const img = document.getElementById(id);
+          if (!img) {
+              console.error(`Image with ID ${id} not found.`);
+              resolve(); // Resolve to not block the other images
+              return;
+          }
+          if (img.complete && img.naturalHeight !== 0) {
+            console.log(`Image with ID ${id} is already loaded or cached.`);
+            resolve();
+          } else {
+              img.onload = () => {
+                  console.log(`Image with ID ${id} loaded.`);
+                  resolve();
+              };
+              img.onerror = () => {
+                  console.error(`Error loading image with ID ${id}.`);
+                  resolve(); // Resolve on error to continue with other processes
+              };
+          }
+      });
+  }));
+
+  // Promise to enforce the minimum display time of the loader
+  const minTimePromise = new Promise(resolve => {
+      setTimeout(() => {
+          console.log("Minimum display time passed");
+          resolve();
+      }, loaderShowTimeMin);
+  });
+
+  // Promise to handle the maximum waiting time for images
+  const maxTimePromise = new Promise(resolve => {
+      setTimeout(() => {
+          console.log("Maximum time reached for images");
+          resolve();
+      }, loaderShowTimeMax);
+  });
+
+  // Combining promises
+  Promise.all([fontsLoadPromise, minTimePromise, Promise.race([imagesLoadPromise, maxTimePromise])]).then(() => {
+      console.log("Conditions met, executing callback...");
+      callback();
+  });
+}
+
+
+function main()  {
+
+  document.getElementById('page-loader').style.opacity = '0';
+  document.getElementById('page-loader').style.pointerEvents = 'none';
+
   const practiceBookTitles = document.querySelectorAll('[data-practice-book]')
   
   console.log('practiceBookTitles...', practiceBookTitles)
@@ -207,6 +272,18 @@ document.fonts.ready.then(function () {
     opacity: 0,
     y: -90,
   })
-});
+}  
 
-  
+
+
+
+if (window.innerWidth > 768) {
+  manageLoading(() => {
+    main()
+  }, ['hero-slides-desktop-0', 'hero-slides-desktop-1', 'hero-slides-desktop-2', 'hero-slides-desktop-3', 'hero-slides-desktop-4']); // Example IDs
+} else {
+  manageLoading(() => {
+    main()
+  }, ['hero-slides-mobile-0', 'hero-slides-mobile-1', 'hero-slides-mobile-2', 'hero-slides-mobile-3', 'hero-slides-mobile-4']);
+}  
+
