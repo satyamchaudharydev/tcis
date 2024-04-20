@@ -7,7 +7,7 @@ import logo from '../../icons/loaderImages/desktopLogo.png'
 
 <div id="page-loader" class="top-0 transition-all duration-700 left-0 fixed w-screen h-screen bg-[#dff4ff] z-[999999]">
     <div class="w-full relative h-full max-md:hidden block">
-        <Image src={desktopImage} alt='loader' width={1440} class="top-0 absolute -z-50 w-full object-cover" />
+        <Image src={desktopImage} alt='loader' width={1920} class="top-0 bg-cover h-screen absolute -z-50 w-full object-cover" />
         <div class="w-full  h-full flex justify-center items-center ">
           <Image src={logo} alt='loader' width={450} class="h-[158px] fading w-[400px] " />
        </div>
@@ -15,7 +15,7 @@ import logo from '../../icons/loaderImages/desktopLogo.png'
     <div class="w-full relative h-full max-md:block hidden">
         <Image src={mobileImage} width={500} alt='loader' class="top-0 absolute h-full -z-50 w-full object-cover" />
         <div class="w-full  h-full flex justify-center fading items-center ">
-          <Image src={logo} width={250} alt='loader' class="w-[201px]" />
+          <Image src={logo} width={350} alt='loader' class="w-[201px]" />
        </div>
     </div>
 </div>
