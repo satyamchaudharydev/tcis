@@ -60,6 +60,7 @@ function manageLoading(callback, imageElementIds) {
 
 
 function main()  {
+  document.querySelector('html')?.classList.remove('overflow-hidden')
 
   document.getElementById('page-loader').style.opacity = '0';
   document.getElementById('page-loader').style.pointerEvents = 'none';

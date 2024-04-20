@@ -1,22 +1,24 @@
 ---
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import desktopImage from '../../icons/loaderImages/desktop.png'
 import mobileImage from '../../icons/loaderImages/mobile.png'
 import logo from '../../icons/loaderImages/desktopLogo.png'
+
+const desktopImageOptimized = await getImage({src: desktopImage, format: 'webp', width: 1920 })
+const mobileImageOptimized = await getImage({src: mobileImage, format: 'webp', width: 700 })
+
 ---
 
 <div id="page-loader" class="top-0 transition-all duration-700 left-0 fixed w-screen h-screen bg-[#dff4ff] z-[999999]">
-    <div class="w-full relative h-full max-md:hidden block">
-        <Image src={desktopImage} alt='loader' width={1920} class="top-0 bg-cover h-screen absolute -z-50 w-screen object-cover" />
-        <div class="w-full  h-full flex justify-center items-center ">
-          <Image src={logo} alt='loader' width={450} class="h-[158px] fading w-[400px] " />
-       </div>
+    <div class="w-full relative h-full max-md:hidden bg-cover bg-center flex justify-center items-center" style={{
+        backgroundImage: `url("${desktopImageOptimized.src}")`
+    }}>
+          <Image src={logo} alt='loader' width={500} class="h-[158px] fading w-[400px] " />
     </div>
-    <div class="w-full relative h-full max-md:block hidden">
-        <Image src={mobileImage} width={500} alt='loader' class="top-0 absolute h-full -z-50 w-full object-cover" />
-        <div class="w-full  h-full flex justify-center fading items-center ">
-          <Image src={logo} width={350} alt='loader' class="w-[201px]" />
-       </div>
+    <div class="w-full relative h-full max-md:flex justify-center bg-cover bg-center items-center hidden" style={{
+        backgroundImage: `url("${mobileImageOptimized.src}")`
+    }}>
+        <Image src={logo} width={350} alt='loader' class="fading w-[201px]" />
     </div>
 </div>
 
