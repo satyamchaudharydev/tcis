@@ -73,7 +73,7 @@ const footerLinks = [
 
 // const currentDomainBase = Astro.env.DOMAIN_BASE;
 
-const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=footer&utm_content=${Astro.url.origin}`
+const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=footer&utm_content=`
 ---
 
 
@@ -119,8 +119,19 @@ const url = `https://www.thedotstudio.in/?utm_source=SchoolWebsite&utm_medium=fo
   <div class="flex flex-row mt-[54px] justify-between items-center max-md:flex-col max-md:mt-[50px] max-md:gap-[10px]">
     <Text type="xs">Copyright © {new Date().getFullYear()}</Text>
 
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" data-dot-studio-footer>
       <Image src={theDotStudioLogo} class="w-[200px] max-md:w-[160px]" alt={"Website Designed by The Dot Studio"} />
     </a>
   </div>
 </div>
+
+
+<script>
+  // get the current domain
+  
+  const currentDomainBase = window.location.origin;
+
+  const dotStudioLogo = document.querySelector('[data-dot-studio-footer]');
+
+  dotStudioLogo.href = ${currentDomainBase} + `${currentDomainBase}`
+</script>
