@@ -11,13 +11,14 @@ const {
   textClass = "",
   buttonClass,
   iconClass = "",
+  showIcon = true,
   ...props
 } = Astro.props;
 
 const Icon = icon ? icon : FilledArrowCircle;
 const buttonClassName = {
-  primary: "tracking-[2px] font-bold uppercase border-white/30 bg-primary primary border-[3px] text-white",
-  secondary: "border-[#F6BD60] bg-[#FFF2DC] secondary border-[3px] text-[#AF7F30]",
+  primary: "tracking-[2px] font-bold uppercase bg-primary primary text-white",
+  secondary: "bg-[#FFF2DC] secondary text-[#AF7F30]",
   yellow: "bg-yellow text-shades-blue-dark",
   default: "default text-white",
 };
@@ -31,7 +32,7 @@ const buttonClassName = {
   <button
     type={type}
     class:list={[
-      "flex flex-row items-center py-3 px-6  rounded-full  button overflow-hidden relative",
+      "flex flex-row items-center py-3 px-6  rounded-[3px]  button overflow-hidden relative",
       buttonClassName[buttonType],
       buttonClass,
     ]}
@@ -50,11 +51,12 @@ const buttonClassName = {
     >
       <slot />
     </Text>
-    <div class:list={["w-5 h-5 ml-2 icon", iconClass]}>
+    {showIcon &&  <div class:list={["w-5 h-5 ml-2 icon", iconClass]}>
       <slot name="icon">
         <Icon pathClass="fill-white" />
       </slot>
-    </div>
+    </div> }
+   
 
     <div class="w-8 h-8 ml-2 loading-icon hidden">
       <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

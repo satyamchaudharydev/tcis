@@ -244,60 +244,24 @@ const kidsActivities = [
           {slide: slide5Mobile, alt: "Slide 5", position: 'center'},
         ]}
       />
-      <div class="w-full h-full top-0 left-0 z-10 absolute rotate-180" style={{
-        opacity: 0.8,
-        background: 'radial-gradient(91.56% 109.67% at 26.63% 81.51%, rgba(226, 162, 83, 0.00) 0%, #FFCD7C 100%)'
-      }}></div>
-      <div class="w-full h-full absolute top-0 left-0 z-20">
-        <div class="h-[210px] absolute top-[50px] md:top-0 left-0 ">
-          <Image src={heroDecorationTop} alt="Hero Decoration Top" class="w-full h-full object-contain" />
-        </div>
-        <div class="h-[320px] absolute right-0 top-[12%] max-lg:top-[35%] max-md:top-[49%] max-md:hidden max-lg:h-[250px] max-md:h-auto max-md:w-[65%] object-contain object-center">
-          <Image src={heroDecorationRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
-        </div>
-        <div class="h-[372px] max-md:hidden block absolute right-[-80px] -bottom-[10%] max-lg:-right-20 max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
-          <Image src={heroDecorationBottomRight} alt="Hero Decoration Right" class="w-full h-full object-contain" />
-        </div>
-        <div class="h-[372px] absolute max-md:block hidden right-0 -bottom-[10%]  max-lg:-bottom-[6%] max-md:-bottom-[4%] max-sm:bottom-[2%] max-lg:h-[250px] max-md:h-[190px] max-sm:h-[30vw]">
-          <Image src={paperPlaneWithBlackDots} alt="Hero Decoration Right" class="w-full h-full object-contain" />
-        </div>
-      </div>
+  
 
-      <div class="w-full h-full absolute top-0 left-0 z-30 flex items-end">
-        <div class="flex mb-[6%] max-md:mb-[2%] ml-[4%] justify-end gap-12 items-end">
-          <div class="w-[119px] max-md:hidden max-lg:w-[80px] max-md:w-[60px] left-[4%] relative z-[99999]" data-main-logo data-gsap data-delay={0.8} data-start="top 100%" data-end="top 10%" data-duration={1.2}>
-            <Image src={logoMain} alt="SSRBM Logo" class="w-full h-full object-contain absolute top-0 left-0" data-logo-main />
-            <Image src={logoColored} alt="SSRBM Logo" class="w-full h-full object-contain absolute top-0 left-0  opacity-0" data-logo-colored />
-            <Image src={logoColored} alt="SSRBM Logo" class="w-full h-full object-contain invisible" />
-          </div>
-        <div>
-          <div data-hero-text>
-            <Text type="base" class="max-md:mb-2  mb-3 uppercase text-cp-4 font-[500] lg:text-[26px] max-md:text-[18px] max-sm:text-[17px] " data-start="top 100%" data-end="top 10%" data-gsap data-delay={0.6} data-duration={0.8}>SRI SRI RAVI SHANKAR BAL MANDIR</Text>
-            <div class="max-md:hidden block">
-            <Text type="h1" class="text-cp-4  italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[42px]">
-              <PracticeBook class="bg-cp-4" gsap delay={0.3} start="top 100%" end="top 10%">
-                Pre-Primary School
-            </Text>
-          </div>
-            <div class="max-md:block hidden">
-            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[42px]">
-              <PracticeBook class="bg-cp-4" gsap delay={0.3} start="top 100%" end="top 10%">
-                Pre-Primary
-            </Text>
-            <Text type="h1" class="text-cp-4 italic mt-[-3%] max-lg:text-[80px] max-md:text-[60px] max-sm:text-[42px]">
-              <PracticeBook class="bg-cp-4" gsap delay={0.3} start="top 100%" end="top 10%">
-              School
-            </Text>
-          </div>
-          </div>
-              <div data-modal-target="applyNow">
-                 <Button buttonClass="tracking-[2px] font-bold uppercase md:hidden mb-[37px] mt-[12px]" data-gsap data-delay={0.3} data-start="top 100%" data-end="top 10%" data-y={30}>Apply Now</Button>
-              </div>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <div class="w-full bg-primary h-[15px] relative z-20"></div>
+  </div>
+  <div class="min-h-[40vh] bg-primary w-full flex items-center justify-center flex-col text-white">
+    <Text type="h4" class="text-white">
+      Learners Today,
+    </Text>
+    <Text type="h3" class="text-white">
+      Leaders Tomorrow!,
+    </Text>
+    <Text type="base">
+      Get ready for the future with TCIS!
+    </Text>
+    <Button>
+      WATCH OFFICIAL FILM
+    </Button>
   </div>
 
   <div id="about-us" data-scroll-delta={100} class="w-full py-[217px]  flex flex-col items-center relative max-md:py-[160px]">
